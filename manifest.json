@@ -1,0 +1,38 @@
+{
+  "short_name": "ARBOOX",
+  "name": "ARBOOX",
+  "description": "Weather forecast information",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://arboox.glitch.me/index.html",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0084FF",
+  "shortcuts": [
+    {
+      "name": "Launch ARBOOX",
+      "short_name": "Launch AB",
+      "description": "Open the ARBOOX app",
+      "url": "https://arboox.glitch.me/index.html",
+      "icons": [{ "src": "https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458", "sizes": "192x192" }]
+    },
+    {
+      "name": "MDA",
+      "short_name": "MDA",
+      "description": "Learn more about MDA",
+      "url": "https://mdadev.ca",
+      "icons": [{ "src": "https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%2014.png?v=1611348373108", "sizes": "192x192" }]
+    }
+  ]
+}

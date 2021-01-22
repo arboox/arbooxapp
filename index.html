@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authentication — MDA</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link rel="shortcut icon" href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458" />
+  </head>
+  <style>
+    @font-face {
+      font-family: "Gotham Pro";
+      src: url("GothamPro-Medium.eot");
+      src: local("Gotham Pro Medium"), local("GothamPro-Medium"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.eot?v=1610907951453")
+          format("embedded-opentype"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.woff?v=1610907954111")
+          format("woff"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.ttf?v=1610907956280")
+          format("truetype");
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Gotham Pro";
+      src: url("GothamPro-Bold.eot");
+      src: local("Gotham Pro Bold"), local("GothamPro-Bold"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.eot?v=1610907939203")
+          format("embedded-opentype"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.woff?v=1610907934725")
+          format("woff"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.ttf?v=1610907939908")
+          format("truetype");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Gotham Pro";
+      src: url("GothamPro-Light.eot");
+      src: local("Gotham Pro Light"), local("GothamPro-Light"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.eot?v=1610907949683")
+          format("embedded-opentype"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.woff?v=1610907956649")
+          format("woff"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.ttf?v=1610907955494")
+          format("truetype");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Gotham Pro";
+      src: url("GothamPro-Black.eot");
+      src: local("Gotham Pro Black"), local("GothamPro-Black"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.eot?v=1610907930156")
+          format("embedded-opentype"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.woff?v=1610907930104")
+          format("woff"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.ttf?v=1610907939728")
+          format("truetype");
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Gotham Pro";
+      src: url("GothamPro.eot");
+      src: local("Gotham Pro"), local("GothamPro"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.eot?v=1610907939985")
+          format("embedded-opentype"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.woff?v=1610907927568")
+          format("woff"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.ttf?v=1610907931169")
+          format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: "Gotham Pro";
+      margin: 30px;
+    }
+
+    button {
+      font-family: "Gotham Pro", system-ui;
+      width: 170px;
+      height: 30px;
+      border: none;
+      background-color: #0084FF;
+      color: #FFFFFF;
+      border-radius: 22px;
+    }
+
+    input {
+      background-color: #F0F0F0;
+      border: none;
+      height: 25px;
+      border-radius: 10px;
+      padding-left: 15px;
+    }
+  </style>
+  <body>
+    <center>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h3>
+        Authentication
+      </h3>
+      <br />
+      <p>
+        Use your MDA Zero Card number <br />
+        to open the ARBOOX app.
+      </p>
+      <br />
+      <input type="text" name="name_input" id="name" />
+      <br />
+      <br />
+      <a href="arbooxapp.html"
+        ><button type="submit" class="button button-dark" id="send" disabled>
+          Launch ARBOOX
+        </button></a
+      >
+      <script>
+        document.getElementById("name").addEventListener("keyup", function() {
+          var nameInput = document.getElementById("name").value;
+          if (nameInput != "") {
+            document.getElementById("send").removeAttribute("disabled");
+          } else {
+            document.getElementById("send").setAttribute("disabled", null);
+          }
+        });
+      </script>
+    </center>
+  </body>
+</html>

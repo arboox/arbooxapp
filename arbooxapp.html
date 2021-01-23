@@ -13,6 +13,7 @@
       sizes="512x512"
     />
     <link rel="shortcut icon" href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458" />
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   </head>
   <style>
     @font-face {
@@ -106,6 +107,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 500;
+      isolation: isolate;
     }
     
     a {
@@ -158,6 +160,12 @@
       <br>
       <br>
       <text class="mdabrand">DEVELOPED BY <a href="https://mdadev.ca">MDA</a> IN VANCOUVER</text>
+      <script>
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
     </center>
   </body>
 </html>

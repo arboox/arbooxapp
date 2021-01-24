@@ -13,100 +13,68 @@
       sizes="512x512"
     />
     <link rel="shortcut icon" href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458" />
+    <link rel="manifest" href="manifest.json" />
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   </head>
   <style>
     @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Medium.eot");
-      src: local("Gotham Pro Medium"), local("GothamPro-Medium"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.eot?v=1610907951453")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.woff?v=1610907954111")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.ttf?v=1610907956280")
-          format("truetype");
-      font-weight: 500;
-      font-style: normal;
-    }
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Bold.eot");
-      src: local("Gotham Pro Bold"), local("GothamPro-Bold"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.eot?v=1610907939203")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.woff?v=1610907934725")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.ttf?v=1610907939908")
-          format("truetype");
-      font-weight: bold;
-      font-style: normal;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Light.eot");
-      src: local("Gotham Pro Light"), local("GothamPro-Light"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.eot?v=1610907949683")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.woff?v=1610907956649")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.ttf?v=1610907955494")
-          format("truetype");
-      font-weight: 300;
-      font-style: normal;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Black.eot");
-      src: local("Gotham Pro Black"), local("GothamPro-Black"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.eot?v=1610907930156")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.woff?v=1610907930104")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.ttf?v=1610907939728")
-          format("truetype");
-      font-weight: 900;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro.eot");
-      src: local("Gotham Pro"), local("GothamPro"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.eot?v=1610907939985")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.woff?v=1610907927568")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.ttf?v=1610907931169")
-          format("truetype");
-      font-weight: normal;
-      font-style: normal;
-    }
-
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+    
     body {
-      font-family: "Gotham Pro";
+      font-family: "Eina01", system-ui;
       margin: 30px;
     }
 
     button {
-      font-family: "Gotham Pro", system-ui;
-      width: 170px;
-      height: 30px;
+      font-family: "Eina01", system-ui;
+      width: 240px;
+      height: 35px;
       border: none;
       background-color: #0084FF;
       color: #FFFFFF;
-      border-radius: 22px;
+      border-radius: 12px;
       isolation: isolate;
     }
 
     input {
       background-color: #F0F0F0;
       border: none;
-      height: 25px;
-      border-radius: 10px;
+      width: 230px;
+      height: 35px;
+      border-radius: 12px;
       padding-left: 15px;
       isolation: isolate;
     }
@@ -114,29 +82,30 @@
   <body>
     <center>
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h3>
+      <h2>
         Authentication
-      </h3>
-      <br />
+      </h2>
+      <div class="transparent_divider"></div>
       <p>
         Use your MDA Zero Card number <br />
         to open the ARBOOX app.
       </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <br />
-      <input type="text" name="name_input" id="name" />
+      <input type="password" name="name_input" id="name" />
       <br />
       <br />
       <a href="arbooxapp.html"
         ><button type="submit" class="button button-dark" id="send" disabled>
-          Launch ARBOOX
+          Open ARBOOX
         </button></a
       >
+      <br>
       <script>
         document.getElementById("name").addEventListener("keyup", function() {
           var nameInput = document.getElementById("name").value;

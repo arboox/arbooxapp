@@ -3,6 +3,7 @@
   <head>
     <title>ARBOOX</title>
     <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
@@ -17,77 +18,43 @@
   </head>
   <style>
     @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Medium.eot");
-      src: local("Gotham Pro Medium"), local("GothamPro-Medium"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.eot?v=1610907951453")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.woff?v=1610907954111")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Medium.ttf?v=1610907956280")
-          format("truetype");
-      font-weight: 500;
-      font-style: normal;
-    }
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Bold.eot");
-      src: local("Gotham Pro Bold"), local("GothamPro-Bold"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.eot?v=1610907939203")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.woff?v=1610907934725")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Bold.ttf?v=1610907939908")
-          format("truetype");
-      font-weight: bold;
-      font-style: normal;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Light.eot");
-      src: local("Gotham Pro Light"), local("GothamPro-Light"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.eot?v=1610907949683")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.woff?v=1610907956649")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Light.ttf?v=1610907955494")
-          format("truetype");
-      font-weight: 300;
-      font-style: normal;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro-Black.eot");
-      src: local("Gotham Pro Black"), local("GothamPro-Black"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.eot?v=1610907930156")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.woff?v=1610907930104")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro-Black.ttf?v=1610907939728")
-          format("truetype");
-      font-weight: 900;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: "Gotham Pro";
-      src: url("GothamPro.eot");
-      src: local("Gotham Pro"), local("GothamPro"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.eot?v=1610907939985")
-          format("embedded-opentype"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.woff?v=1610907927568")
-          format("woff"),
-        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGothamPro.ttf?v=1610907931169")
-          format("truetype");
-      font-weight: normal;
-      font-style: normal;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
     body {
-      font-family: "Gotham Pro";
+      font-family: "Eina01";
       margin: 50px;
     }
     
@@ -122,6 +89,15 @@
       -moz-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+    }
+    
+    .darkmode--activated .mdabrand {
+      .mdabrand {
+      font-size: 12px;
+      background: -webkit-linear-gradient(#00A3FF, #0359FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 500;
     }
   </style>
   <body>

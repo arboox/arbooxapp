@@ -14,7 +14,7 @@
       sizes="512x512"
     />
     <link rel="shortcut icon" href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458" />
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+     <link rel="manifest" type="application/manifest+json" href="manifest.webmanifest">
   </head>
   <style>
     @font-face {
@@ -60,12 +60,16 @@
     
     .experience_card {
       width: 235px;
-      width: max-width;
+      height: auto;
+      background-color: #FFFFFF;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -moz-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      border-radius: 12px;
+      transition: 300ms linear;
+      cursor: pointer;
     }
     
     .mdabrand {
@@ -91,57 +95,82 @@
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
     }
     
-    .darkmode--activated .mdabrand {
-      .mdabrand {
-      font-size: 12px;
-      background: -webkit-linear-gradient(#00A3FF, #0359FF);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 500;
+    .topbar {
+      display: inline-block;
+      padding-bottom: -100px;
+      cursor: pointer;
+    }
+    
+    .app__icon {
+      width: 25px;
+      display: inline-block;
+      border-radius: 4px;
+      position: relative;
+      top: 2px;
+    }
+    
+    .experience_card:hover {
+      transform: scale(0.94);
+    }
+    
+    h2 {
+      display: inline-block;
+      top: -2px;
+    }
+    
+    .tool {
+      width: 40px;
+      height: 23px;
+      background-color: #F1F4F9;
+      border-radius: 22px;
+      display: inline-block;
     }
   </style>
   <body>
     <center>
-      <h2>
+      <div class="topbar">
+        <img class="app__icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458">&emsp;<h2>
         ARBOOX
-      </h2>
+        </h2>
+      </div>
+      </center>
       <br>
       <br>
-      <a href="https://www.vectary.com/viewer-ar/v1/?model=2463a415-2913-46e6-aa2a-5019d1dd422a"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_1.png?v=1611271537483"></a>
-      <br>
-      <br>
-      <br>
-      <br>
-      <a href="https://www.vectary.com/viewer-ar/v1/?model=6bf91e5d-342c-4bc3-a6af-a661dce2b4ae"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_2.png?v=1611271901985"></a>
-      <br>
-      <br>
-      <br>
-      <br>
-      <a href="https://www.vectary.com/viewer-ar/v1/?model=4e69abff-6730-4279-8806-3c50097a36c3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_3.png?v=1611271984677"></a>
-      
+      <center>
+      <a href="https://www.vectary.com/viewer/v1/?model=6407622d-4c86-4ad4-a948-25400e6a31c5&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_1.png?v=1612046335882"></a>
       <br>
       <br>
       <br>
       <br>
-     <a href="https://www.vectary.com/viewer-ar/v1/?model=59181a7c-7cd5-4c9a-bb63-59c6dd5840d0"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_4.png?v=1611271627930"></a> 
+      <a href="https://www.vectary.com/viewer/v1/?model=b6d137f5-0769-4ca1-8e9c-31947973634f&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_2.png?v=1612046338597"></a>
       <br>
       <br>
       <br>
       <br>
-     <a href="https://mdadev.ca/arboox.html"><img class="banner_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fbanner.png?v=1611346525056"></a>
+      <a href="https://www.vectary.com/viewer/v1/?model=e9897510-6021-4e34-ae3a-498e198309d8&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_3.png?v=1612046369735"></a>
       <br>
       <br>
       <br>
       <br>
+        <a href="explorer.html"><div class="tool">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplorer_icon.png?v=1612058475506" style="width: 12px; pointer-events: none;">
+          </div></a>
+        &ensp;
+        <a href="streetwalker.html"><div class="tool">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fstreetwalker_icon.png?v=1612058743608" style="width: 13px; pointer-events: none;">
+          </div></a>
+        &ensp;
+        <a href="https://mdadev.ca/arboox.html"><div class="tool">
+          <img src="https://www.sketch.com/images/icons/universal/color/64x64/question.mark.circle@2x.png" style="width: 14px; pointer-events: none;">
+          </div></a>
+         &ensp;
+       <a href="https://forms.gle/RMYMuSdNWf7oDKxB6"><div class="tool">
+          <img src="https://www.sketch.com/images/icons/universal/color/64x64/exclamation.mark.triangle@2x.png" style="width: 14px; pointer-events: none;">
+         </div></a>
       <br>
-      <br>
-      <text class="mdabrand">DEVELOPED BY <a href="https://mdadev.ca">MDA</a> IN VANCOUVER</text>
-      <script>
-  function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
+        <br>
+        <br>
+      <text class="mdabrand">©MANOLO DEVELOPMENT AGENCY</text>
     </center>
   </body>
 </html>

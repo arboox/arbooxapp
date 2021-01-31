@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Authentication — MDA</title>
+    <title>Login to ARBOOX</title>
     <link rel="manifest" href="manifest.json" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
     <meta name="apple-mobile-web-app-title" content="ARBOOX" />
@@ -12,47 +12,61 @@
       href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
       sizes="512x512"
     />
-    <link rel="shortcut icon" href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458" />
-    <link rel="manifest" href="manifest.json" />
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+    />
+    <link
+      rel="manifest"
+      type="application/janifest+son"
+      href="manifest.webmanifest"
+    />
   </head>
   <style>
     @font-face {
-    font-family: 'Eina01';
-    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
-        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
+      font-family: "Eina01";
+      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651")
+          format("woff2"),
+        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772")
+          format("woff");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Eina01';
-    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
-        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+      font-family: "Eina01";
+      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711")
+          format("woff2"),
+        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127")
+          format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Eina01';
-    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
-        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+      font-family: "Eina01";
+      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651")
+          format("woff2"),
+        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772")
+          format("woff");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Eina01';
-    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
-        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-    
+    @font-face {
+      font-family: "Eina01";
+      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711")
+          format("woff2"),
+        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127")
+          format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
     body {
       font-family: "Eina01", system-ui;
       margin: 30px;
@@ -83,19 +97,19 @@
     <center>
       <br />
       <h2>
-        Authentication
+        Welcome
       </h2>
       <div class="transparent_divider"></div>
       <p>
         Use your MDA Zero Card number <br />
         to open the ARBOOX app.
       </p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <input type="password" name="name_input" id="name" />
       <br />
@@ -105,7 +119,19 @@
           Open ARBOOX
         </button></a
       >
-      <br>
+      <br />
+      <br />
+      <br />
+      <text style="font-size: 14px; font-family: system-ui; color: #CCCCCC;"
+        >Not in ARBOOX yet?&ensp;<a
+          style="color: #0084FF; font-weight: 500;"
+          href="https://mdadev.ca/zero.html"
+          >Subscribe today</a
+        ></text
+      >
+      <br />
+      <br />
+      <br />
       <script>
         document.getElementById("name").addEventListener("keyup", function() {
           var nameInput = document.getElementById("name").value;
@@ -116,12 +142,6 @@
           }
         });
       </script>
-      <script>
-        function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
     </center>
   </body>
 </html>

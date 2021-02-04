@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login to ARBOOX</title>
+    <title>ARBOOX</title>
     <link rel="manifest" href="manifest.json" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
     <meta name="apple-mobile-web-app-title" content="ARBOOX" />
@@ -12,136 +13,164 @@
       href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
       sizes="512x512"
     />
-    <link
-      rel="shortcut icon"
-      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
-    />
-    <link
-      rel="manifest"
-      type="application/janifest+son"
-      href="manifest.webmanifest"
-    />
+    <link rel="shortcut icon" href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458" />
+     <link rel="manifest" type="application/manifest+json" href="manifest.webmanifest">
   </head>
   <style>
     @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772")
-          format("woff");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127")
-          format("woff");
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772")
-          format("woff");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127")
-          format("woff");
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-    }
+@font-face {
+    font-family: 'Eina01';
+    src: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711') format('woff2'),
+        url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
     body {
-      font-family: "Eina01", system-ui;
-      margin: 30px;
+      font-family: "Eina01";
+      margin: 50px;
     }
-
-    button {
-      font-family: "Eina01", system-ui;
-      width: 240px;
-      height: 35px;
-      border: none;
-      background-color: #0084FF;
-      color: #FFFFFF;
+    
+    .experience_card {
+      width: 235px;
+      height: auto;
+      background-color: #FFFFFF;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -moz-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -ms-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       border-radius: 12px;
+      transition: 300ms linear;
+      cursor: pointer;
+    }
+    
+    .mdabrand {
+      font-size: 12px;
+      background: -webkit-linear-gradient(#00A3FF, #0359FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 500;
       isolation: isolate;
     }
-
-    input {
-      background-color: #F0F0F0;
-      border: none;
-      width: 230px;
-      height: 35px;
-      border-radius: 12px;
-      padding-left: 15px;
-      isolation: isolate;
+    
+    a {
+      font-weight: 900;
+    }
+    
+    .banner_card {
+      width: 235px;
+      width: max-width;
+       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -moz-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -ms-filter:  drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+    }
+    
+    .topbar {
+      display: inline-block;
+      padding-bottom: -100px;
+      cursor: pointer;
+    }
+    
+    .app__icon {
+      width: 25px;
+      display: inline-block;
+      border-radius: 4px;
+      position: relative;
+      top: 2px;
+    }
+    
+    .experience_card:hover {
+      transform: scale(0.94);
+    }
+    
+    h2 {
+      display: inline-block;
+      top: -2px;
+    }
+    
+    .tool {
+      width: 40px;
+      height: 23px;
+      background-color: #F1F4F9;
+      border-radius: 22px;
+      display: inline-block;
     }
   </style>
   <body>
     <center>
-      <br />
-      <h2>
-        Welcome
-      </h2>
-      <div class="transparent_divider"></div>
-      <p>
-        Use your MDA Zero Card number <br />
-        to open the ARBOOX app.
-      </p>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <input type="password" name="name_input" id="name" />
-      <br />
-      <br />
-      <a href="arbooxapp.html"
-        ><button type="submit" class="button button-dark" id="send" disabled>
-          Open ARBOOX
-        </button></a
-      >
-      <br />
-      <br />
-      <br />
-      <text style="font-size: 14px; font-family: system-ui; color: #CCCCCC;"
-        >Not in ARBOOX yet?&ensp;<a
-          style="color: #0084FF; font-weight: 500;"
-          href="https://mdadev.ca/zero.html"
-          >Subscribe today</a
-        ></text
-      >
-      <br />
-      <br />
-      <br />
-      <script>
-        document.getElementById("name").addEventListener("keyup", function() {
-          var nameInput = document.getElementById("name").value;
-          if (nameInput != "") {
-            document.getElementById("send").removeAttribute("disabled");
-          } else {
-            document.getElementById("send").setAttribute("disabled", null);
-          }
-        });
-      </script>
+      <div class="topbar">
+        <img class="app__icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458">&emsp;<h2>
+        ARBOOX
+        </h2>
+      </div>
+      </center>
+      <br>
+      <br>
+      <center>
+      <a href="https://www.vectary.com/viewer-ar/v1/?model=6407622d-4c86-4ad4-a948-25400e6a31c5&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_1.png?v=1612046335882"></a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="https://www.vectary.com/viewer-ar/v1/?model=b6d137f5-0769-4ca1-8e9c-31947973634f&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_2.png?v=1612046338597"></a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="https://www.vectary.com/viewer-ar/v1/?model=e9897510-6021-4e34-ae3a-498e198309d8&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_3.png?v=1612046369735"></a>
+      <br>
+      <br>
+      <br>
+      <br>
+        <a href="explorer.html"><div class="tool">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplorer_icon.png?v=1612058475506" style="width: 12px; pointer-events: none;">
+          </div></a>
+        &ensp;
+        <a href="streetwalker.html"><div class="tool">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fstreetwalker_icon.png?v=1612058743608" style="width: 13px; pointer-events: none;">
+          </div></a>
+        &ensp;
+        <a href="https://mdadev.ca/arboox.html"><div class="tool">
+          <img src="https://www.sketch.com/images/icons/universal/color/64x64/question.mark.circle@2x.png" style="width: 14px; pointer-events: none;">
+          </div></a>
+         &ensp;
+       <a href="https://forms.gle/RMYMuSdNWf7oDKxB6"><div class="tool">
+          <img src="https://www.sketch.com/images/icons/universal/color/64x64/exclamation.mark.triangle@2x.png" style="width: 14px; pointer-events: none;">
+         </div></a>
+      <br>
+        <br>
+        <br>
+      <text class="mdabrand">©MANOLO DEVELOPMENT AGENCY</text>
     </center>
   </body>
 </html>

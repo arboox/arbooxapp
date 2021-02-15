@@ -70,7 +70,6 @@
 
     body {
       font-family: "Eina01";
-      margin: 50px;
     }
 
     .experience_card {
@@ -82,209 +81,121 @@
       -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      border-radius: 12px;
+      border-radius: 21px;
       transition: 300ms linear;
       cursor: pointer;
+      z-index: 9;
     }
-
-    .mdabrand {
-      font-size: 12px;
-      background: -webkit-linear-gradient(#00A3FF, #0359FF);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 500;
-      isolation: isolate;
-    }
-
-    a {
-      font-weight: 900;
-    }
-
-    .ad_card {
-      width: 235px;
-      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+    
+       .menu {
+      backdrop-filter: blur(50px);
+      width: 130px;
+      height: 234px;
+      overflow: hidden;
+      z-index: 10;
+      font-family: system-ui;
+      font-weight: 400;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      backdrop-filter: opacity(50%);
+         filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-    }
-
-    .topbar {
-      display: inline-block;
-      padding-bottom: -100px;
-      cursor: pointer;
-    }
-
-    .app__icon {
-      width: 25px;
-      display: inline-block;
-      border-radius: 4px;
-      position: relative;
-      top: 2px;
-    }
-
-    .experience_card:hover {
-      transform: scale(0.94);
-    }
-
-    h2 {
-      display: inline-block;
-      top: -2px;
-    }
-
-    .tool {
-      width: 40px;
-      height: 23px;
-      background-color: #F1F4F9;
-      border-radius: 22px;
-      display: inline-block;
-    }
-
-    .adshref {
-      font-family: "Eina01", system-ui;
-      font-size: 14px;
-      color: #0084FF;
-      text-decoration: none;
-        transition: 300ms linear;
+      text-align: center;
+         transition: 300ms linear;
+         position: absolute;
     }
     
-    .warning {
-      margin-bottom: 40px;
-      font-size: 13px;
-      color: #0084FF;
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .menu {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);  
+  }
+    
+    .app_icon {
+      display: inline-block;
     }
+    
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    summary:after {
+      display: none;
+    }
+    
+    summary:focus {
+      outline: none;
+    }
+    
+    details[open] summary ~ * {
+  animation: sweep .2s ease-in-out;
+}
+    
+    @keyframes sweep {
+  0%    {opacity: 0; margin-left: 0px}
+  100%  {opacity: 1; margin-left: 0px}
+}
   </style>
   <body>
     <center>
-      <div class="topbar">
-        <img
-          class="app__icon"
-          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
-        />&emsp;
-        <h2>
-          ARBOOX
-        </h2>
-      </div>
+      <details style="display: inline-block; background-color: #FFFFFF;"><summary><img class="app_icon" id="logo" style="width: 30px; border-radius: 6px; margin: 30px;" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"></summary><div class="menu" id="abmenu">
+      <br>
+      <a href="tv.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">TV</a>
+      <br>
+      <br>
+       <a href="se.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Sessions</a>
+       <br>
+      <br>
+       <a href="https://forms.gle/cD6FQwEeGECwZYbd7" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Charts</a>
+      <br>
+      <br>
+       <a href="https://forms.gle/j1KWPp2Ac8cyo9jT7" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Publish</a>
+        <br>
+        <br>
+        <a href="ex.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Maps</a>
+   </div></details>
     </center>
     <br />
     <br />
-    <center>
-      <a href="https://www.vectary.com/viewer-ar/v1/?model=ae668ba8-03ec-41d0-bf4c-ffdcdbbc72f8&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_4.png?v=1612535488695"></a>
-      <br>
-      <br>
-      <br>
-      <br>
-      <a href="https://www.vectary.com/viewer-ar/v1/?model=6fa2becb-b0b4-40c0-a8f3-15db1317da74&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_5.png?v=1612485523264"></a>
-      <br>
-      <br>
-      <br>
-      <br>
-      <a href="https://eji.org"><img class="ad_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fad_card_eji.png?v=1612486210293"></a>
-      <br />
-      <br />
-      <a class="adshref" href="https://mdadev.ca/ads.html"
-        >ADVERTISE IN ARBOOX</a
-      >
-      <br>
-      <br>
-      <br>
-      <br>
-      <a href="https://www.vectary.com/viewer-ar/v1/?model=6c72a432-0718-428e-a8c5-73f97d67d3de&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_6.png?v=1612485527911"></a>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <text class="warning">You're all caught up!</text>
-      <br>
-      <br>
-      <div style="width: 200px; height: 2px; background-color: #0084FF;">
-        
-      </div>
-      <br>
-      <text class="warning">AVAILABLE UNTIL FEB 12</text>
-      <br>
-      <br>
-      <a
-        href="https://www.vectary.com/viewer-ar/v1/?model=6407622d-4c86-4ad4-a948-25400e6a31c5&env=studio3"
-        ><img
-          class="experience_card"
-          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_1.png?v=1612046335882"
-      /></a>
-      <br />
-      <br />
-      <br />
-      <br />
-      <a
-        href="https://www.vectary.com/viewer-ar/v1/?model=b6d137f5-0769-4ca1-8e9c-31947973634f&env=studio3"
-        ><img
-          class="experience_card"
-          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_2.png?v=1612046338597"
-      /></a>
-      <br />
-      <br />
-      <br />
-      <br />
-      <a href="https://who.int">
-        <img
-          class="ad_card"
-          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fad_card_who.png?v=1612458850209"
-      /></a>
+  <center>
+    <a href="https://www.vectary.com/viewer-ar/v1/?model=f51a2b85-e807-40fd-8bd0-9063a62387c9&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_lebron.png?v=1612989944224"></a>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="https://www.vectary.com/viewer-ar/v1/?model=1c847303-a8c2-4117-be30-2554ea6a3ec5&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_surface.png?v=1612989942337"></a>
+     
+     <br>
+    <br>
+    <br>
+    <br>
+    <a href="https://www.vectary.com/viewer-ar/v1/?model=6a0152ed-2d8a-4263-8357-dd79103dabe2&env=studio3"><img class="experience_card" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_ship.png?v=1613410795776"></a>
+     
+    <br>
+    <br>
+    <br>
+    <br>
+    </center>
+<pwa-install>Install</pwa-install>
 
-      <br />
-      <br />
-      <a class="adshref" href="https://mdadev.ca/ads.html"
-        >ADVERTISE IN ARBOOX</a
-      >
-      <br />
-      <br />
-      <br />
-      <br />
-      <a
-        href="https://www.vectary.com/viewer-ar/v1/?model=e9897510-6021-4e34-ae3a-498e198309d8&env=studio3"
-        ><img
-          class="experience_card"
-          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexperience_card_3.png?v=1612046369735"
-      /></a>
-      <br />
-      <br />
-      <br />
-      <br />
-      <a href="explorer.html"
-        ><div class="tool">
-          <img
-            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplorer_icon.png?v=1612058475506"
-            style="width: 12px; pointer-events: none;"
-          /></div
-      ></a>
-      &ensp;
-      <a href="streetwalker.html"
-        ><div class="tool">
-          <img
-            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fstreetwalker_icon.png?v=1612058743608"
-            style="width: 13px; pointer-events: none;"
-          /></div
-      ></a>
-      &ensp;
-      <a href="https://forms.gle/iMKQ7UBWegtt8g1b9"
-        ><div class="tool">
-          <img
-            src="https://www.sketch.com/images/icons/universal/color/64x64/question.mark.circle@2x.png"
-            style="width: 14px; pointer-events: none;"
-          /></div
-      ></a>
-      &ensp;
-      <a href="https://forms.gle/RMYMuSdNWf7oDKxB6"
-        ><div class="tool">
-          <img
-            src="https://www.sketch.com/images/icons/universal/color/64x64/exclamation.mark.triangle@2x.png"
-            style="width: 14px; pointer-events: none;"
-          /></div
-      ></a>
-      <br>
-      <br />
-      <br />
-      <text class="mdabrand">©MANOLO DEVELOPMENT AGENCY</text>
-    </center>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
+    ></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+      }
+    </script>
+    <p style="font-family: system-ui; text-align: center; font-size: 14px; font-weight: 500; ">
+      ©ARBOOX 2021
+    </p>
+    <br>
   </body>
 </html>

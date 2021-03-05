@@ -22,164 +22,83 @@
       type="application/manifest+json"
       href="manifest.webmanifest"
     />
+     <link rel="stylesheet" href="style.css">
   </head>
-  <style>
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772")
-          format("woff");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127")
-          format("woff");
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff2?v=1611498489651")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-SemiBold.woff?v=1611498488772")
-          format("woff");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "Eina01";
-      src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff2?v=1611498487711")
-          format("woff2"),
-        url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FEina01-Bold.woff?v=1611498487127")
-          format("woff");
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-    }
-
+    <style>
     body {
-      font-family: "Eina01";
+      overflow-x: hidden;
     }
-
-    .experience_card {
-      width: 265px;
+    
+    .main {
+      width: 300px;
+      z-index: 9;
+    }
+    
+.experience_card {
+      width: 300px;
       max-width: 100%;
       height: auto;
-      background-color: #FFFFFF;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      border-radius: 21px;
       transition: 300ms linear;
       cursor: pointer;
       z-index: 9;
     }
     
     .ad_card {
-      width: 265px;
-       width: 265px;
+      width: 300px;
       height: auto;
-      background-color: #FFFFFF;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      border-radius: 21px;
       transition: 300ms linear;
       cursor: pointer;
       z-index: 9;
       max-width: 100%;
     }
     
-       .menu {
-      backdrop-filter: blur(50px);
-      width: 130px;
-      height: 280px;
-      overflow: hidden;
+    .topbar {
+      display: inline-block;
+      width: 300px;
+      position: -webkit-sticky;
+  position: sticky;
+  top: 0;
       z-index: 10;
-      font-family: system-ui;
-      font-weight: 400;
-      border-radius: 12px;
       background-color: #FFFFFF;
-      backdrop-filter: opacity(50%);
-         filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      text-align: center;
-         transition: 300ms linear;
-         position: absolute;
-    }
+       backdrop-filter: blur(50px);
+      border-radius: 0px 0px 10px 10px;
+}
     
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .menu {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+  .topbar {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
     background-color: rgba(255, 255, 255, 0.8);  
   }
+
+    .ab_text_logo {
+      width: 100px;
+      margin-top: 28px;
+      margin-right: 6%;
+      pointer-events: none;
+    }
     
-    .app_icon {
+    .topbar_icon {
       display: inline-block;
     }
-    
-    summary::-webkit-details-marker {
-      display: none;
-    }
-    
-    summary:after {
-      display: none;
-    }
-    
-    summary:focus {
-      outline: none;
-    }
-    
-    details[open] summary ~ * {
-  animation: sweep .2s ease-in-out;
-}
-    
-    @keyframes sweep {
-  0%    {opacity: 0; margin-left: 0px}
-  100%  {opacity: 1; margin-left: 0px}
-}
   </style>
   <body>
     <center>
-      <details style="display: inline-block; background-color: #FFFFFF;"><summary><img class="app_icon" id="logo" style="width: 30px; border-radius: 6px; margin: 30px;" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"></summary><div class="menu" id="abmenu">
-      <br>
-      <a href="tv.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">TV</a>
-      <br>
-      <br>
-       <a href="se.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Sessions</a>
-       <br>
-      <br>
-       <a href="https://forms.gle/cD6FQwEeGECwZYbd7" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Charts</a>
-      <br>
-      <br>
-       <a href="https://forms.gle/j1KWPp2Ac8cyo9jT7" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Publish</a>
+      <div class="main">
+        <div class="topbar">
+          <img class="ab_text_logo" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FText%20Logo%20Black.svg?v=1614726820998">&emsp;<a href="publish.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus_icon.svg?v=1614813437110"></a>&emsp;&ensp;<a href="friends.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile_icon.svg?v=1614813438678"></a>&emsp;&ensp;<a href="maps.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmaps_icon.svg?v=1614813435341"></a>&emsp;&ensp;<a href="tv.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftv_icon.svg?v=1614813433175"></a>
+      </div>
         <br>
-        <br>
-        <a href="ex.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Maps</a>
-        <br>
-        <br>
-        <a href="ka.html" style="font-family: system-ui; font-weight: 500; font-size: 14px; color: #000000; text-decoration: none;">Karrott</a>
-   </div></details>
-    </center>
     <br />
     <br />
   <center>
@@ -227,9 +146,11 @@
     <br>
     <br>
     </center>
-    <p style="font-family: system-ui; text-align: center; font-size: 14px; font-weight: 500; ">
-      ©ARBOOX 2021
-    </p>
+    <p style="font-family: 'Avenir Next',Avenir, system-ui; color: #000000; font-weight: 500; font-size: 10px;"> 
+    ©ARBOOX 2021. This trademark belongs to JMZE, who reserves  all rights.
+  </p>
     <br>
+      </div>
+      </center>
   </body>
 </html>

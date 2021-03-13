@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>TV Shows | ARBOOX</title>
@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="apple-mobile-web-app-title" content="ARBOOX" />
+    <meta name="theme-color" content="#0094FF">
     <link
       rel="apple-touch-icon"
       href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
@@ -23,21 +24,27 @@
   <style>
     body {
       overflow-x: hidden;
+      margin: 0px;
     }
     
-    .main {
-     width: 300px; 
-      z-index: 9;
-    }
-    
-     .topbar {
+      .topbar {
       display: inline-block;
       width: 300px;
       position: -webkit-sticky;
   position: sticky;
   top: 0;
       z-index: 10;
+      background-color: #FFFFFF;
+       backdrop-filter: blur(50px);
+      border-radius: 0px 0px 10px 10px;
 }
+    
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .topbar {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(17, 17, 17, 0.8);  
+  }
     
     .ab_text_logo {
       width: 100px;
@@ -53,6 +60,7 @@
     video {
       border-radius: 12px;
       background-color: #000000;
+      width: 90%;
     }
     
     .video_info {
@@ -61,13 +69,12 @@
   </style>
   <body style="background-color: #242424;">
 <center>
-<div class="main">
         <div class="topbar">
         <a href="index.html" style="color: #0084FF; font-family: system-ui; text-decoration: none;">←</a>&emsp;<img class="ab_text_logo" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftvshows_tabtitle.svg?v=1614820450387">&emsp;<a href="publish.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus_icon_white.svg?v=1614873413915"></a>&emsp;&ensp;<a href="friends.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile_icon_white.svg?v=1614873416563"></a>&emsp;&ensp;<a href="maps.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmaps_icon_white.svg?v=1614873412439"></a>
       </div>
   <br>
   <br>
-  <video width="300px" height="200px" controls autoplay>
+  <video controls autoplay>
   <source src="https://www.apple.com/105/media/us/environment/2020/597041ed-8d87-4e1a-bb29-f1efc75766a6/anim/hero/large_2x.mp4" type="video/mp4">
 </video>
   <br>
@@ -85,7 +92,6 @@
   <p style="font-family: 'Avenir Next',Avenir, system-ui; color: #555555; font-weight: 500; font-size: 10px;"> 
     ©ARBOOX 2021. This trademark belongs to JMZE, who reserves  all rights.
   </p>
-  </div>
     </center>
   </body>
 </html>

@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="apple-mobile-web-app-title" content="ARBOOX" />
+    <meta name="theme-color" content="#000000" />
     <link
       rel="apple-touch-icon"
       href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
@@ -17,7 +18,7 @@
       rel="shortcut icon"
       href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
@@ -25,48 +26,86 @@
     />
   </head>
   <style>
-            body {
-              margin: 0px;
-              font-family: system-ui;
-              overflow: hidden;
-            }         
-      
-       .topbar {
+    body {
+      margin: 0px;
+      font-family: system-ui;
+    }
+
+    .topbar {
       display: inline-block;
       width: 300px;
-  top: 0;
-}
-    
+      top: 0;
+    }
+
     .ab_text_logo {
       width: 100px;
       margin-bottom: 0px;
       margin-right: 24%;
       pointer-events: none;
-      font-family: 'Avenir Next', Avenir, system-ui;
+      font-family: "Avenir Next", Avenir, system-ui;
       color: #FFFFFF;
       font-size: 26px;
       font-weight: 700;
     }
-    
+
     .topbar_icon {
       display: inline-block;
     }
   </style>
   <body style="background-color: #000000">
     <center>
-      <br>
+      <br />
       <div class="topbar">
-        <a href="index.html" style="color: #0084FF; font-family: system-ui; text-decoration: none;">←</a>&emsp;<text class="ab_text_logo">Maps</text>&emsp;<a href="publish.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus_icon_white.svg?v=1614873413915"></a>&emsp;&ensp;<a href="friends.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile_icon_white.svg?v=1614873416563"></a>&emsp;&ensp;<a href="tv.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftv_icon_white.svg?v=1614873426035"></a>
+        <a
+          href="index.html"
+          style="color: #0084FF; font-family: system-ui; text-decoration: none;"
+          >←</a
+        >&emsp;<text class="ab_text_logo">Maps</text>&emsp;<a
+          href="publish.html"
+          ><img
+            class="topbar_icon"
+            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus_icon_white.svg?v=1614873413915"/></a
+        >&emsp;&ensp;<a href="friends.html"
+          ><img
+            class="topbar_icon"
+            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile_icon_white.svg?v=1614873416563"/></a
+        >&emsp;&ensp;<a href="tv.html"
+          ><img
+            class="topbar_icon"
+            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftv_icon_white.svg?v=1614873426035"
+        /></a>
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
       <div
         id="map"
-        style="width: 90%; height: 66vh; position: relative; z-index: 0; border-radius: 22px;"
+        style="width: 90%; height: 76vh; position: relative; z-index: 0; border-radius: 22px;"
       ></div>
-      <p style="font-family: 'Avenir Next',Avenir, system-ui; color: #555555; font-weight: 500; font-size: 12px;"> 
-    ©ARBOOX 2021. This trademark belongs to <br> JMZE, who reserves  all rights.
-  </p>
+      <br />
+      <div style="width: 90%">
+        <p
+        style="font-family: 'Avenir Next',Avenir, system-ui; color: #0084FF; font-weight: 500; font-size: 12px; text-align: left;"
+      >
+        IN-PLACE AR EXPERIENCES
+      </p>
+      <br />
+<p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; text-align: left; margin-top: -18px; font-size: 14px;">
+  In-place AR experiences are located around the <br> world inside stablishments like museums, <br> restaurants, parks and more.
+      </p>
+        <br>
+        <p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; text-align: left; margin-top: -18px; font-size: 14px;">
+  These experiences are also known as anchors, <br> and they're currently beta testing. Most of them <br> are coming soon.
+      </p>
+      </div>
+      <br />
+      <br>
+      <br>
+      <p
+        style="font-family: 'Avenir Next',Avenir, system-ui; color: #555555; font-weight: 500; font-size: 12px;"
+      >
+        ©ARBOOX 2021. This trademark belongs to <br />
+        JMZE, who reserves all rights.
+      </p>
       <script>
         mapboxgl.accessToken =
           "pk.eyJ1IjoiYXJib294IiwiYSI6ImNrazBsYXl6NDA3MDUybnBiaHZ5a3IyMjAifQ.NnDbxZILxNDrJqgJcT7Xyg";
@@ -78,6 +117,31 @@
         });
 
         map.addControl(new mapboxgl.NavigationControl());
+
+        var marker1 = new mapboxgl.Marker({ color: "#FF6868" })
+          .setLngLat([-99.16289318979926, 19.42980104734659])
+          .addTo(map);
+
+        var marker2 = new mapboxgl.Marker({ color: "#FF6868" })
+          .setLngLat([-73.98552114498212, 40.75821848334573])
+          .addTo(map);
+
+        var marker3 = new mapboxgl.Marker({ color: "#FF6868" })
+          .setLngLat([-123.10330692059763, 49.27989244906147])
+          .addTo(map);
+
+        var marker4 = new mapboxgl.Marker({ color: "#FF6868" })
+          .setLngLat([55.19983552382186, 25.119816697839596])
+          .addTo(map);
+
+        map.addControl(
+          new mapboxgl.GeolocateControl({
+            positionOptions: {
+              enableHighAccuracy: true
+            },
+            trackUserLocation: true
+          })
+        );
       </script>
     </center>
   </body>

@@ -2,12 +2,18 @@
 <html>
   <head>
     <title>Maps | ARBOOX</title>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
     <link
       rel="shortcut icon"
-      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
@@ -31,46 +37,57 @@
     .ab_text_logo {
       width: 100px;
       margin-bottom: 0px;
-      margin-right: 24%;
-      pointer-events: none;
       font-family: "Avenir Next", Avenir, system-ui;
-      color: #FFFFFF;
-      font-size: 26px;
+      color: #000000;
+      font-size: 24px;
       font-weight: 700;
     }
 
-    .topbar_icon {
+      .topbar {
       display: inline-block;
+      width: 100%;
+      position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+      z-index: 10;
+      padding-top: .5rem;
+}
+    
+    .topbar_surround {
+      display: inline-block;
+      width: 120px;
+      height: 36px;
+      border-radius: 22px;
     }
+    
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .topbar_surround {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);  
+  }
+      
   </style>
-  <body style="background-color: #000000">
+  <body>
     <center>
       <br />
       <div class="topbar">
-        <a
-          href="index.html"
-          style="color: #0084FF; font-family: system-ui; text-decoration: none;"
-          >←</a
-        >&emsp;<text class="ab_text_logo">Maps</text>&emsp;<a
-          href="create.html"
-          ><img
-            class="topbar_icon"
-            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus_icon_white.svg?v=1614873413915"/></a
-        >&emsp;&ensp;<a href="friends.html"
-          ><img
-            class="topbar_icon"
-            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile_icon_white.svg?v=1614873416563"/></a
-        >&emsp;&ensp;<a href="tv.html"
-          ><img
-            class="topbar_icon"
-            src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftv_icon_white.svg?v=1614873426035"
-        /></a>
+          <div class="topbar_surround">
+            <text class="ab_text_logo">
+              <a href="index.html" style="font-family: 'Avenir Next', system-ui; color: #0094FF; text-decoration: none;">←</a> Maps
+            </text></div>&emsp;&ensp;<a style="position: relative; text-align: right; display: inline-block;" href="maps.html">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%207.png?v=1617839846064" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+          </a>&emsp;<a style="position: relative; text-align: right; display: inline-block;" href="tv.html">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%205.png?v=1617839843607" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+          </a>&emsp;<a style="position: relative; text-align: right; display: inline-block;" href="bites.html">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%204.png?v=1617839843607" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+          </a>
       </div>
       <br />
       <br />
       <div
         id="map"
-        style="width: 90%; height: 76vh; position: relative; z-index: 0; border-radius: 22px;"
+        style="width: 86%; height: 76vh; position: relative; z-index: 0; border-radius: 22px;"
       ></div>
       <br />
       <div style="width: 90%">
@@ -80,17 +97,17 @@
         IN-PLACE AR EXPERIENCES
       </p>
       <br />
-<p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; text-align: left; margin-top: -18px; font-size: 14px;">
+<p style="font-family: 'Avenir Next', system-ui; color: #000000; text-align: left; margin-top: -18px; font-size: 14px;">
   In-place AR experiences are located around the <br> world inside stablishments like museums, <br> restaurants, parks and more.
       </p>
       </div>
       <br />
-      <div style="width: 90%; height: 100px; background-color: #2F2F2F; border-radius: 22px;">
-        <h2 style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
+      <div style="width: 90%; height: 100px; background-color: #F6F6F6; border-radius: 22px;">
+        <h2 style="font-family: 'Avenir Next', system-ui; color: #000000; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
           Manhattan, NYC
         </h2>
         <br>
-        <p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
+        <p style="font-family: 'Avenir Next', system-ui; color: #000000; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
           Coming soon
         </p>
         <br> 
@@ -99,12 +116,12 @@
         </p>
       </div>
       <br>
-      <div style="width: 90%; height: 100px; background-color: #2F2F2F; border-radius: 22px; margin-top: -20px;">
-        <h2 style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
+      <div style="width: 90%; height: 100px; background-color: #F6F6F6; border-radius: 22px; margin-top: -20px;">
+        <h2 style="font-family: 'Avenir Next', system-ui; color: #000000; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
           Vancouver, BC
         </h2>
         <br>
-        <p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
+        <p style="font-family: 'Avenir Next', system-ui; color: #000000; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
           Coming soon
         </p>
                 <br> 
@@ -113,12 +130,12 @@
         </p>
       </div>
        <br>
-      <div style="width: 90%; height: 100px; background-color: #2F2F2F; border-radius: 22px; margin-top: -20px;">
-        <h2 style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
+      <div style="width: 90%; height: 100px; background-color: #F6F6F6; border-radius: 22px; margin-top: -20px;">
+        <h2 style="font-family: 'Avenir Next', system-ui; color: #000000; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
           Anchor de Reforma
         </h2>
         <br>
-        <p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
+        <p style="font-family: 'Avenir Next', system-ui; color: #000000; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
           Currently closed
         </p>
                 <br> 
@@ -127,12 +144,12 @@
         </p>
       </div>
             <br>
-      <div style="width: 90%; height: 100px; background-color: #2F2F2F; border-radius: 22px; margin-top: -20px;">
-        <h2 style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
+      <div style="width: 90%; height: 100px; background-color: #F6F6F6; border-radius: 22px; margin-top: -20px;">
+        <h2 style="font-family: 'Avenir Next', system-ui; color: #000000; position: relative; text-align: left; padding-top: 22px; margin-left: 30px;">
           Palm Jumeirah
         </h2>
         <br>
-        <p style="font-family: 'Avenir Next', system-ui; color: #F6F6F6; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
+        <p style="font-family: 'Avenir Next', system-ui; color: #000000; margin-left: 30px; position: relative; text-align: left; margin-top: -38px;">
           Coming soon
         </p>
                 <br> 
@@ -152,7 +169,7 @@
           "pk.eyJ1IjoiYXJib294IiwiYSI6ImNrazBsYXl6NDA3MDUybnBiaHZ5a3IyMjAifQ.NnDbxZILxNDrJqgJcT7Xyg";
         var map = new mapboxgl.Map({
           container: "map",
-          style: "mapbox://styles/arboox/ckkzpwp7l14vz17o69bce7npj",
+          style: "mapbox://styles/arboox/ckn83hpva106217mjk1h3ko23",
           center: [-73.97460503891138, 40.77263911269625],
           zoom: 12
         });
@@ -187,3 +204,4 @@
     </center>
   </body>
 </html>
+

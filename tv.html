@@ -2,8 +2,6 @@
 <html>
   <head>
     <title>TV Shows | ARBOOX</title>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
@@ -16,7 +14,7 @@
     />
     <link
       rel="shortcut icon"
-      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
     />
    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -27,35 +25,57 @@
       margin: 0px;
     }
     
-      .topbar {
-      display: inline-block;
-      width: 300px;
-  top: 0;
-      z-index: 10;
-       backdrop-filter: blur(50px);
-      border-radius: 0px 0px 10px 10px;
-}
-    
     .ab_text_logo {
       width: 100px;
-      margin-top: 28px;
-      margin-right: 14%;
-      pointer-events: none;
+      margin-bottom: 0px;
+      font-family: "Avenir Next", Avenir, system-ui;
+      color: #000000;
+      font-size: 24px;
+      font-weight: 700;
     }
     
-    .topbar_icon {
+    .topbar {
       display: inline-block;
+      width: 100%;
+      position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+      z-index: 10;
+      padding-top: .5rem;
+}
+    
+    .topbar_surround {
+      display: inline-block;
+      width: 120px;
+      height: 36px;
+      border-radius: 22px;
     }
+    
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .topbar_surround {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);  
+  }
     
     
     .video_info {
       width: 90%;
     }
   </style>
-  <body style="background-color: #242424;">
+  <body>
 <center>
-        <div class="topbar">
-        <a href="index.html" style="color: #0084FF; font-family: system-ui; text-decoration: none;">←</a>&emsp;<img class="ab_text_logo" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftvshows_tabtitle.svg?v=1614820450387">&emsp;<a href="create.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus_icon_white.svg?v=1614873413915"></a>&emsp;&ensp;<a href="friends.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile_icon_white.svg?v=1614873416563"></a>&emsp;&ensp;<a href="maps.html"><img class="topbar_icon" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmaps_icon_white.svg?v=1614873412439"></a>
+       <div class="topbar">
+          <div class="topbar_surround">
+            <text class="ab_text_logo">
+              <a href="index.html" style="font-family: 'Avenir Next', system-ui; color: #0094FF; text-decoration: none;">←</a> TV
+            </text></div>&emsp;&ensp;<a style="position: relative; text-align: right; display: inline-block;" href="maps.html">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%206.png?v=1617839843606" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+          </a>&emsp;<a style="position: relative; text-align: right; display: inline-block;" href="tv.html">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%208.png?v=1617839845233" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+          </a>&emsp;<a style="position: relative; text-align: right; display: inline-block;" href="bites.html">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%204.png?v=1617839843607" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+          </a>
       </div>
   <br>
   <br>
@@ -63,10 +83,10 @@
   <br>
   <br>
   <div class="video_info">
-    <h2 style="position: relative; text-align: left; color: #FFFFFF; font-family: 'Avenir Next', Avenir, system-ui; font-weight: 600; font-size: 22px;">
+    <h2 style="position: relative; text-align: left; color: #000000; font-family: 'Avenir Next', Avenir, system-ui; font-weight: 600; font-size: 22px;">
       Lost World of the Maya (from NatGeo)
     </h2>
-    <p style="position: relative; text-align: left; color: #FFFFFF; font-family: 'Avenir Next', Avenir, system-ui;">
+    <p style="position: relative; text-align: left; color: #000000; font-family: 'Avenir Next', Avenir, system-ui;">
       Join National Geographic explorers and immerse into the Central American jungles to unveil the secrets behind the Mayan civilization.
     </p>
   </div>
@@ -77,10 +97,10 @@
   <br>
   <br>
   <div class="video_info">
-    <h2 style="position: relative; text-align: left; color: #FFFFFF; font-family: 'Avenir Next', Avenir, system-ui; font-weight: 600; font-size: 22px;">
+    <h2 style="position: relative; text-align: left; color: #000000; font-family: 'Avenir Next', Avenir, system-ui; font-weight: 600; font-size: 22px;">
       The Whole Saga of the Supercontinents (from PBS Eons)
     </h2>
-    <p style="position: relative; text-align: left; color: #FFFFFF; font-family: 'Avenir Next', Avenir, system-ui;">
+    <p style="position: relative; text-align: left; color: #000000; font-family: 'Avenir Next', Avenir, system-ui;">
      The Earth is constantly moving, but to understand how we got where we are, you need to watch this video.
     </p>
   </div>
@@ -95,3 +115,4 @@
     </center>
   </body>
 </html>
+

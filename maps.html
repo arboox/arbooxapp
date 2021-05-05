@@ -21,6 +21,10 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
   </head>
   <style>
     body {
@@ -28,24 +32,16 @@
       font-family: system-ui;
     }
 
+    .ab_text_logo {
+      width: 86px;
+position: relative;
+      top: -10px;
+      pointer-events: none;
+    }
+    
     .topbar {
       display: inline-block;
-      width: 300px;
-      top: 0;
-    }
-
-    .ab_text_logo {
-      width: 100px;
-      margin-bottom: 0px;
-      font-family: "Avenir Next", Avenir, system-ui;
-      color: #000000;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-      .topbar {
-      display: inline-block;
-      width: 100%;
+      width: 320px;
       position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -60,28 +56,78 @@
       border-radius: 22px;
     }
     
+        .blurry_icon {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      border-radius: 22px;
+          position: relative;
+          top: -12px;
+          margin-left: 2.4px;
+          margin-right:2.4px; 
+    }
+    
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .topbar_surround {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);  
-  }
+    background-color: rgba(255, 255, 255, 0.5);
+      }
       
+      .blurry_icon {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+      }
+  }
   </style>
   <body>
     <center>
       <br />
-      <div class="topbar">
-          <div class="topbar_surround">
-            <text class="ab_text_logo">
-              <a href="index.html" style="font-family: 'Avenir Next', system-ui; color: #0094FF; text-decoration: none;">←</a> Maps
-            </text></div>&emsp;&ensp;<a style="position: relative; text-align: right; display: inline-block;" href="maps.html">
-          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%207.png?v=1617839846064" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
-          </a>&emsp;<a style="position: relative; text-align: right; display: inline-block;" href="tv.html">
-          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%205.png?v=1617839843607" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
-          </a>&emsp;<a style="position: relative; text-align: right; display: inline-block;" href="bites.html">
-          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FGroup%204.png?v=1617839843607" width="36px" style="filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.15)); position: relative; top: 8px">
+            <div class="topbar">
+        <div class="blurry_icon">
+          <a
+            href="tv.html"
+            class="material-icons-round"
+            style="position: relative; text-align: left; display: block; left: 5.8px; top: 6px; color: #0094FF; text-decoration: none;"
+            >play_circle</a
+          >
+        </div>
+        <div class="blurry_icon">
+          <a
+            href="maps.html"
+            class="material-icons-round"
+            style="position: relative; text-align: left; display: block; left: 5.8px; top: 6px; color: #0094FF; text-decoration: none;"
+            >language</a
+          >
+        </div>
+        <div class="topbar_surround">
+          <a href="main.html"><p
+            style="position: relative; text-align: left; display: inline-block;"
+          >
+            <img
+              class="ab_text_logo"
+              src="https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FText%20Logo%20Black.svg?v=1618838333051"
+            />
+          </p>
           </a>
+        </div>
+        <div class="blurry_icon">
+          <a
+            href="brands.html"
+            class="material-icons-round"
+            style="position: relative; text-align: left; display: block; left: 5.8px; top: 5.8px; color: #0094FF; text-decoration: none;"
+            >shopping_bag</a
+          >
+        </div>
+        <div class="blurry_icon">
+          <a
+            href="bites.html"
+            class="material-icons-round"
+            style="position: relative; text-align: left; display: block; left: 5.8px; top: 5.8px; color: #0094FF; text-decoration: none;"
+            >agriculture</a
+          >
+        </div>
       </div>
       <br />
       <br />
@@ -204,4 +250,3 @@
     </center>
   </body>
 </html>
-

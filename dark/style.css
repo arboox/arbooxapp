@@ -64,7 +64,3 @@
   bottom: 0;
   right: 0;
 }
-
-a:focus {
-  background-color: transparent;
-}

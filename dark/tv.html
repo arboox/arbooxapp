@@ -79,9 +79,63 @@ position: relative;
       }
   }
     
+    .video-widget {
+      width: 300px;
+      height: 168px;
+      background-color: #F6F7F8;
+      border-radius: 14px;
+      filter: drop-shadow(0px 4px 12px rgba(0, 0, 0,           0.25));
+    }
     
-    .video_info {
-      width: 90%;
+    .video-widget-youtube-logo {
+      width: 108px;
+      position: relative;
+      top: 24px;
+      left: -72px;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0,           0.3));
+    }
+    
+    .video-widget-title {
+      font-family: 'Avenir Next', system-ui;
+      color: #FFFFFF;
+      position: relative;
+      text-align: left;
+      left: -36px;
+      bottom: -48px;
+      width: 180px;
+            filter: drop-shadow(0px 0px 4px rgba(0, 0, 0,           0.5));
+    }
+    
+    .video-widget-play-button {
+      width: 32px;
+      position: relative;
+      bottom: 18px;
+      right: -110px;
+      transition: linear 100ms;
+      cursor: pointer;
+    }
+    
+    .video-widget-play-button:hover {
+      transition: linear 100ms;
+      transform: scale(1.2);
+    }
+    
+    .one {
+    background: url('https://i.ytimg.com/vi/n8xL5OoKhcA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1zRQqW3WnlsU4B4trlDTfkK5jQw');
+    background-size: 140% auto;
+    background-repeat: no-repeat;
+    }
+    
+        .two {
+    background: url('https://i.ytimg.com/vi/lUTvB1O8eEg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCKHlW0aR8uBi-0aqXvMqMERLWjA');
+    background-size: 130% auto;
+    background-repeat: no-repeat;
+    }
+    
+    .three {
+          background: url('https://i.ytimg.com/vi/fEkpAYhIcI4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB96xUaAYIhBR1oaFGxAd7vlaL6Ow');
+    background-size: 120% auto;
+    background-repeat: no-repeat;
     }
   </style>
   <body>
@@ -133,30 +187,36 @@ position: relative;
       </div>
   <br>
   <br>
-  <iframe width="90%" height="250px" src="https://www.youtube.com/embed/7MFKy7DJsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
-  <br>
-  <br>
-  <div class="video_info">
-    <h2 style="position: relative; text-align: left; color: #F6F6F6; font-family: 'Avenir Next', Avenir, system-ui; font-weight: 600; font-size: 22px;">
-      Lost World of the Maya (from NatGeo)
-    </h2>
-    <p style="position: relative; text-align: left; color: #F6F6F6; font-family: 'Avenir Next', Avenir, system-ui;">
-      Join National Geographic explorers and immerse into the Central American jungles to unveil the secrets behind the Mayan civilization.
-    </p>
+  <div class="video-widget one">
+    <img class="video-widget-youtube-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg">
+    <br>
+    <h3 class="video-widget-title">
+      How Weassels Got Skinny
+    </h3>
+    <br>
+    <a href="https://www.youtube.com/watch?v=n8xL5OoKhcA" target="_blank"><img class="video-widget-play-button" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplay-rectangle-light.svg?v=1622584343922"></a>
   </div>
   <br>
   <br>
+    <div class="video-widget two">
+    <img class="video-widget-youtube-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg">
+    <br>
+    <h3 class="video-widget-title title-variant-two">
+      Why captchas are getting harder
+    </h3>
+    <br>
+    <a href="https://www.youtube.com/watch?v=lUTvB1O8eEg" target="_blank"><img class="video-widget-play-button" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplay-rectangle-light.svg?v=1622584343922"></a>
+  </div>
   <br>
-  <iframe width="90%" height="250px" src="https://www.youtube.com/embed/KfYn9KVya-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
   <br>
-  <br>
-  <div class="video_info">
-    <h2 style="position: relative; text-align: left; color: #F6F6F6; font-family: 'Avenir Next', Avenir, system-ui; font-weight: 600; font-size: 22px;">
-      The Whole Saga of the Supercontinents (from PBS Eons)
-    </h2>
-    <p style="position: relative; text-align: left; color: #F6F6F6; font-family: 'Avenir Next', Avenir, system-ui;">
-     The Earth is constantly moving, but to understand how we got where we are, you need to watch this video.
-    </p>
+  <div class="video-widget three">
+    <img class="video-widget-youtube-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg">
+    <br>
+    <h3 class="video-widget-title">
+      Why Dirt from Mars is So Expensive
+    </h3>
+    <br>
+    <a href="https://www.youtube.com/watch?v=fEkpAYhIcI4" target="_blank"><img class="video-widget-play-button" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplay-rectangle-light.svg?v=1622584343922"></a>
   </div>
   <br>
   <br>

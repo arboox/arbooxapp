@@ -1,12 +1,14 @@
 @import url("https://snapnet-cdn.storage.googleapis.com/fonts/avenir-next/avenirnext.font.css");
 
+@import url("https://arboox-web.glitch.me/style.css");
+
 #carbonads {
-  font-family: 'Avenir Next', system-ui;
+  font-family: 'Neurial Grotesk', system-ui;
 }
 #carbonads {
   display: flex;
   max-width: 330px;
-  background-color: #FAFAFA;
+  background-color: #333333;
    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
@@ -14,6 +16,7 @@
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
   z-index: 100;
   border-radius: 16px;
+  color: #F6F6F6;
 }
 #carbonads a {
   color: inherit;
@@ -31,10 +34,9 @@
   display: flex;
 }
 #carbonads .carbon-img {
-  display: block;
   margin: 0;
   line-height: 1;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 #carbonads .carbon-img img {
   display: visible;
@@ -51,7 +53,7 @@
 #carbonads .carbon-poweredby {
   display: block;
   padding: 6px 8px;
-  background: #f1f1f2;
+  background: #444444;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -62,6 +64,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  color: #F6F6F6;
 }
 
 a {

@@ -1,7 +1,9 @@
 @import url("https://snapnet-cdn.storage.googleapis.com/fonts/avenir-next/avenirnext.font.css");
 
+@import url("https://arboox-web.glitch.me/style.css");
+
 #carbonads {
-  font-family: 'Avenir Next', system-ui;
+  font-family: 'Neurial Grotesk', system-ui;
 }
 #carbonads {
   display: flex;
@@ -31,10 +33,9 @@
   display: flex;
 }
 #carbonads .carbon-img {
-  display: block;
   margin: 0;
   line-height: 1;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 #carbonads .carbon-img img {
   display: visible;
@@ -75,7 +76,7 @@ a:hover {
 }
 
 .material-icons-round {
-    transition: linear 100ms;
+  transition: linear 100ms;
 }
 
 .material-icons-round:hover {
@@ -98,7 +99,7 @@ a:hover {
 
 .experience_card:hover {
   transition: linear 100ms;
-  transform: scale(0.9)
+  transform: scale(0.9);
 }
 
 .nav {

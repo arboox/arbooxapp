@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARBOOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
+    <meta name="theme-color" content="#0094FF" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+    
+    body {
+      overflow-x: hidden;
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    
+    .main {
+      width: 300px;
+      z-index: 9;
+    }
+
+    .text-logo {
+      font-family: "Neurial Grotesk", system-ui;
+      color: #000000;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    
+    .shortcuts-container {
+      width: 300px;
+      height: 60px;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    }
+    
+    .launchlink-button {
+      width: 180px;
+      height: 26px;
+      border-radius: 28px;
+      border: solid 2px #0094FF;
+      background-color: transparent;
+      cursor: pointer;
+      color: #0094FF;
+      font-weight: 500;
+      margin-top: 20px;
+      transition: linear 100ms;
+    }
+    
+    .launchlink-button:hover {
+      transform: scale(1.1);
+    }
+    
+    .shortcut {
+      width: 100px;
+      height: 60px;
+      display: inline-block;
+    }
+    
+    .shortcut-text {
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #CCCCCC;
+      font-weight: 500;
+      position: relative;
+      top: 20px;
+      transition: linear 100ms;
+    }
+    
+    .settings-href {
+      color: #000000;
+    }
+    
+    .launchlink {
+      width: 300px;
+      height: 420px;
+      background: rgb(0,198,255);
+background: linear-gradient(180deg, rgba(0,198,255,1) 0%, rgba(0,148,255,1) 100%);
+      border-radius: 16px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+        color: #F8F8F8;
+      }
+
+      .text-logo {
+        font-family: "Neurial Grotesk", system-ui;
+        color: #00B3FF;
+        font-weight: 700;
+        font-size: 24px;
+      }
+      
+      .shortcuts-container {
+      width: 300px;
+      height: 60px;
+      background-color: #333333;
+      border-radius: 14px;
+      filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    }
+      
+      .settings-href {
+        color: #F6F6F6;
+    }
+    }
+  </style>
+  <body>
+    <center>
+      <div class="main">
+        <center>
+          <br />
+          <br />
+          <p class="animate-reveal" style="text-align: left; display: block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fapp_icon_pwa.png?v=1617234928233" style="width: 40px; border-radius: 8px;">
+          </p>
+          &ensp;
+          <a href="javascript:history.back()" class="material-icons-round animate-reveal" style="color: #0094FF; font-size: 38px; position: relative; right: -140px; top: -56px;">close</a>
+          <br /> 
+          <br />
+          <img class="animate-reveal" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile.svg?v=1623282942986" style="width: 180px;">
+          <br>
+          <br>
+          <button class="launchlink-button animate-reveal">
+          <a href="#launchlink" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF;">
+           Share with my friends
+          </a>
+          </button>
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class="shortcuts-container animate-reveal">
+            <div class="shortcut">
+          <a class="shortcut-text" href="explore.html">Explore</a>
+            </div>
+            &ensp;
+            <div class="shortcut">
+          <a class="shortcut-text" href="arcade.html">Arcade</a>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br>
+          <br>
+          <a class="settings-href animate-reveal" href="webviews/privacy.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">lock</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Privacy
+            </h2>
+          </a>
+          <br />
+          <a class="settings-href animate-reveal" href="interface.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">brightness_4</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Interface
+            </h2>
+          </a>
+           <br />
+          <a class="settings-href animate-reveal" href="map.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">my_location</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Map
+            </h2>
+          </a>
+          <br />
+          <a class="settings-href animate-reveal" href="shop.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">shopping_bag</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Shop
+            </h2>
+          </a>
+          <br />
+            <br />
+            <br />
+          <div class="launchlink animate-reveal" id="launchlink">
+            <h3 style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; padding-top: 20px; margin-left: 20px;">
+              Share ARBOOX™ with a LaunchLink
+            </h3>
+            <br>
+            <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; position: relative; top: -40px; margin-left: -20px; width: 240px;">
+              LaunchLink is an easy way to share ARBOOX™ with your best friends safely. A LaunchLink is autogenerated each time you open the app and previous ones are never stored. Just scan the QR Code below.
+            </p>
+            <br>
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flaunchlink.svg?v=1623340973191" style="width: 140px; margin-top: -40px;">
+          </div>
+            <br />
+            <br />
+          <br />
+          <br />
+          <p class="text-logo">
+            ARBOOX™
+          </p>
+        </center>
+        <br />
+        <br>
+      </div>
+      <br />
+    </center>
+  </body>
+</html>

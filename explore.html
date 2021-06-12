@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARBOOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
+    <meta name="theme-color" content="#0094FF" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    .main {
+      width: 300px;
+      z-index: 9;
+    }
+
+    .story_card {
+      width: 300px;
+      max-width: 100%;
+      height: 384px;
+      background-color: #F3F4F5;
+      color: #FFFFFF;
+      border-radius: 18px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      transition: 100ms linear;
+      cursor: pointer;
+      z-index: 9;
+    }
+
+    .separator {
+      background-color: #F3F4F5;
+    }
+
+    .explore {
+      width: 30px;
+      position: relative;
+      top: -86px;
+      right: -136px;
+      cursor: pointer;
+    }
+
+    .text-logo {
+      font-family: "Neurial Grotesk", system-ui;
+      color: #000000;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .experiences {
+      width: 300px;
+      height: 522px;
+      background-color: #FFFFFF;
+      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
+      border-radius: 18px;
+    }
+
+    .experience-content {
+      width: 300px;
+    }
+
+    .ar-experience-title {
+      font-family: "Neurial Grotesk", system-ui;
+      text-align: left;
+      display: block;
+      margin-left: 100px;
+      font-weight: 600;
+      position: relative;
+      top: -100px;
+    }
+
+    .ar-experience-description {
+      font-family: "Neurial Grotesk", system-ui;
+      font-size: 14px;
+      text-align: left;
+      display: block;
+      margin-left: 100px;
+      color: #CCCCCC;
+      position: relative;
+      top: -98px;
+    }
+
+    .ar-experience-cover {
+      width: 50px;
+      height: 60px;
+      background-color: #F3F4F5;
+      border-radius: 8px;
+      position: relative;
+      top: -26px;
+      left: -94px;
+    }
+
+    .ar-experience-launchlink {
+      font-family: "Neurial Grotesk", system-ui;
+      font-size: 14px;
+      text-align: left;
+      display: block;
+      margin-left: 100px;
+      color: #0094FF;
+      text-transform: uppercase;
+      position: relative;
+      top: -94px;
+      font-weight: 600;
+    }
+
+    .video-widget {
+      width: 300px;
+      height: 168px;
+      background-color: #F6F7F8;
+      border-radius: 14px;
+      filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+    }
+
+    .video-widget-youtube-logo {
+      width: 108px;
+      position: relative;
+      top: 24px;
+      left: -72px;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .video-widget-title {
+      font-family: "Neurial Grotesk", system-ui;
+      color: #FFFFFF;
+      position: relative;
+      text-align: left;
+      left: -36px;
+      bottom: -48px;
+      width: 180px;
+      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .video-widget-play-button {
+      width: 32px;
+      font-family: "Neurial Grotesk", system-ui;
+      color: #FFFFFF;
+      font-weight: 500;
+      position: relative;
+      bottom: 18px;
+      right: -110px;
+      transition: linear 100ms;
+      cursor: pointer;
+    }
+
+    .video-widget-play-button:hover {
+      transition: linear 100ms;
+      transform: scale(1.2);
+    }
+
+    .one {
+      background: url("https://i.ytimg.com/vi/n8xL5OoKhcA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1zRQqW3WnlsU4B4trlDTfkK5jQw");
+      background-size: 140% auto;
+      background-repeat: no-repeat;
+    }
+
+    .two {
+      background: url("https://i.ytimg.com/vi/_g2CaF12xxw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDy4oeAMJ9WjUqaHXAD9oUWOvMykA");
+      background-size: 162% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .three {
+      background: url("https://i.ytimg.com/vi/j6bGZXk6F2E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6nhhPHMaNFdQb1dweWG5Ka3FbCw");
+      background-size: 120% auto;
+      background-repeat: no-repeat;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+        color: #F8F8F8;
+      }
+
+      .separator {
+        background-color: #333333;
+      }
+
+      .text-logo {
+        font-family: "Neurial Grotesk", system-ui;
+        color: #00B3FF;
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .experiences {
+        background-color: #333333;
+      }
+    }
+  </style>
+  <body>
+    <center>
+      <div class="main">
+        <center>
+          <br />
+          <br>
+          <div>
+            <h1
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -16px;"
+            >
+              <a href="main.html" style="color: #0094FF" class="material-icons-round"
+                >arrow_back</a
+              >
+              &ensp; Explore
+            </h1>
+            <br />
+            <img
+              onclick="window.location.href='information';" class="explore"
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile.svg?v=1623282942986"
+            />
+            <br />
+            <div
+              class="separator"
+              style="width: 100%; height: 2px; margin-top: -66px; border-radius: 12px;"
+            ></div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div class="experiences">
+            <text
+              style="font-family: 'Neurial Grotesk', system-ui; font-size: 18px;
+      font-weight: 500;
+      color: #CCCCCC;
+      text-transform: uppercase;  position: relative; text-align: left; display: block; top: 22px; left: 26px;"
+            >
+              AR Experiences
+            </text>
+            <br />
+            <text
+              style="font-family: 'Neurial Grotesk', system-ui; font-size: 24px;
+      font-weight: 600;
+position: relative; text-align: left; display: block; top: 22px; left: -2px; width: 240px;"
+            >
+              All the AR content you can ask for.
+            </text>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="experience-content">
+              <figure class="ar-experience-cover" style="background: url('https://cdn.dribbble.com/users/1869172/screenshots/14544858/media/b24c63cf37bcf28da87f4d6e5f2d1cf2.png?compress=1&resize=1600x1200'); background-size: auto 100%;"></figure>
+              <text class="ar-experience-title">Windmill</text>
+              <text class="ar-experience-description">View a windmill in AR</text>
+              <a class="ar-experience-launchlink" href="https://bit.ly/3vh2NY8" target="_blank"
+                >Open in AR</a
+              >
+            </div>
+            <br />
+            <div class="experience-content" style="margin-top: -70px;">
+              <figure class="ar-experience-cover" style="background: url('https://cdn.dribbble.com/users/60166/screenshots/11442385/media/04245a13a17845b0bb38203e7bf4eac9.jpg?compress=1&resize=1600x1200'); background-size: auto 100%;"></figure>
+              <text class="ar-experience-title">Desert Temple</text>
+              <text class="ar-experience-description">View a pyramyd in AR</text>
+              <a class="ar-experience-launchlink" href="https://bit.ly/3cTxj4j" target="_blank"
+                >Open in AR</a
+              >
+            </div>
+            <br />
+            <div class="experience-content" style="margin-top: -70px;">
+              <figure class="ar-experience-cover" style="background: url('https://cdn.dribbble.com/users/844597/screenshots/12486416/media/c23a3220d3d06074ba2e422a6f35f21e.png'); background-size: auto 100%;"></figure>
+              <text class="ar-experience-title">Whale</text>
+              <text class="ar-experience-description">The biggest on the ocean</text>
+              <a class="ar-experience-launchlink" href="https://bit.ly/3iBc5vI" target="_blank"
+                >Open in AR</a
+              >
+            </div>
+            <br />
+            <button
+              style="width: 90%; height: 36px; border-radius: 10px; background-color: #0094FF; border: none; position: relative; top: -76px;"
+            >
+              <a
+                href="experiences.html"
+                style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;"
+                >All experiences</a
+              >
+            </button>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class="ad-card">
+            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDC5Q7&placement=arbooxca" id="_carbonads_js"></script>
+            <br>
+            <p
+              style="text-align: left; display: block; font-family: 'Neurial Grotesk', system-ui; color: #CCCCCC"
+            >
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fpromoted.svg?v=1623257411544"
+                style="position: relative; top: 3px;"
+              />
+              Sponsored
+            </p>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <h3
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
+          >
+            Stay up to date with videos from Vox, Insider and others
+          </h3>
+          <br />
+          <div class="videos">
+            <div class="video-widget one">
+              <img
+                class="video-widget-youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg"
+              />
+              <br />
+              <h3 class="video-widget-title">
+                How Weassels Got Skinny
+              </h3>
+              <br />
+              <a
+                class="video-widget-play-button"
+                href="https://www.youtube.com/watch?v=n8xL5OoKhcA"
+                target="_blank"
+                >Play</a
+              >
+            </div>
+            <br />
+            <br />
+            <div class="video-widget two">
+              <img
+                class="video-widget-youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg"
+              />
+              <br />
+              <h3 class="video-widget-title" style="margin-top: 2px;">
+                How radical gardeners took back New York City
+              </h3>
+              <br />
+              <a
+                class="video-widget-play-button"
+                href="https://www.youtube.com/watch?v=_g2CaF12xxw"
+                target="_blank"
+                >Play</a
+              >
+            </div>
+            <br />
+            <br />
+            <div class="video-widget three">
+              <img
+                class="video-widget-youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg"
+              />
+              <br />
+              <h3 class="video-widget-title">
+                Why Dirt from Mars is So Expensive
+              </h3>
+              <br />
+              <a
+                class="video-widget-play-button"
+                href="https://www.youtube.com/watch?v=j6bGZXk6F2E"
+                target="_blank"
+                >Play</a
+              >
+            </div>
+          </div>
+          <br>
+          <br>
+          <br />
+          <p class="text-logo">
+            ARBOOX™
+          </p>
+        </center>
+        <br />
+      </div>
+      <br />
+    </center>
+  </body>
+</html>

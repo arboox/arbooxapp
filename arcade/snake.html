@@ -3,46 +3,45 @@
   <head>
     <title>Snake</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
-    />
   </head>
   <style>
-    @import url("https://snapnet-cdn.storage.googleapis.com/fonts/avenir-next/avenirnext.font.css");
-    
     body {
       margin: 0px;
-      overflow: hidden;
+      background-color: #FFFFFF;
     }
-    
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100vh;
+
+    a {
+      color: #000000;
     }
-    
-    .nav {
-      width: 100%;
-      height: 50px;
-      background-color: #222222;
-      position: relative;
-      top: -56px;
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+      }
     }
-    
-        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .nav {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(34, 34, 34, 0.8);  
-  }
   </style>
   <body>
-    <iframe src="https://universesnake.netlify.app"></iframe>
-    <div class="nav">
-      <a href="https://arboox.github.io/arbooxapp/bites.html" style="text-align: left;">
-        <img src="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2FGroup%202_bites.png?v=1618024489706" width="50px;" style="position: relative; top: 7px;">
+    <center>
+      <iframe
+        src="https://universesnake.netlify.app/"
+        style="width: 100%; height: 88.8vh; border: none; border-radius: 0px 0px 22px 22px;"
+      ></iframe>
+      <p
+        style="position: relative; text-align: left; margin-top: 6.4px; margin-left: 20px;"
+      >
+        <img
+          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fsnake-arcade-cover.png?v=1624027880735"
+          style="width: 36px; border-radius: 8px;"
+        />
+      </p>
+      <a
+        href="javascript:history.back()"
+        style="text-align: right; display: block; text-decoration: none; font-family: 'Neurial Grotesk', system-ui; position: relative; margin-right: 20px; margin-top: -48px;"
+      >
+        <img
+          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclose.svg?v=1623369019686"
+        />
       </a>
-    </div>
+    </center>
   </body>
 </html>

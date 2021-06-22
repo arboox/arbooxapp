@@ -21,7 +21,7 @@
   <style>
     body {
       overflow-x: hidden;
-      background-color: #0094FF;
+      background-color: #FFFFFF;
     }
     
     .arboox_splash {
@@ -32,12 +32,38 @@
         padding: 20px;
       line-height: 120px;
     }
+    
+    .splash-href {
+      color: #000000;
+    }
+    
+    .arboox-text {
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #000000;
+      font-size: 38px;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+      }
+      
+      .splash-href {
+      color: #F6F6F6;
+    }
+      
+      .arboox-text {
+      color: #F6F6F6;
+    }
+    }
   </style>
   <body>
     <div class="arboox_splash">
-    <img class="arboox_splash" src="https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FText%20Logo%20White.svg?v=1618838333023" width="200px;">
+    <h1 class=" arboox_splash arboox-text">
+      ARBOOX™
+      </h1>
     <br>
-    <a href="main.html" style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-decoration: none; font-weight: 500;">Tap to start</a>
+    <a class="splash-href" href="main.html" style="font-family: 'Neurial Grotesk', system-ui; text-decoration: none; font-weight: 500; position: relative; top: 12px;">Tap to start</a>
     </div>
   </body>
 </html>

@@ -5,56 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <style>
-    @import url("https://snapnet-cdn.storage.googleapis.com/fonts/avenir-next/avenirnext.font.css");
-    
-    @import url("https://conchoaventura.glitch.me/style.css");
-    
     body {
       margin: 0px;
-      background-color: #FBFBFB;
-    }
-    
-    .nav {
-      width: 100%;
-      height: 50px;
       background-color: #FFFFFF;
-      position: fixed;
-      bottom: 0px;
     }
-    
-        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .nav {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.8);  
-  }
-   
-          .flashcard {
-            width: 284px;
-          }
+
+    a {
+      color: #000000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+      }
+    }
   </style>
   <body>
-    <h2 style="font-family: 'HK Grotesk', system-ui; text-align: center; color: #00B3FF;">
-      Flashcards
-    </h2>
-    <br>
     <center>
-    <img class="flashcard" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcard%201.png?v=1619135442564">
-      <br>
-          <img class="flashcard" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcard%202.png?v=1619135517314">
-       <br>
-          <img class="flashcard" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcard%203.png?v=1619135764842">
-      <br>
-          <img class="flashcard" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcard%204.png?v=1619135533507">
-      <br>
-      <br>
-      <br>
-      <br>
-    </center>
-      <div class="nav">
-      <a href="https://arboox.github.io/arbooxapp/bites.html" style="text-align: left; text-decoration: none;">
-        <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fnav_white.png?v=1618934070798" width="50px;" style="position: relative; top: 7px;">
+      <iframe
+        src="https://ab-bites.glitch.me/flashcards.html"
+        style="width: 100%; height: 88.8vh; border: none; border-radius: 0px 0px 22px 22px;"
+      ></iframe>
+      <p
+        style="position: relative; text-align: left; margin-top: 6.4px; margin-left: 20px;"
+      >
+        <img
+          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcards-arcade-cover.png?v=1624027879350"
+          style="width: 36px; border-radius: 8px;"
+        />
+      </p>
+      <a
+        href="javascript:history.back()"
+        style="text-align: right; display: block; text-decoration: none; font-family: 'Neurial Grotesk', system-ui; position: relative; margin-right: 20px; margin-top: -48px;"
+      >
+        <img
+          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclose.svg?v=1623369019686"
+        />
       </a>
-    </div>
+    </center>
   </body>
 </html>

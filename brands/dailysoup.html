@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARBOOX™</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
+    <meta name="theme-color" content="#0094FF" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    @import url("https://arboox-web.glitch.me/style.css");
+
+    body {
+      margin: 0px;
+      overflow-x: hidden;
+    }
+
+    .header {
+      width: 100%;
+      height: 300px;
+      background: url('https://images.unsplash.com/photo-1624821588855-a3ffb0b050ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80');
+        background-position: center;
+             background-size: 100%;
+      background-color: #F3F4F5;
+    }
+
+    .brandlogo {
+      margin-top: 80px;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55));
+      width: 280px;
+    }
+    
+    .actionbar {
+      width: 100%;
+      padding: 16px;
+      background: rgb(116,116,116);
+background: linear-gradient(180deg, rgba(116,116,116,0.6) 0%, rgba(0,0,0,0.0) 100%);
+    }
+
+    .product {
+      width: 340px;
+      height: 80px;
+      background-color: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.12);
+border-radius: 12px;
+    }
+    
+    .product-cover {
+      width: 46px;
+      height: 58px;
+      background-color: #F0F0F0;
+      position: relative;
+      top: -5px;
+      left: -134px;
+      box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.18);
+border-radius: 4px;
+    }
+    
+    .heading-element {
+      font-family: 'Neurial Grotesk', system-ui;
+      position: relative;
+      text-align: left;
+    }
+    
+    .product-title {
+      color: #000000;
+    }
+    
+    .product-checkout-button {
+       width: 100px;
+      height: 36px;
+      border-radius: 22px;
+      border: none;
+      background-color: #222222;
+      position: relative;
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #FFFFFF;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      cursor: pointer;
+      transition: linear 200ms;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.20));
+    }
+    
+    .product-checkout-button:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.25));
+    }
+    
+    .dialog-empty-section {
+      width: 100%;
+      height: 100px;
+      background-color: #F8F9FA;
+      border-radius: 12px;
+      color: #000000;
+      font-family: 'Neurial Grotesk', system-ui;
+    }
+        
+      .story_card {
+      width: 300px;
+      max-width: 100%;
+      height: 384px;
+      background-color: #F3F4F5;
+      color: #FFFFFF;
+      border-radius: 18px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      transition: 100ms linear;
+      cursor: pointer;
+      z-index: 9;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+      }
+      
+      .heading-element {
+        color: #F6F6F6;
+      }
+      
+      .product {
+        background-color: #333333;
+border: 1px solid rgba(255, 255, 255, 0.5);
+box-sizing: border-box;
+box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.12);
+border-radius: 12px;
+      }
+      
+      .product-cover {
+        background-color: #444444;
+      }
+      
+      .product-title {
+      color: #F6F6F6;
+    }
+      
+      .product-checkout-button {
+        background-color: #444444;
+        color: #F6F6F6;
+      }
+      
+      .dialog-empty-section {
+        background-color: #333333;
+        color: #F6F6F6;
+      }
+    }
+  </style>
+  <body>
+    <div class="header">
+      <center>
+        <div class="actionbar">
+          <a href="javascript:history:back()"
+            class="material-icons-round"
+            style="text-align: left; display: block; cursor: pointer; color: #FFFFFF; text-decoration: none; font-size: 32px;"
+            >expand_more</a
+          >
+        </div>
+                  <br>
+          <img class="brandlogo" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fyds-text-logo.png?v=1625007284274">
+        <br>
+        <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55));">
+          Your daily dose of news about fashion, cars, lifestyle and more.
+        </p>
+      </center>
+    </div>
+    <center>
+      <br />
+      <br />
+      <div style="width: 340px;">
+        <h2 class="heading-element">
+          Stories
+        </h2>
+        <br>
+      <a href="https://arboox.github.io/arbooxapp/stories/0001.html">
+              <div class="story_card" style="background: url('https://images.unsplash.com/photo-1518517611416-da57df49b8d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=769&q=80');
+      background-size: auto 100%;
+      background-position: center;">
+                <h3
+                  style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block; position: relative; top: 18px; left: 22px; text-transform: uppercase;"
+                >
+                  Story
+                </h3>
+                <br />
+                <h1
+                  style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block; position: relative; top: 160px; left: 14px; width: 280px;"
+                >
+                  Top 3 countries with best life quality
+                </h1>
+              </div>
+            </a>
+      </div>
+    </center>
+    <br />
+    <br />
+  </body>
+</html>

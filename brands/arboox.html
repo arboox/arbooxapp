@@ -23,7 +23,7 @@
     />
   </head>
   <style>
-    @import url("https://snapnet-cdn.storage.googleapis.com/fonts/avenir-next/avenirnext.font.css");
+    @import url("https://arboox-web.glitch.me/style.css");
 
     body {
       margin: 0px;
@@ -32,84 +32,176 @@
 
     .header {
       width: 100%;
-      height: 280px;
-      background: url('https://images.unsplash.com/photo-1543199301-4747bd5090d9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80');
+      height: 300px;
+      background: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2Fdevicehero.png?v=1623807862203');
        background-repeat: no-repeat;
         background-position: center;
-             background-size: 100%;
-    }
-
-    .actionbar {
-      width: 90%;
-      padding: 16px;
+             background-size: auto 100%;
+      background-color: #F3F4F5;
     }
 
     .brandlogo {
-      width: 120px;
-      height: 120px;
-      background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458');
-       background-size: 120px 120px;
-  background-repeat: no-repeat;
-      border: solid 6px #FFFFFF;
-      margin-top: -80px;
-      border-radius: 100px;
+      margin-top: 50px;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55));
+    }
+    
+    .actionbar {
+      width: 100%;
+      padding: 16px;
+      background: rgb(116,116,116);
+background: linear-gradient(180deg, rgba(116,116,116,0.6) 0%, rgba(0,0,0,0.0) 100%);
     }
 
     .product {
-      width: 90%;
-      height: 260px;
-      background-color: #F6F7F8;
-      border-radius: 16px;
+      width: 340px;
+      height: 80px;
+      background-color: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.12);
+border-radius: 12px;
+    }
+    
+    .product-cover {
+      width: 46px;
+      height: 58px;
+      background-color: #F0F0F0;
+      position: relative;
+      top: -5px;
+      left: -134px;
+      box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.18);
+border-radius: 4px;
+    }
+    
+    .heading-element {
+      font-family: 'Neurial Grotesk', system-ui;
+      position: relative;
+      text-align: left;
+    }
+    
+    .product-title {
+      color: #000000;
+    }
+    
+    .product-checkout-button {
+       width: 100px;
+      height: 36px;
+      border-radius: 22px;
+      border: none;
+      background-color: #222222;
+      position: relative;
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #FFFFFF;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      cursor: pointer;
+      transition: linear 200ms;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.20));
+    }
+    
+    .product-checkout-button:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.25));
+    }
+    
+    .dialog-empty-section {
+      width: 100%;
+      height: 100px;
+      background-color: #F8F9FA;
+      border-radius: 12px;
+      color: #000000;
+      font-family: 'Neurial Grotesk', system-ui;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222222;
+      }
+      
+      .heading-element {
+        color: #F6F6F6;
+      }
+      
+      .product {
+        background-color: #333333;
+border: 1px solid rgba(255, 255, 255, 0.5);
+box-sizing: border-box;
+box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.12);
+border-radius: 12px;
+      }
+      
+      .product-cover {
+        background-color: #444444;
+      }
+      
+      .product-title {
+      color: #F6F6F6;
+    }
+      
+      .product-checkout-button {
+        background-color: #444444;
+        color: #F6F6F6;
+      }
+      
+      .dialog-empty-section {
+        background-color: #333333;
+        color: #F6F6F6;
+      }
     }
   </style>
   <body>
     <div class="header">
       <center>
         <div class="actionbar">
-          <a href="https://arboox.github.io/arbooxapp/brands.html"
-            class="material-icons-round"
-            style="text-align: left; display: block; cursor: pointer; color: #FFFFFF; text-decoration: none;"
-            >arrow_back</a
-          >
-          &emsp;
-          <a href="https://arboox.ca" target="_blank"
-            class="material-icons-round"
-            style="text-align: right; display: block; margin-top: -44px; margin-right: 10px; cursor: pointer; color: #FFFFFF; text-decoration: none;"
-            >public</a
-          >
+          <img onclick="window.location.href='javascript:history.back()';" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclose.svg?v=1625410277160" style="width: 26px; float: right; margin-right: 30px; cursor: pointer;">
         </div>
+                  <br>
+          <img class="brandlogo" src="https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FText%20Logo%20White.svg?v=1618838333023">
+        <br>
+        <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55));">
+          ARBOOX™ is where augmented reality becomes the world's source of inspiration.
+        </p>
+        <br>
+        <a href="https://arboox.github.io/arbooxapp/webviews/arbooxca.html" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55)); text-decoration: none; position: relative; top: -20px; font-weight: 600;">
+          arboox.ca
+        </a>
       </center>
     </div>
-    <br />
     <center>
-      <div class="brandlogo"></div>
       <br />
-      <h2
-        style="font-family: 'Avenir Next', system-ui; text-align: center; margin-top: -0.2px;"
-      >
-        ARBOOX™&ensp;<span
-          class="material-icons-round"
-          style="color: #00B3FF; position: relative; top: 4px;"
-          >verified</span
-        >
+      <br />
+      <div style="width: 340px;">
+  <h2 class="heading-element">
+    Merchandise
       </h2>
-      <br />
-      <p style="font-family: 'Avenir Next', system-ui; margin-top: -26px;">
-        We connect people <br> through augmented reality. <br> For free. 
-      </p>
-      <br />
-      <a
-        style="font-family: 'Avenir Next', system-ui; text-decoration: none; color: #00B3FF; position: relative; top: -24px;"
-        href="https://arboox.ca" target="_blank"
-        >arboox.ca</a
-      >
-      <br />
-      <br>
-      <br>
-      <br>
-          <p style="font-family: 'Avenir Next',Avenir, system-ui; color: #555555; font-weight: 500; font-size: 10px;"> 
-    ©2021. ARBOOX™ is a registered <br> trademark. Brand's logo belongs <br> to their respective owners.
-  </p>
+        <br>
+        <div class="product">
+          <figure class="product-cover" style="background: url('https://images.unsplash.com/photo-1563287850-43074a35e139?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80'); background-size: auto 100%; background-repeat: no-repeat;"></figure>
+          <p style="font-family: 'Neurial Grotesk', system-ui; color: #CCCCCC; text-transform: uppercase; position: relative; text-align: left; top: -80px; left: 70px; font-weight: 500; font-size: 14px;">
+            Out of stock
+          </p>
+          <br>
+          <p class="product-title" style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -124px; left: 70px; font-weight: 500; font-size: 16px;">
+            ARBOOX™ Original <br> Tee Set
+          </p>
+          <button style="position: relative; top: -187px; left: 106px; background-color: #CCCCCC; cursor: not-allowed;" class="product-checkout-button">
+           Purchase
+          </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h2 class="heading-element">
+          Stories
+        </h2>
+        <br>
+        <div class="dialog-empty-section">
+          <p style="width: 280px; position: relative; top: 30px;">
+            ARBOOX™ has no stories to display at the moment.
+          </p>
+        </div>
+      </div>
     </center>
     <br />
     <br />

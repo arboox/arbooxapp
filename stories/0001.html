@@ -58,23 +58,15 @@
     .story-header {
       width: 300px;
       margin-top: 20px;
-      height: 340px;
+      height: 384px;
       background-color: #F3F4F5;
       background: url('https://images.unsplash.com/photo-1518517611416-da57df49b8d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=769&q=80');
       background-size: auto 100%;
       background-position: center;
       border-radius: 16px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
     }
-    
-    .close {
-      font-size: 36px;
-      position: relative;
-      top: 20px;
-      left: -100px;
-      cursor: pointer;
-      color: #000000;
-    }
-    
+
     .story-content {
       width: 80%;
     }
@@ -94,7 +86,7 @@
       border: solid 2px #FFFFFF;
       position: relative;
       left: -70px;
-      top: 234px;
+      top: 300px;
     }
     
     ::selection {
@@ -145,7 +137,7 @@
     <br>
     <br>
   <div class="story-header">
-    <a href="javascript:history.back()" class="material-icons-round close">close</a>
+    <img onclick="window.location.href='javascript:history.back()';" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclose.svg?v=1625410277160" style="width: 30px; float: right; margin: 20px; cursor: pointer;">
     &emsp;
     <div class="topictag">
       <p style="margin-top: 4px; color: #FFFFFF; text-transform: uppercase;">

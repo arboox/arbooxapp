@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARBOOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
+    <meta name="theme-color" content="#0094FF" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://arboox.ca/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+  </head>
+  <style>
+    html {
+      --plyr-color-main: #0094FF00;
+      --plyr-badge-border-radius: 8px;
+    }
+
+    body {
+      margin: 0px;
+      height: 100vh;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(240, 240, 240, 1) 100%
+      );
+      overflow: hidden;
+    }
+
+    .wrap {
+      width: 320px;
+    }
+    
+    a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #ADBAC7;
+        background: rgb(38, 45, 54);
+        background: linear-gradient(
+          180deg,
+          rgba(38, 45, 54, 1) 0%,
+          rgba(12, 14, 16, 1) 100%
+        );
+      }
+      
+      a {
+        color: #ADBAC7;
+      }
+    }
+  </style>
+  <body>
+    <center>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="wrap">
+        <p
+          style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #768390; font-size: 14px;"
+        >
+          Watching
+        </p>
+        <br />
+        <h4
+          style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-top: -22px; width: 220px; float: left;"
+        >
+          What tennis pros look at when they pick a ball
+        </h4>
+        &ensp;
+        <a href="javascript:history.back()" class="material-icons-round" style="float: right; font-size: 34px; margin-top: -12px;">close</a>
+        <br />
+        <br />
+        <br>
+        <div
+          class="plyr__video-embed"
+          id="player"
+          style="width: 320px; height: 180px; border-radius: 12px; filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2)); font-family: 'Neurial Grotesk', system-ui;"
+        >
+          <iframe
+            src="https://www.youtube.com/watch?v=ChzL17zV9hA?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+            allowfullscreen
+            allowtransparency
+            allow="autoplay"
+            style="border-radius: 12px; filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2));"
+          ></iframe>
+        </div>
+      </div>
+    </center>
+    <script>
+      const player = new Plyr("#player");
+    </script>
+  </body>
+</html>

@@ -68,112 +68,38 @@
       font-size: 24px;
     }
 
-    .experiences {
+    .gamecard {
       width: 300px;
-      height: 542px;
+      height: 200px;
       background-color: #FFFFFF;
       filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
-      border-radius: 18px;
+      border-radius: 14px;
     }
 
-    .experience-content {
-      width: 300px;
-    }
-
-    .ar-experience-title {
-      font-family: "Neurial Grotesk", system-ui;
-      text-align: left;
-      display: block;
-      margin-left: 100px;
-      font-weight: 600;
-      position: relative;
-      top: -100px;
-    }
-
-    .ar-experience-description {
-      font-family: "Neurial Grotesk", system-ui;
-      font-size: 14px;
-      text-align: left;
-      display: block;
-      margin-left: 100px;
-      color: #CCCCCC;
-      position: relative;
-      top: -98px;
-    }
-
-    .ar-experience-cover {
-      width: 50px;
-      height: 50px;
+    button {
+      border-radius: 12px;
+      border: none;
       background-color: #F3F4F5;
-      border-radius: 8px;
-      position: relative;
-      top: -26px;
-      left: -94px;
-    }
-
-    .ar-experience-launchlink {
-      font-family: "Neurial Grotesk", system-ui;
-      font-size: 14px;
-      text-align: left;
-      display: block;
-      margin-left: 100px;
       color: #0094FF;
-      text-transform: uppercase;
-      position: relative;
-      top: -94px;
-      font-weight: 600;
-    }
-    
-    input {
-      width: 300px;
-      height: 34px;
-      font-family: 'Neurial Grotesk', system-ui;
-      background-color: #F0F0F0;
-      border: none;
-      padding: 4px;
-      border-radius: 10px;
-      transition: linear 100ms;
-      color: #888888;
-      resize: vertical; 
-      max-height: 300px;
-    }
-    
-    input:focus {
-      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
-      outline: none;
-      border: solid 1.4px #00000012;
-    }
-    
-      button {
-      width: 200px;
-      height: 42px;
-      border-radius: 22px;
-      border: none;
-      background-color: #222222;
-      position: relative;
-      font-family: 'Neurial Grotesk', system-ui;
-      color: #FFFFFF;
+      font-family: "Neurial Grotesk", system-ui;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 1.6px;
+      transition: linear 100ms;
       cursor: pointer;
-      transition: linear 200ms;
-      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.20));
     }
-    
+
     button:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.25));
+      transform: scale(1.08);
     }
-    
+
     @media (prefers-color-scheme: dark) {
       body {
-        background-color: #1E2329;
-        color: #ADBAC7;
+        background-color: #090C10;
+        color: #C9D1D9;
       }
 
       .separator {
-        background-color: #2D333B;
+        background-color: #C9D1D930;
       }
 
       .text-logo {
@@ -182,23 +108,9 @@
         font-weight: 700;
         font-size: 24px;
       }
-
-      .experiences {
-        background-color: #22272E;
-      }
       
-      button {
-        background-color: #373E47;
-      }
-      
-      input {
-        background-color: #22272E;
-      }
-      
-      input:focus {
-      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
-      outline: none;
-      border: solid 1.4px #1E2329;
+      .gamecard {
+      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.8));
     }
     }
   </style>
@@ -207,20 +119,24 @@
       <div class="main">
         <center>
           <br />
-          <br>
+          <br />
           <div>
             <h1
               style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -16px;"
             >
-              <a href="javascript:history.back()" style="color: #0094FF" class="material-icons-round"
+              <a
+                href="javascript:history.back()"
+                style="color: #0094FF"
+                class="material-icons-round"
                 >arrow_back</a
               >
               &ensp; Arcade
             </h1>
             <br />
             <img
-              onclick="window.location.href='information';" class="explore"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile.svg?v=1623282942986"
+              onclick="window.location.href='information';"
+              class="explore"
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fa39af331-79fb-48cc-a4bf-8afdb00edd95.image.png?v=1627093172944"
             />
             <br />
             <div
@@ -231,87 +147,150 @@
           <br />
           <br />
           <br />
-          <div class="experiences">
-            <text
-              style="font-family: 'Neurial Grotesk', system-ui; font-size: 18px;
-      font-weight: 500;
-      color: #CCCCCC;
-      text-transform: uppercase;  position: relative; text-align: left; display: block; top: 22px; left: 26px;"
+          <div
+            class="gamecard"
+            style="background: url('https://cdn.dribbble.com/users/121405/screenshots/14915028/media/36d6190013d42ec57391733c5fc5c515.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          >
+            <div
+              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background-color: #FFFFFF85;"
             >
-              Popular Now
-            </text>
-            <br />
-            <text
-              style="font-family: 'Neurial Grotesk', system-ui; font-size: 24px;
-      font-weight: 600;
-position: relative; text-align: left; display: block; top: 22px; left: -2px; width: 240px;"
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fsnake-arcade-cover.png?v=1624027880735"
+                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
+              />
+              <br />
+              <h3
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
+              >
+                Snake
+              </h3>
+              <br />
+              <p
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
+              >
+                Don't bite your tail!
+              </p>
+              <br />
+              <button
+                onclick="window.location.href='arcade/snake.html';"
+                style="position: relative; top: -54px; left: 110px;"
+              >
+                Play
+              </button>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div
+            class="gamecard"
+            style="background: url('https://cdn.dribbble.com/users/997200/screenshots/16098138/media/0477e5be542b655ade8375a3661aeacd.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          >
+            <div
+              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background-color: #FFFFFF85;"
             >
-             The game is on.
-            </text>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div class="experience-content">
-              <figure class="ar-experience-cover" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fsnake-arcade-cover.png?v=1624027880735'); background-size: auto 100%;"></figure>
-              <text class="ar-experience-title">Snake</text>
-              <text class="ar-experience-description">Reviving a classic</text>
-              <a class="ar-experience-launchlink" href="arcade/snake.html"
-                >Launch</a
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcards-arcade-cover.png?v=1624027879350"
+                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
+              />
+              <br />
+              <h3
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
               >
-            </div>
-            <br />
-            <div class="experience-content" style="margin-top: -70px;">
-              <figure class="ar-experience-cover" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcards-arcade-cover.png?v=1624027879350'); background-size: auto 100%;"></figure>
-              <text class="ar-experience-title">Flashcards</text>
-              <text class="ar-experience-description">Learn something new in <br> one minute or less</text>
-              <a class="ar-experience-launchlink" href="arcade/flashcards.html"
-                >Launch</a
+                Flashcards
+              </h3>
+              <br />
+              <p
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
               >
-            </div>
-            <br />
-            <div class="experience-content" style="margin-top: -70px;">
-              <figure class="ar-experience-cover" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flvrp-arcade-cover.png?v=1624027880675'); background-size: auto 100%;"></figure>
-              <text class="ar-experience-title">Las Vegas Resort <br> Party</text>
-              <text class="ar-experience-description">Celebrate in your favourite MGM or Caesars hotel</text>
-              <a class="ar-experience-launchlink" href="arcade/lvrp.html"
-                >Launch</a
+                Learn new things fast
+              </p>
+              <br />
+              <button
+                onclick="window.location.href='arcade/flashcards.html';"
+                style="position: relative; top: -54px; left: 110px;"
               >
+                Play
+              </button>
             </div>
-            <br />
-            <div class="experience-content" style="margin-top: -70px;">
-              <figure class="ar-experience-cover" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftreebook-arcade-cover.png?v=1624027879351'); background-size: auto 100%;"></figure>
-              <text class="ar-experience-title">TreeBook</text>
-              <text class="ar-experience-description">Multiple tree types <br> gathered in a book</text>
-              <a class="ar-experience-launchlink" href="arcade/treebook.html"
-                >Launch</a
+          </div>
+          <br>
+          <br>
+          <div
+            class="gamecard"
+            style="background: url('https://cdn.dribbble.com/users/650400/screenshots/15802026/media/f46731c80d7698808a0519210432e186.jpg'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          >
+            <div
+              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background-color: #FFFFFF85;"
+            >
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftreebook-arcade-cover.png?v=1624027879351"
+                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
+              />
+              <br />
+              <h3
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
               >
+                TreeBook
+              </h3>
+              <br />
+              <p
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
+              >
+              A book about trees
+              </p>
+              <br />
+              <button
+                onclick="window.location.href='arcade/treebook.html';"
+                style="position: relative; top: -54px; left: 110px;"
+              >
+                Play
+              </button>
             </div>
-            <br />
+          </div>
+          <br>
+          <br>
+          <div
+            class="gamecard"
+            style="background: url('https://cdn.dribbble.com/users/1728242/screenshots/15134789/media/f47b57d975aeb725c9d3483d66b83984.jpg?compress=1&resize=1600x1200'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          >
+            <div
+              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        background-color: #FFFFFF85;"
+            >
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flvrp-arcade-cover.png?v=1624027880675"
+                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
+              />
+              <br />
+              <h3
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
+              >
+                LV Resort Party
+              </h3>
+              <br />
+              <p
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
+              >
+              Party in any hotel
+              </p>
+              <br />
+              <button
+                onclick="window.location.href='arcade/lvrp.html';"
+                style="position: relative; top: -54px; left: 110px;"
+              >
+                Play
+              </button>
+            </div>
           </div>
           <br />
           <br />
-          <br />
-          <br />
-          <h3
-            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
-          >
-           Have any game suggestions? Let us know.
-          </h3>
-          <br />
-          <p style="font-family: 'Neurial Grotesk', system-ui; color: #CCCCCC; text-align: left; display: block; margin-top: -16px;">
-            We're open to new suggestions, and we would like to know which are the games that you enjoy playing. If you have any suggestions please let us know in the text box below.
-          </p>
-          <br>
-          <input type="text">
-          <br>
-          <br>
-          <button>
-            Submit
-          </button>
-          <br>
-          <br>
           <br />
           <p class="text-logo">
             ARBOOX™

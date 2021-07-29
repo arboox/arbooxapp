@@ -186,6 +186,54 @@
       background-size: 100% auto;
       background-repeat: no-repeat;
     }
+    
+    .postbutton {
+      width: 204px;
+      height: 44px;
+      background-color: #0094FF;
+      border-radius: 32px;
+      border: none;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 25px;
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3));
+      transition: linear 100ms;
+      cursor: pointer;
+    }
+    
+    .postbutton:hover {
+      transform: scale(1.04);
+    }
+    
+        .gamecard {
+      width: 300px;
+      height: 200px;
+      background-color: #FFFFFF;
+      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
+      border-radius: 14px;
+    }
+    
+    .gamecard-button {
+      border-radius: 12px;
+      border: none;
+      background-color: #F3F4F5;
+      color: #0094FF;
+      font-family: "Neurial Grotesk", system-ui;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: linear 100ms;
+      cursor: pointer;
+    }
+
+    .gamecard-button:hover {
+      transform: scale(1.08);
+    }
 
     @media (prefers-color-scheme: dark) {
       body {
@@ -212,6 +260,10 @@
       .video-widget {
         filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.8));
       }
+      
+            .gamecard {
+      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.8));
+    }
     }
   </style>
   <body>
@@ -243,21 +295,6 @@
               class="separator"
               style="width: 100%; height: 2px; margin-top: -66px; border-radius: 12px;"
             ></div>
-          </div>
-          <br />
-          <br />
-          <br />
-          <div
-            style="width: 100%; height: 200px; background: rgb(144,0,255);
-background: linear-gradient(180deg, rgba(144,0,255,1) 0%, rgba(84,0,255,1) 100%); border-radius: 18px;   filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));"
-          >
-            <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; font-size: 22px; position: relative; top: 16px; margin-left: 16px; margin-right: 16px;">
-              The Tokyo Olympics are finally here! Get the full info and never miss a stream.
-            </p>
-            <br>
-            <a href="https://olympics.com" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-weight: 500; text-transform: uppercase; float: left; margin-left: 16px; margin-top: 16px;">Stay informed</a>
-            &emsp;
-            <a href="https://www.google.com/search?q=olympics" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-weight: 500; text-transform: uppercase; float: left; margin-left: 16px; margin-top: 16px;">Live results</a>
           </div>
           <br />
           <br />
@@ -352,6 +389,86 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
           <h3
             style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
           >
+            Top games in Arcade right now
+          </h3>
+          <br />
+          <div
+            class="gamecard"
+            style="background: url('https://cdn.dribbble.com/users/121405/screenshots/14915028/media/36d6190013d42ec57391733c5fc5c515.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          >
+            <div
+              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background-color: #FFFFFF85;"
+            >
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fsnake-arcade-cover.png?v=1624027880735"
+                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
+              />
+              <br />
+              <h3
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
+              >
+                Snake
+              </h3>
+              <br />
+              <p
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
+              >
+                Don't bite your tail!
+              </p>
+              <br />
+              <button
+                onclick="window.location.href='arcade/snake.html';"
+                style="position: relative; top: -54px; left: 110px;" class="gamecard-button"
+              >
+                Play
+              </button>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div
+            class="gamecard"
+            style="background: url('https://cdn.dribbble.com/users/1728242/screenshots/15134789/media/f47b57d975aeb725c9d3483d66b83984.jpg?compress=1&resize=1600x1200'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+          >
+            <div
+              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        background-color: #FFFFFF85;"
+            >
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flvrp-arcade-cover.png?v=1624027880675"
+                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
+              />
+              <br />
+              <h3
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
+              >
+                LV Resort Party
+              </h3>
+              <br />
+              <p
+                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
+              >
+              Party in any hotel
+              </p>
+              <br />
+              <button
+                onclick="window.location.href='arcade/lvrp.html';"
+                style="position: relative; top: -54px; left: 110px;" class="gamecard-button"
+              >
+                Play
+              </button>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br>
+          <h3
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
+          >
             Watch trending videos from popular publishers
           </h3>
           <br />
@@ -412,6 +529,13 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
               >
             </div>
           </div>
+          <button class="postbutton" onclick="window.location.href='https://arboox.github.io/arbooxapp/posts';">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus.svg?v=1627238736991" style="width: 18px; margin-top: 12.4px; float: left; margin-left: 10px; display: inline-block;">
+            &ensp;
+            <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-size: 18px; display: inline-block; margin-top: 9.8px; margin-left: -10px;">
+              Share something
+            </p>
+          </button>
           <br />
           <br />
           <br />

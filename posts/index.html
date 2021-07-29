@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARBOOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
+    <meta name="theme-color" content="#0094FF" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://arboox.ca/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .thoughtpreview {
+      width: 300px;
+      height: 450px;
+      border-radius: 16px;
+      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
+      margin-top: 24px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    textarea {
+      background-color: transparent;
+      outline: none;
+      resize: none;
+      border: none;
+      font-family: "Neurial Grotesk", system-ui;
+      font-size: 22px;
+      text-align: left;
+      margin-left: 4px;
+      color: #FFFFFF;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 100px;
+      margin-top: -60px;
+    }
+
+    ::-webkit-input-placeholder {
+      color: #FFFFFF60;
+    }
+
+    ::-moz-placeholder {
+      color: #FFFFFF60;
+    }
+    :-ms-input-placeholder {
+      color: #FFFFFF60;
+    }
+
+    a {
+      text-transform: uppercase;
+      color: #000000;
+      text-decoration: none;
+      font-family: "Neurial Grotesk", system-ui;
+      position: relative;
+      top: 14px;
+    }
+
+    .sheet {
+      width: 100%;
+      height: 400px;
+      background-color: #FFFFFF;
+      border-radius: 16px 16px 0px 0px;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
+      display: none;
+    }
+
+    .bar {
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      background-color: #F0F0F0;
+      margin-top: 22px;
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+    }
+
+    .animate-reveal {
+      opacity: 0;
+      -webkit-animation: reveal 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal
+        forwards;
+      -moz-animation: reveal 0.4s ease-in 1 normal forwards;
+      -o-animation: reveal 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+      animation: reveal 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+    }
+
+    .colour {
+      width: 28px;
+      height: 28px;
+      background-color: #FFFFFF70;
+      border-radius: 34px;
+      position: relative;
+      top: -54px;
+      float: left;
+      margin-left: 20px;
+      cursor: pointer;
+      transition: linear 100ms;
+      z-index: 10;
+    }
+
+    .colour:hover {
+      transform: scale(1.08);
+    }
+    
+    .checkbox {
+      -webkit-appearance: none;
+      background-color: transparent;
+      border: 1.2px solid #CCCCCC;
+      width: 16px;
+      height: 16px;
+	display: inline-block;
+	position: relative;
+      transition: linear 100ms;
+      position: relative;
+      border-radius: 3px;
+    }
+    
+    .checkbox:checked {
+      background-color: #0094FF;
+      border: 2px solid #0094FF;
+       filter: box-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+    }
+    
+    input {
+      width: 320px;
+      height: 36px;
+      border-radius: 10px;
+      border: none;
+      background-color: #F6F6F6;
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #CCCCCC;
+      outline: none;
+      transition: linear 100ms;
+    }
+    
+    input:focus {
+      border: 1.6px solid #CCCCCC;
+      filter: box-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+    }
+
+    button {
+      width: 320px;
+      height: 40px;
+      border-radius: 32px;
+      border: none;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+      background-color: #222222;
+      font-family: 'Neurial Grotesk', system-ui;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      transition: linear 200ms;
+      color: #FFFFFF;
+    }
+    
+    button:hover {
+      transform: scale(1.06);
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+    }
+ 
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #090C10;
+        color: #C9D1D9;
+      }
+
+      a {
+        color: #C9D1D9;
+      }
+
+      .sheet {
+        background-color: #0C0F14;
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 1));
+      }
+
+      .bar {
+        background-color: #C9D1D930;
+      }
+
+      input {
+      background-color: #C9D1D940;
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #C9D1D9;
+    }
+      
+      input:focus {
+        border: 1.6px solid #C9D1D980;
+      }
+      
+      button {
+        background-color: #0094FF;
+      }
+    }
+  </style>
+  <body>
+    <center>
+      <br />
+      <a href="javascript:history.back()">Close</a>
+      <br />
+      <form
+        name="submit-to-google-sheet"
+        action="https://script.google.com/macros/s/AKfycbyVgmrhLoSFGY8gZkUjKbllX8yK2FRtaG6vngIB9qnODPvuRMc/exec"
+      >
+        <div
+          class="thoughtpreview">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fblue.png?v=1627404358155" style="width: 100%; height: 100%; z-index: -2; border-radius: 16px;" id="colourswatch">
+          <textarea
+            placeholder="Share your thoughts, tell a story, or simply say something"
+            name="thought"
+            required
+          ></textarea>
+          <br />
+          &ensp;
+          <div class="colour" id="stickers" style="margin-left: 20px;">
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fstickers.svg?v=1627476047192"
+              style="width: 18px; margin-top: 5.4px;"
+            />
+          </div>
+          &ensp;
+          <div class="colour" id="music" style="margin-left: 12px;">
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmusic.svg?v=1627323025837"
+              style="height: 18px; margin-top: 5px; margin-left: 2px;"
+            />
+          </div>
+          &ensp;
+          <div class="colour" id="link" style="margin-left: 12px;">
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flink.svg?v=1627392226232"
+              style="width: 16px; margin-top: 7px;"
+            />
+          </div>
+          <p
+            style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; font-weight: 500; color: #FFFFFF; float: right; margin-right: 20px; position: relative; top: -66px; cursor: pointer;"
+            id="share"
+          >
+            Share <b>→</b>
+          </p>
+        </div>
+        <div
+          class="sheet animate-reveal"
+          id="sticker-sheet"
+             style="height: 550px;"
+        >
+          <div class="bar" id="sticker-sheet-bar"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <br />
+          <h2
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;"
+          >
+            Stickers
+          </h2>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 12px; margin-right: 10%; margin-top: -20px;">
+            The sticker you select won't be visible in the preview, but it will be visible in your published thought.
+          </p>
+          <br />
+                              <div style="width: 100%; height: 400px; overflow-y: scroll;">
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 16px; text-transform: uppercase; color: #0094FF; font-weight: 500; margin-top: 24px;">
+            Popular
+          </p>
+          <br>
+            <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fcat-and-tv.png?v=1627344577294" style="width: 180px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fcat-and-tv.png?v=1627344577294"/>
+                      </div>
+                      &ensp;
+                      <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fphrog-and-toilet.png?v=1627345031717" style="width: 180px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fphrog-and-toilet.png?v=1627345031717"/>
+          </div>
+                      <br>
+                      <br>
+                      <br>
+                       <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fadventure-jeep.png?v=1627345817573" style="width: 180px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fadventure-jeep.png?v=1627345817573"/>
+                      </div>
+                      &ensp;
+                      <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fspace-shuttle.png?v=1627345877612" style="width: 160px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fspace-shuttle.png?v=1627345877612"/>
+          </div>
+                                 <br>
+                      <br>
+                      <br>
+                       <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flesgo1.png?v=1627346477159" style="width: 130px; border-radius: 12px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flesgo1.png?v=1627346477159"/>
+                      </div>
+                      &emsp;&emsp;
+                      <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2F12a0bee8-805a-49ac-870b-f05bef56d58e.webp?v=1627346720818" style="width: 130px; border-radius: 12px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2F12a0bee8-805a-49ac-870b-f05bef56d58e.webp?v=1627346720818"/>
+          </div>
+                                          <br>
+                      <br>
+                      <br>
+                       <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2F84b3525d-8cea-4f36-ad9f-8416850a9f67.webp?v=1627346987709" style="width: 130px; border-radius: 12px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2F84b3525d-8cea-4f36-ad9f-8416850a9f67.webp?v=1627346987709"/>
+                      </div>
+                      &emsp;&emsp;
+                      <div style="display: inline-block;">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplore.png?v=1626964537116" style="width: 130px; border-radius: 12px;">
+              <br>
+              <input class="checkbox" name="sticker" type="checkbox" value="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplore.png?v=1626964537116"/>
+          </div>
+                      <br>
+                      <br>
+                      <br>
+        </div>
+        </div>
+        <div
+          class="sheet animate-reveal"
+          id="music-sheet"
+        >
+          <div class="bar" id="music-sheet-bar"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <br />
+          <h2
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;"
+          >
+            Music
+          </h2>
+          <br />
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 12px; margin-right: 10%; margin-top: -20px;">
+        When you select a song, it will be displayed in your published thought. Users can listen to a 30-second music preview, and then listen to the full song with Spotify.
+          </p>
+          <br>
+           <div style="width: 100%; height: 300px; overflow-y: scroll;">
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 16px; text-transform: uppercase; color: #0094FF; font-weight: 500; margin-top: 24px;">
+            Popular
+          </p>
+             <br>
+             <div>
+               <input class="checkbox" name="name" type="checkbox" value="https://open.spotify.com/embed/track/5QxK3RfBfLAqIJivw57u1a" style="position: relative; top: -26px;"/>
+               &ensp;
+               <iframe src="https://open.spotify.com/embed/track/5QxK3RfBfLAqIJivw57u1a" style="width: 320px; height: 80px; border: none; border-radius: 12px;" allowtransparency="true" allow="encrypted-media"></iframe>
+             </div>
+             <br>
+             <br>
+             <div>
+               <input class="checkbox" name="name" type="checkbox" value="https://open.spotify.com/embed/track/5PjdY0CKGZdEuoNab3yDmX" style="position: relative; top: -26px;"/>
+               &ensp;
+               <iframe src="https://open.spotify.com/embed/track/5PjdY0CKGZdEuoNab3yDmX" style="width: 320px; height: 80px; border: none; border-radius: 12px;" allowtransparency="true" allow="encrypted-media"></iframe>
+             </div>
+             <br>
+             <br>
+             <div>
+               <input class="checkbox" name="name" type="checkbox" value="https://open.spotify.com/embed/track/0k4d5YPDr1r7FX77VdqWez?si=40428c1dbafa4d76" style="position: relative; top: -26px;"/>
+               &ensp;
+               <iframe src="https://open.spotify.com/embed/track/0k4d5YPDr1r7FX77VdqWez?si=40428c1dbafa4d76" style="width: 320px; height: 80px; border: none; border-radius: 12px;" allowtransparency="true" allow="encrypted-media"></iframe>
+             </div>
+             <br>
+             <br>
+             <div>
+               <input class="checkbox" name="name" type="checkbox" value="https://open.spotify.com/embed/track/7MAibcTli4IisCtbHKrGMh?si=c3f3136ce7d84dcd" style="position: relative; top: -26px;"/>
+               &ensp;
+               <iframe src="https://open.spotify.com/embed/track/7MAibcTli4IisCtbHKrGMh?si=c3f3136ce7d84dcd" style="width: 320px; height: 80px; border: none; border-radius: 12px;" allowtransparency="true" allow="encrypted-media"></iframe>
+             </div>
+             <br>
+             <br>
+             <div>
+               <input class="checkbox" name="name" type="checkbox" value="https://open.spotify.com/embed/track/6cx06DFPPHchuUAcTxznu9?si=4300adba94324ba8" style="position: relative; top: -26px;"/>
+               &ensp;
+               <iframe src="https://open.spotify.com/embed/track/6cx06DFPPHchuUAcTxznu9?si=4300adba94324ba8" style="width: 320px; height: 80px; border: none; border-radius: 12px;" allowtransparency="true" allow="encrypted-media"></iframe>
+             </div>
+             <br>
+             <br>
+             <div>
+               <input class="checkbox" name="name" type="checkbox" value="https://open.spotify.com/embed/track/6cx06DFPPHchuUAcTxznu9?si=4300adba94324ba8" style="position: relative; top: -26px;"/>
+               &ensp;
+               <iframe src="https://open.spotify.com/embed/track/5zFglKYiknIxks8geR8rcL?si=3641009d85d44a94" style="width: 320px; height: 80px; border: none; border-radius: 12px;" allowtransparency="true" allow="encrypted-media"></iframe>
+             </div>
+             <br>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;">
+               Data from: <a href="https://open.spotify.com/playlist/37i9dQZEVXbLp5XoPON0wI?si=b2e4c858ba6248e1" target="_blank" style="position: relative; top: 1px; text-transform: none; text-decoration: underline;">Top Songs - USA (Spotify)</a>
+             </p>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+          </div>
+        </div>
+        <div
+          class="sheet animate-reveal"
+          id="link-sheet"
+          style="height: 280px;"
+        >
+          <div class="bar" id="link-sheet-bar"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <br />
+          <h2
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;"
+          >
+            Add a link
+          </h2>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 12px; margin-right: 10%; margin-top: -20px;">
+             You can add links to external links. If the destination website contains media (photos or videos), a preview of it will be shown.
+          </p>
+          <br />
+          <input type="text" name="link" placeholder="https://arboox.ca">
+        </div>
+        <div
+          class="sheet animate-reveal"
+          id="share-sheet"
+             style="height: 320px;"
+        >
+          <div class="bar" id="share-sheet-bar"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <br />
+          <h2
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;"
+          >
+            Share
+          </h2>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 12px; margin-right: 10%; margin-top: -20px;">
+             You're almost done, but before sharing, we need to know who you are. Please type your ARBOOX™ username below, starting with '@'.
+          </p>
+          <br />
+          <input type="text" name="username" required>
+          <br>
+          <br>
+          <button id="toggleSuccessSheet" type="submit">
+            Share
+          </button>
+        </div>
+      </form>
+              <div
+          class="sheet animate-reveal"
+          id="success-sheet"
+             style="height: 90vh; overflow-y: scroll;"
+        >
+          <div class="bar" id="success-sheet-bar"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <br />
+                <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fpost-artboard.png?v=1627478873464" style="width: 100%; z-index: -2; position: relative; top: -60px;">
+                <br>
+          <h2
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; margin-top: -18px;"
+          >
+            Do you love cats?
+          </h2>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;  margin-right: 10%; margin-top: -20px;">
+             <i>Or squirrels?</i>
+            <br>
+            <br>
+            <br>
+            We mean, your post is live! Isn't that good news? Your post will be shared across the Feed and Explore sections, and once it hits a considerable sum of reactions and shares, you will get the chance to be featured in our Instagram profile and story. (Find us as @arbooxapp). Please note it may take some time for your post to be visible everywhere.
+            <br>
+            <br>
+            Now you can leave the post editor and continue to explore ARBOOX™.
+          </p>
+          <br />
+          <br>
+          <br>
+          <button onclick="javascript:history.back()">
+            Alright
+          </button>
+                <br>
+                <br>
+                <br>
+        </div>
+    </center>
+  </body>
+  <script>
+    document.querySelector("#colour").addEventListener("click", function() {
+      document.querySelector("#colour-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#colour-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#colour-sheet").style.display = "none";
+      });
+  </script>
+  <script>
+    document.querySelector("#stickers").addEventListener("click", function() {
+      document.querySelector("#sticker-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#sticker-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#sticker-sheet").style.display = "none";
+      });
+  </script>
+  <script>
+    document.querySelector("#music").addEventListener("click", function() {
+      document.querySelector("#music-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#music-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#music-sheet").style.display = "none";
+      });
+  </script>
+  <script>
+    document.querySelector("#link").addEventListener("click", function() {
+      document.querySelector("#link-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#link-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#link-sheet").style.display = "none";
+      });
+  </script>
+  <script>
+    document.querySelector("#share").addEventListener("click", function() {
+      document.querySelector("#share-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#share-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#share-sheet").style.display = "none";
+      });
+  </script>
+    <script>
+    document.querySelector("#toggleSuccessSheet").addEventListener("click", function() {
+      document.querySelector("#success-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document.querySelector("#toggleSuccessSheet").addEventListener("click", function() {
+      document.querySelector("#share-sheet").style.display = "none";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#success-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#success-sheet").style.display = "none";
+      });
+  </script>
+  <script>
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbyVgmrhLoSFGY8gZkUjKbllX8yK2FRtaG6vngIB9qnODPvuRMc/exec";
+    const form = document.forms["submit-to-google-sheet"];
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then(response => console.log("Success!", response))
+        .catch(error => console.error("Error!", error.message));
+    });
+  </script>
+</html>

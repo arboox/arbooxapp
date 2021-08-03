@@ -33,7 +33,7 @@
     .header {
       width: 100%;
       height: 300px;
-      background: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2Fdevicehero.png?v=1623807862203');
+      background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fabp001-header.png?v=1627969801157');
        background-repeat: no-repeat;
         background-position: center;
              background-size: auto 100%;
@@ -41,7 +41,7 @@
     }
 
     .brandlogo {
-      margin-top: 50px;
+      margin-top: 120px;
       filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55));
     }
     
@@ -114,17 +114,25 @@ border-radius: 4px;
       font-family: 'Neurial Grotesk', system-ui;
     }
     
+    .post-card {
+      background: rgb(0, 198, 255);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 198, 255, 1) 0%,
+        rgba(0, 148, 255, 1) 100%
+      );
+      border-radius: 16px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+    }
+    
     @media (prefers-color-scheme: dark) {
       body {
-        background-color: #222222;
-      }
-      
-      .heading-element {
-        color: #F6F6F6;
+        background-color: #090C10;
+        color: #C9D1D9;
       }
       
       .product {
-        background-color: #333333;
+        background-color: #0C0F14;
 border: 1px solid rgba(255, 255, 255, 0.5);
 box-sizing: border-box;
 box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.12);
@@ -153,18 +161,14 @@ border-radius: 12px;
   <body>
     <div class="header">
       <center>
-        <div class="actionbar">
-          <img onclick="window.location.href='javascript:history.back()';" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclose.svg?v=1625410277160" style="width: 26px; float: right; margin-right: 30px; cursor: pointer;">
-        </div>
-                  <br>
           <img class="brandlogo" src="https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FText%20Logo%20White.svg?v=1618838333023">
         <br>
-        <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55));">
+        <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8)); margin-top: 4px;">
           ARBOOX™ is where augmented reality becomes the world's source of inspiration.
         </p>
         <br>
-        <a href="https://arboox.github.io/arbooxapp/webviews/arbooxca.html" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55)); text-decoration: none; position: relative; top: -20px; font-weight: 600;">
-          arboox.ca
+        <a href="https://arboox.github.io/arbooxapp/webviews/arbooxca.html" style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; width: 300px; filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.55)); text-decoration: none; position: relative; top: -20px; font-weight: 600;">
+          arboox.com
         </a>
       </center>
     </div>
@@ -185,7 +189,7 @@ border-radius: 12px;
           <p class="product-title" style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -124px; left: 70px; font-weight: 500; font-size: 16px;">
             ARBOOX™ Original <br> Tee Set
           </p>
-          <button style="position: relative; top: -187px; left: 106px; background-color: #CCCCCC; cursor: not-allowed;" class="product-checkout-button">
+          <button style="position: relative; top: -187px; left: 106px; background-color: #888888; cursor: not-allowed;" class="product-checkout-button">
            Purchase
           </button>
         </div>
@@ -193,17 +197,29 @@ border-radius: 12px;
         <br>
         <br>
         <h2 class="heading-element">
-          Stories
+          Posts by ARBOOX
         </h2>
         <br>
-        <div class="dialog-empty-section">
-          <p style="width: 280px; position: relative; top: 30px;">
-            ARBOOX™ has no stories to display at the moment.
-          </p>
-        </div>
+        <div class="post-card" style="width: 340px; height: 200px;">
+                <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-size: 22px; text-align: left; margin-left: 22px; margin-right: 22px; margin-bottom: 22px; position: relative; top: 20px;">
+                  ARBOOX just became your new way to social.
+              </p>
+              <br>
+              <div>
+                <div style="width: 30px; height: 30px; border-radius: 40px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2F226865574_946341152875665_2616112210526608025_n.jpg?v=1627964762700'); background-repeat: none; background-position: center; background-size: 100%; float: left; margin-left: 22px; position: relative; top: 52px;">
+                </div>
+                &ensp;
+                <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-weight: 500; text-align: left; position: relative; top: 20px; margin-left: 64px; cursor: pointer;" id="ustxt-abp001">
+                  @arboox&ensp;<span class="material-icons-round" style="font-size: 16px; position: relative; top: 2px;">verified</span>
+                </p>
+              </div>
+              <br>
+          </div>
       </div>
     </center>
     <br />
     <br />
+    <br>
+    <br>
   </body>
 </html>

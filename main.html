@@ -21,9 +21,6 @@
       href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/react-spring-bottom-sheet@3.4.0/dist/index.js"></script>
-    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/next@11.0.1/dist/server/next.js"></script>
   </head>
   <style>
     body {
@@ -69,9 +66,7 @@
       z-index: 9;
     }
 
-    .popular-card {
-      width: 300px;
-      height: 340px;
+    .post-card {
       background: rgb(0, 198, 255);
       background: linear-gradient(
         180deg,
@@ -80,74 +75,6 @@
       );
       border-radius: 16px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
-    }
-
-    .popular-card-header {
-      width: 300px;
-      height: 140px;
-      background-color: #F3F4F5;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border-radius: 15px 15px 0px 0px;
-    }
-
-    .popular-card-subtitle {
-      font-family: "Neurial Grotesk", system-ui;
-      position: relative;
-      top: 20px;
-      left: -96px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #F0F0F0;
-      text-transform: uppercase;
-    }
-
-    .popular-card-title {
-      font-family: "Neurial Grotesk", system-ui;
-      position: relative;
-      top: 4px;
-      left: 22px;
-      color: #FFFFFF;
-      text-align: left;
-      display: block;
-    }
-
-    .popular-card-content {
-      width: 300px;
-    }
-
-    .popular-card-content-title {
-      font-family: "Neurial Grotesk", system-ui;
-      font-weight: 500;
-      font-size: 18px;
-      position: relative;
-      text-align: left;
-      display: block;
-      color: #FFFFFF;
-      top: -75px;
-      left: 86px;
-    }
-
-    .popular-card-content-type {
-      font-family: "Neurial Grotesk", system-ui;
-      font-weight: 400;
-      font-size: 15px;
-      position: relative;
-      text-align: left;
-      display: block;
-      color: #FFFFFF76;
-      top: -94px;
-      left: 86px;
-    }
-
-    .popular-card-item {
-      width: 50px;
-      height: 60px;
-      background-color: #0094FF;
-      border-radius: 8px;
-      position: relative;
-      top: 8px;
-      left: -100px;
     }
 
     .separator {
@@ -168,7 +95,7 @@
       font-weight: 700;
       font-size: 24px;
     }
-    
+
     .adverts {
       width: 300px;
       height: 533.33px;
@@ -177,7 +104,120 @@
       border-radius: 18px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
     }
-  
+
+    .translucent-sheet {
+      width: 100%;
+      height: 90vh;
+      background-color: #FFFFFF95;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
+      z-index: 100;
+      display: none;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-radius: 16px 16px 0px 0px; 
+    }
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .translucent-sheet {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background-color: #FFFFFF95;
+      }
+      
+      #abp001 {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background-color: #FFFFFF95;
+      }
+    }
+    
+        .shortcuts-container {
+      width: 300px;
+      height: 60px;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    }
+    
+    .launchlink-button {
+      width: 180px;
+      height: 26px;
+      border-radius: 28px;
+      border: solid 2px #0094FF;
+      background-color: transparent;
+      cursor: pointer;
+      color: #0094FF;
+      font-weight: 500;
+      margin-top: 20px;
+      transition: linear 100ms;
+    }
+    
+    .launchlink-button:hover {
+      transform: scale(1.1);
+    }
+    
+    #abp001 {
+      width: 100%;
+      height: 80vh;
+      border-radius: 16px 16px 0px 0px;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
+      display: none;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    
+    .bar {
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      background-color: #F0F0F0;
+      margin-top: 22px;
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+    }
+    
+    .shortcut {
+      width: 140px;
+      height: 60px;
+      display: inline-block;
+    }
+    
+    .shortcut-text {
+      font-family: 'Neurial Grotesk', system-ui;
+      color: #CCCCCC;
+      font-weight: 500;
+      position: relative;
+      top: 20px;
+      transition: linear 100ms;
+    }
+    
+    .settings-href {
+      color: #000000;
+    }
+    
+    .backlink {
+      color: #000000;
+    }
+    
+    .menu-heading {
+      color: #000000;
+    }
+
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #090C10;
@@ -201,22 +241,59 @@
         background-color: #C9D1D930;
       }
 
-      .popular-card-header {
-        width: 300px;
-        height: 140px;
-        background-color: #333333;
-        background-url: ("");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        border-radius: 15px 15px 0px 0px;
-      }
-
       .text-logo {
         font-family: "Neurial Grotesk", system-ui;
         color: #0094FF;
         font-weight: 700;
         font-size: 24px;
       }
+      
+      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .translucent-sheet {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        background-color: #090C1095;
+      }
+        
+        #abp001 {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        background-color: #090C1095;
+      }
+    }
+      
+      .translucent-sheet {
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
+      }
+      
+      #abp001 {
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
+      }
+      
+      .bar {
+        background-color: #090C10;
+      }
+      
+      .shortcuts-container {
+      width: 300px;
+      height: 60px;
+      background-color: #0D1117;
+      border-radius: 14px;
+        border: 1.6px solid #30363D;
+      filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    }
+      
+      .settings-href {
+        color: #C9D1D9;
+    }
+      
+      .backlink {
+        color: #C9D1D9;
+      }
+      
+      .menu-heading {
+      color: #C9D1D9;
+    }
     }
   </style>
   <body>
@@ -233,9 +310,9 @@
             </h1>
             <br />
             <img
-              onclick="window.location.href='information';"
               class="explore"
               src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fa39af331-79fb-48cc-a4bf-8afdb00edd95.image.png?v=1627093172944"
+              id="toggle"
             />
             <br />
             <div
@@ -246,23 +323,23 @@
           <br />
           <br />
           <br />
-          <a href="https://bit.ly/3eSvk14" target="_blank">
+          <a href="https://bit.ly/3ilV1cx" target="_blank">
             <div class="experience_card">
               <div
-                style="background: url('https://cdn.dribbble.com/users/83080/screenshots/16021541/media/4e40b966da862e0f55bf99f6e8711fd2.png'); background-size: auto 100%; background-repeat: no-repeat; background-position: center; width: 300px; height: 294px; border-radius: 18px 18px 0px 0px; "
+                style="background: url('https://cdn.dribbble.com/users/3320958/screenshots/16112943/media/0c08eb2e7147a41dd06cd2ebc4a8e27e.jpeg?compress=1&resize=1600x1200'); background-size: auto 100%; background-repeat: no-repeat; background-position: center; width: 300px; height: 294px; border-radius: 18px 18px 0px 0px; "
               ></div>
               <br />
               <div>
                 <p
                   style="font-family: 'Neurial Grotesk', system-ui; font-weight: 700; position: relative; text-align: left; left: 30px; top: -8px;"
                 >
-                 Kangaroo
+                  Pool
                 </p>
                 <br />
                 <p
                   style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; left: 30px; top: -58px; color: #768390;"
                 >
-                  Bring an aussie kangaroo to life
+                  Vacay vibes at home
                 </p>
               </div>
             </div>
@@ -271,48 +348,33 @@
           <br />
           <br />
           <br />
-          <a href="explore.html"
-            ><div class="popular-card">
-              <div class="popular-card-header" style="background: url('https://cdn.dribbble.com/users/702789/screenshots/16095454/media/ea15997826cd20cf52558265fa8b326b.png?compress=1&resize=1200x900'); background-size: 100%; background-position: center;">
-                <h3
-                  style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; position: relative; top: 16px; right: -116px;"
-                >
-                  AB
-                </h3>
-                <br />
-                <text class="popular-card-subtitle">Explore</text>
-                <br />
-                <h3 class="popular-card-title">
-                 The olympics are here!
-                </h3>
+            <div class="post-card" style="width: 300px; height: 200px;">
+                <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-size: 22px; text-align: left; margin-left: 22px; margin-right: 22px; margin-bottom: 22px; position: relative; top: 20px;">
+                  ARBOOX just became your new way to social.
+              </p>
+              <br>
+              <div>
+                <div style="width: 30px; height: 30px; border-radius: 40px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2F226865574_946341152875665_2616112210526608025_n.jpg?v=1627964762700'); background-repeat: none; background-position: center; background-size: 100%; float: left; margin-left: 22px; position: relative; top: 52px;">
+                </div>
+                &ensp;
+                <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-weight: 500; text-align: left; position: relative; top: 20px; margin-left: 64px; cursor: pointer;" id="ustxt-abp001">
+                  @arboox&ensp;<span class="material-icons-round" style="font-size: 16px; position: relative; top: 2px;">verified</span>
+                </p>
               </div>
-              <div class="popular-card-content">
-                <figure class="popular-card-item" style="background: url('https://cdn.dribbble.com/users/3009971/screenshots/15897943/media/90699a7948830cc1f44c77c878a3123f.jpg?compress=1&resize=800x600'); background-size: auto 100%;"></figure>
-                <br />
-                <text class="popular-card-content-title">Stay updated
-</text>
-                <br />
-                <text class="popular-card-content-type">View athlete results</text>
-              </div>
-              <br />
-              <div class="popular-card-content" style="margin-top: -98px;">
-                <figure class="popular-card-item" style="background: url('https://cdn.dribbble.com/users/512167/screenshots/16075742/media/e226a7430d6d438dcd931644123fdb79.png?compress=1&resize=1600x1200'); background-size: auto 100%;"></figure>
-                <br />
-                <text class="popular-card-content-title">Official information</text>
-                <br />
-                <text class="popular-card-content-type">Provided by the OIC</text>
-              </div>
-            </div></a
-          >
-          <br>
-          <br>
-          <br>
+              <br>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
           <br>
           <div>
-          <iframe src="https://arboox.glitch.me/datalogs/adverts/1.html" class="adverts">
-            
-          </iframe>
-                      <br />
+            <iframe
+              src="https://arboox.glitch.me/datalogs/2.html"
+              class="adverts"
+            >
+            </iframe>
+            <br />
             <p
               style="text-align: left; display: block; font-family: 'Neurial Grotesk', system-ui; color: #CCCCCC"
             >
@@ -343,21 +405,152 @@
                 <p
                   style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; left: 30px; top: -58px; color: #768390;"
                 >
-                Give yourself a zen moment
+                  Give yourself a zen moment
                 </p>
               </div>
             </div>
           </a>
+        </center>
+        <br />
+        <div class="translucent-sheet animate-reveal" id="settings-sheet">
+          <div class="bar" id="settings-sheet-bar">
+            <span
+              class="material-icons-round"
+              style="font-size: 28px; margin-top: 20px; float: right; margin-right: 20px; cursor: pointer; position: relative; top: 22px;"
+              >close</span
+            >
+          </div>
+    <div class="main">
+        <center>
+          <br />
+          <br />
+          <p style="text-align: center; display: inline-block; font-family: 'Neurial Grotesk', system-ui; font-weight: 500; font-size: 20px; margin-top: 6px;">
+              Menu
+          </p>
+          <br />
+          <br />
+          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
+            Shortcuts
+          </p>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/explore.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplore.png?v=1626964537116" style="position: relative; top: 3px; width: 24px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Explore
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/map.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmap.png?v=1626965399891" style="position: relative; top: 3px; width: 24px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Map
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/arcade.html" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Farcade.png?v=1626997768600" style="position: relative; top: 3px; width: 28px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Arcade
+            </h2>
+          </a>
+          <br>
+          <br>
+          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
+            More
+          </p>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.ca/privacy" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprivacy.png?v=1626999116977" style="position: relative; top: 3px; width: 30px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Privacy
+            </h2>
+          </a>
+           <br />
+          <a class="settings-href animate-reveal" href="https://arboox.ca/studio/creators" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile.png?v=1627002530605" style="position: relative; top: 3px; width: 24px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Profile
+            </h2>
+          </a>
+          <br>
+          <br>
+          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
+            Other
+          </p>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.com/studio/adverts" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">north_east</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Advertisements
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.com/studio/brands" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">shopping_bag</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Set up shopping
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.com/setup/delete" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block; color: #FF3A44;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">delete</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Delete account
+            </h2>
+          </a>
+          </div>
           <br />
           <br />
           <br />
+        </div>
+      </div>
+        <div class="animate-reveal" id="abp001">
+          <div class="bar" id="abp001-sheet-bar" style="z-index: 1000; position: relative;"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <iframe style="border: none; width: 100%; height: 100%; border-radius: 16px 16px 0px 0px; position: relative; top: -44px; z-index: 1;" src="https://arboox.github.io/arbooxapp/brands/arboox">
+            
+          </iframe>
+        </div>
+      <br />
+      <br />
+      <br />
           <p class="text-logo">
             ARBOOX™
           </p>
-        </center>
-        <br />
-      </div>
-      <br />
+        <br>
+        <br>
+        <br>
     </center>
+    <script>
+      document.querySelector("#toggle").addEventListener("click", function() {
+        document.querySelector("#settings-sheet").style.display = "block";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#settings-sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#settings-sheet").style.display = "none";
+        });
+    </script>
+      <script>
+      document.querySelector("#ustxt-abp001").addEventListener("click", function() {
+        document.querySelector("#abp001").style.display = "block";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#abp001-sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#abp001").style.display = "none";
+        });
+    </script>
   </body>
 </html>

@@ -186,7 +186,7 @@
       background-size: 100% auto;
       background-repeat: no-repeat;
     }
-    
+
     .postbutton {
       width: 204px;
       height: 44px;
@@ -206,19 +206,19 @@
       transition: linear 100ms;
       cursor: pointer;
     }
-    
+
     .postbutton:hover {
       transform: scale(1.04);
     }
-    
-        .gamecard {
+
+    .gamecard {
       width: 300px;
       height: 200px;
       background-color: #FFFFFF;
       filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
       border-radius: 14px;
     }
-    
+
     .gamecard-button {
       border-radius: 12px;
       border: none;
@@ -233,6 +233,106 @@
 
     .gamecard-button:hover {
       transform: scale(1.08);
+    }
+
+    .translucent-sheet {
+      width: 100%;
+      height: 90vh;
+      background-color: #FFFFFF95;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
+      z-index: 100;
+      display: none;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-radius: 16px 16px 0px 0px;
+    }
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .translucent-sheet {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background-color: #FFFFFF95;
+      }
+    }
+
+    .shortcuts-container {
+      width: 300px;
+      height: 60px;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    }
+
+    .launchlink-button {
+      width: 180px;
+      height: 26px;
+      border-radius: 28px;
+      border: solid 2px #0094FF;
+      background-color: transparent;
+      cursor: pointer;
+      color: #0094FF;
+      font-weight: 500;
+      margin-top: 20px;
+      transition: linear 100ms;
+    }
+
+    .launchlink-button:hover {
+      transform: scale(1.1);
+    }
+
+    .bar {
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      background-color: #F0F0F0;
+      margin-top: 22px;
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+    }
+
+    .shortcut {
+      width: 140px;
+      height: 60px;
+      display: inline-block;
+    }
+
+    .shortcut-text {
+      font-family: "Neurial Grotesk", system-ui;
+      color: #CCCCCC;
+      font-weight: 500;
+      position: relative;
+      top: 20px;
+      transition: linear 100ms;
+    }
+
+    .settings-href {
+      color: #000000;
+    }
+
+    .backlink {
+      color: #000000;
+    }
+
+    .menu-heading {
+      color: #000000;
+    }
+    
+    .adverts {
+      width: 300px;
+      height: 533.33px;
+      overflow: hidden;
+      border: none;
+      border-radius: 18px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
     }
 
     @media (prefers-color-scheme: dark) {
@@ -254,16 +354,53 @@
 
       .experiences {
         background-color: #0C0F14;
-        filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.8));
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
       }
 
       .video-widget {
-        filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.8));
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
       }
-      
-            .gamecard {
-      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.8));
-    }
+
+      .gamecard {
+        filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.8));
+      }
+
+      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        .translucent-sheet {
+          -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+          background-color: #090C1095;
+        }
+      }
+
+      .translucent-sheet {
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
+      }
+
+      .bar {
+        background-color: #090C10;
+      }
+
+      .shortcuts-container {
+        width: 300px;
+        height: 60px;
+        background-color: #0D1117;
+        border-radius: 14px;
+        border: 1.6px solid #30363D;
+        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+      }
+
+      .settings-href {
+        color: #C9D1D9;
+      }
+
+      .backlink {
+        color: #C9D1D9;
+      }
+
+      .menu-heading {
+        color: #C9D1D9;
+      }
     }
   </style>
   <body>
@@ -286,9 +423,9 @@
             </h1>
             <br />
             <img
-              onclick="window.location.href='information';"
               class="explore"
               src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fa39af331-79fb-48cc-a4bf-8afdb00edd95.image.png?v=1627093172944"
+                 id="toggle"
             />
             <br />
             <div
@@ -420,14 +557,15 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
               <br />
               <button
                 onclick="window.location.href='arcade/snake.html';"
-                style="position: relative; top: -54px; left: 110px;" class="gamecard-button"
+                style="position: relative; top: -54px; left: 110px;"
+                class="gamecard-button"
               >
                 Play
               </button>
             </div>
           </div>
-          <br>
-          <br>
+          <br />
+          <br />
           <div
             class="gamecard"
             style="background: url('https://cdn.dribbble.com/users/1728242/screenshots/15134789/media/f47b57d975aeb725c9d3483d66b83984.jpg?compress=1&resize=1600x1200'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
@@ -451,12 +589,13 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
               <p
                 style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
               >
-              Party in any hotel
+                Party in any hotel
               </p>
               <br />
               <button
                 onclick="window.location.href='arcade/lvrp.html';"
-                style="position: relative; top: -54px; left: 110px;" class="gamecard-button"
+                style="position: relative; top: -54px; left: 110px;"
+                class="gamecard-button"
               >
                 Play
               </button>
@@ -465,7 +604,29 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
           <br />
           <br />
           <br />
-          <br>
+          <br />
+          <div>
+            <iframe
+              src="https://arboox.glitch.me/datalogs/1.html"
+              class="adverts"
+            >
+            </iframe>
+            <br />
+            <p
+              style="text-align: left; display: block; font-family: 'Neurial Grotesk', system-ui; color: #CCCCCC"
+            >
+              <img
+                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fpromoted.svg?v=1623257411544"
+                style="position: relative; top: 3px;"
+              />
+              Sponsored
+            </p>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <h3
             style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
           >
@@ -483,11 +644,7 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
                 How Noiseless Props Are Made For Movies
               </h3>
               <br />
-              <a
-                class="video-widget-play-button"
-                href="tv/1.html"
-                >Play</a
-              >
+              <a class="video-widget-play-button" href="tv/1.html">Play</a>
             </div>
             <br />
             <br />
@@ -504,11 +661,7 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
                 How the rich avoid paying taxes
               </h3>
               <br />
-              <a
-                class="video-widget-play-button"
-                href="tv/2.html"
-                >Play</a
-              >
+              <a class="video-widget-play-button" href="tv/2.html">Play</a>
             </div>
             <br />
             <br />
@@ -522,20 +675,124 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
                 Windows 11 beta deep dive
               </h3>
               <br />
-              <a
-                class="video-widget-play-button"
-                href="tv/3.html"
-                >Play</a
-              >
+              <a class="video-widget-play-button" href="tv/3.html">Play</a>
             </div>
           </div>
-          <button class="postbutton" onclick="window.location.href='https://arboox.github.io/arbooxapp/posts';">
-            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus.svg?v=1627238736991" style="width: 18px; margin-top: 12.4px; float: left; margin-left: 10px; display: inline-block;">
+          <button
+            class="postbutton"
+            onclick="window.location.href='https://arboox.github.io/arbooxapp/posts';"
+          >
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus.svg?v=1627238736991"
+              style="width: 18px; margin-top: 12.4px; float: left; margin-left: 10px; display: inline-block;"
+            />
             &ensp;
-            <p style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-size: 18px; display: inline-block; margin-top: 9.8px; margin-left: -10px;">
+            <p
+              style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-size: 18px; display: inline-block; margin-top: 9.8px; margin-left: -10px;"
+            >
               Share something
             </p>
           </button>
+          <div class="translucent-sheet animate-reveal" id="settings-sheet">
+          <div class="bar" id="settings-sheet-bar">
+            <span
+              class="material-icons-round"
+              style="font-size: 28px; margin-top: 20px; float: right; margin-right: 20px; cursor: pointer; position: relative; top: 22px;"
+              >close</span
+            >
+          </div>
+    <div class="main">
+        <center>
+          <br />
+          <br />
+          <p style="text-align: center; display: inline-block; font-family: 'Neurial Grotesk', system-ui; font-weight: 500; font-size: 20px; margin-top: 6px;">
+              Menu
+          </p>
+          <br />
+          <br />
+          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
+            Shortcuts
+          </p>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/explore.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplore.png?v=1626964537116" style="position: relative; top: 3px; width: 24px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Explore
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/map.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmap.png?v=1626965399891" style="position: relative; top: 3px; width: 24px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Map
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/arcade.html" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Farcade.png?v=1626997768600" style="position: relative; top: 3px; width: 28px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Arcade
+            </h2>
+          </a>
+          <br>
+          <br>
+          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
+            More
+          </p>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.ca/privacy" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprivacy.png?v=1626999116977" style="position: relative; top: 3px; width: 30px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Privacy
+            </h2>
+          </a>
+           <br />
+          <a class="settings-href animate-reveal" href="https://arboox.ca/studio/creators" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile.png?v=1627002530605" style="position: relative; top: 3px; width: 24px;">
+            &ensp;
+            <h2 style="display: inline-block;">
+              Profile
+            </h2>
+          </a>
+          <br>
+          <br>
+          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
+            Other
+          </p>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.com/studio/adverts" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">north_east</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Advertisements
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.com/studio/brands" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">shopping_bag</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Set up shopping
+            </h2>
+          </a>
+          <br>
+          <a class="settings-href animate-reveal" href="https://arboox.com/setup/delete" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block; color: #FF3A44;">
+            <span class="material-icons-round" style="position: relative; top: 3px;">delete</span>
+            &ensp;
+            <h2 style="display: inline-block;">
+              Delete account
+            </h2>
+          </a>
+          </div>
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
           <br />
           <br />
           <br />
@@ -547,5 +804,17 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
       </div>
       <br />
     </center>
+    <script>
+      document.querySelector("#toggle").addEventListener("click", function() {
+        document.querySelector("#settings-sheet").style.display = "block";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#settings-sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#settings-sheet").style.display = "none";
+        });
+    </script>
   </body>
 </html>

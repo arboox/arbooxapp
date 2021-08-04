@@ -215,7 +215,7 @@
       width: 300px;
       height: 200px;
       background-color: #FFFFFF;
-      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
+      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.2));
       border-radius: 14px;
     }
 
@@ -334,6 +334,48 @@
       border-radius: 18px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
     }
+    
+    .post-card {
+      background: rgb(0, 198, 255);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 198, 255, 1) 0%,
+        rgba(0, 148, 255, 1) 100%
+      );
+      border-radius: 16px;
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.04));
+    }
+    
+    .productcard {
+      width: 300px;
+      height: 200px;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+    }
+    
+    .productcard-content {
+      width: 300px;
+    }
+
+    .purchase-button {
+      width: 106px;
+      height: 32px;
+      background-color: #222222;
+      color: #F6F6F6;
+      border: none;
+      border-radius: 32px;
+      font-family: 'Neurial Grotesk', system-ui;
+      text-transform: uppercase;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+      cursor: pointer;
+      transition: linear 200ms;
+      letter-spacing: 1.2px;
+      text-align: center;
+    }
+    
+    .purchase-button:hover {
+      transform: scale(1.1);
+    }
 
     @media (prefers-color-scheme: dark) {
       body {
@@ -401,6 +443,10 @@
       .menu-heading {
         color: #C9D1D9;
       }
+      
+      .purchase-button {
+        background-color: #0094FF;
+      } 
     }
   </style>
   <body>
@@ -433,9 +479,9 @@
               style="width: 100%; height: 2px; margin-top: -66px; border-radius: 12px;"
             ></div>
           </div>
-          <br />
-          <br />
-          <br />
+          <br>
+          <br>
+          <br>
           <div class="experiences">
             <text
               style="font-family: 'Neurial Grotesk', system-ui; font-size: 18px;
@@ -526,8 +572,10 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
           <h3
             style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
           >
-            Top games in Arcade right now
+            Top Arcade games
           </h3>
+          &ensp;
+          <a href="arcade.html" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; font-weight: 500; font-size: 18px; position: relative; right: -100px; top: -40px;">View all <span style="font-size: 16px;" class="material-icons-round">arrow_forward</span></a>
           <br />
           <div
             class="gamecard"
@@ -622,7 +670,6 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
               Sponsored
             </p>
           </div>
-          <br />
           <br />
           <br />
           <br />

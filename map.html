@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARBOOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
+    <meta name="theme-color" content="#0094FF" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
+      sizes="512x512"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    @font-face {
+      font-family: "Basier Circle";
+      src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Regular.woff2?v=1628276477678")
+          format("woff2"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Regular.woff?v=1628276478719")
+          format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Basier Circle";
+      src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Medium.woff2?v=1628276475280")
+          format("woff2"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Medium.woff?v=1628276476551")
+          format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Basier Circle";
+      src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-SemiBold.woff2?v=1628276647759")
+          format("woff2"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-SemiBold.woff?v=1628276474252")
+          format("woff");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    body {
+      overflow: hidden;
+      text-decoration: none;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .main {
+      width: 300px;
+      z-index: 9;
+    }
+
+    .text-logo {
+      font-family: "Neurial Grotesk", system-ui;
+      color: #000000;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .sheet {
+      width: 96%;
+      height: 400px;
+      background-color: #E9EDED;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1));
+      z-index: 100;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-radius: 16px 16px 0px 0px;
+      display: none;
+    }
+
+    .row-item {
+      width: 96%;
+      max-width: 360px;
+      height: 80px;
+      border-radius: 10px;
+      background-color: #F6F7F6;
+    }
+
+    .row-item:hover {
+      transition: linear 100ms;
+      transform: scale(0.98);
+    }
+
+    .map-sheet-h3 {
+      color: #294351;
+    }
+
+    .bar {
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      background-color: #F0F0F0;
+      margin-top: 22px;
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+    }
+
+    .status-tag {
+      width: 110px;
+      height: 16px;
+      border-radius: 4px;
+      border: solid 1.8px #A4CA92;
+    }
+
+    .location-indicator {
+      color: #A3AEB3;
+    }
+
+    .anchor-name {
+      color: #022437;
+    }
+    
+    .close {
+      width: 80px;
+      height: 30px;
+      position: fixed;
+      position: -webkit-sticky;
+      bottom: 0;
+      background-color: #E9EDED;
+      z-index: 100;
+      border-radius: 6px;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      cursor: pointer;
+      margin-bottom: 88vh;
+    }
+
+    .toggle {
+      width: 96%;
+      height: 40px;
+      position: fixed;
+      position: -webkit-sticky;
+      bottom: 0;
+      background-color: #E9EDED;
+      z-index: 100;
+      border-radius: 16px 16px 0px 0px;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #1E2329;
+        color: #ADBAC7;
+      }
+
+      .text-logo {
+        font-family: "Neurial Grotesk", system-ui;
+        color: #0094FF;
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .row-item {
+        background-color: #0C0F14;
+        color: #ADBAC7;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
+      }
+
+      .sheet {
+        background-color: #090C10;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
+      }
+
+      .bar {
+        background-color: #0C0F14;
+      }
+
+      .map-sheet-h3 {
+        color: #ADBAC7;
+      }
+
+      .anchor-name {
+        color: #ADBAC7;
+      }
+
+      .toggle, .close {
+        background-color: #090C10;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
+      }
+    }
+  </style>
+  <body>
+    <center>
+      <div>
+        <div id="map" style="width: 100%; height: 100vh; position: relative; top: 36px;"></div>
+        <div class="sheet animate-reveal" id="map-anchors-sheet">
+          <div
+            class="bar"
+            id="sheet-bar"
+            style="z-index: 1000; position: relative;"
+          >
+            <span
+              id="sheet-bar"
+              class="material-icons-round"
+              style="font-size: 16px; margin-top: 2.4px;"
+              >close</span
+            >
+          </div>
+          <br />
+          <br />
+          <h3
+            class="map-sheet-h3"
+            style="font-family: 'Neurial Grotesk', system-ui; font-weight: 500;"
+          >
+            Anchors
+          </h3>
+          <br />
+          <div class="row-item">
+            <br />
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmapmarker-1.svg?v=1628280588148"
+              style="width: 30px; float: left; margin-left: 20px; margin-top: 2px;"
+            />
+            <p
+              class="location-indicator"
+              style="font-family: 'Neurial Grotesk', system-ui; margin-left: 30px; position: relative; text-align: left; text-transform: uppercase; font-size: 12px; margin-top: 2px; left: 10px;"
+            >
+              Mexico City
+            </p>
+            <h4
+              class="anchor-name"
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; margin-top: -10px; top: 4px; margin-left: 30px; left: 10px;"
+            >
+              Antara Polanco
+            </h4>
+            <div
+              class="status-tag"
+              style="float: right; margin-right: 16px; margin-top: -60px;"
+            >
+              <p
+                style="font-family: 'Basier Circle', system-ui; color: #A4CA92; font-size: 14px !important; font-weight: 500; text-transform: uppercase; margin-top: -1px;"
+              >
+                Coming soon
+              </p>
+            </div>
+            <br />
+            <p
+              class="location-indicator"
+              style="font-family: 'Basier Circle', system-ui; float: right; margin-right: 16px; margin-top: -50px; font-size: 12px !important;"
+            >
+              11AM - 8PM
+            </p>
+          </div>
+          <br />
+          <div class="row-item">
+            <br />
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmapmarker-2.svg?v=1628280588600"
+              style="width: 30px; float: left; margin-left: 20px; margin-top: 2px;"
+            />
+            <p
+              class="location-indicator"
+              style="font-family: 'Neurial Grotesk', system-ui; margin-left: 30px; position: relative; text-align: left; text-transform: uppercase; font-size: 12px; margin-top: 2px; left: 10px;"
+            >
+              Mexico City
+            </p>
+            <h4
+              class="anchor-name"
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; margin-top: -10px; top: 4px; margin-left: 30px; left: 10px;"
+            >
+              Anchor Reforma
+            </h4>
+            <div
+              class="status-tag"
+              style="float: right; margin-right: 16px; margin-top: -60px;"
+            >
+              <p
+                style="font-family: 'Basier Circle', system-ui; color: #A4CA92; font-size: 14px !important; font-weight: 500; text-transform: uppercase; margin-top: -1px;"
+              >
+                Coming soon
+              </p>
+            </div>
+            <br />
+            <p
+              class="location-indicator"
+              style="font-family: 'Basier Circle', system-ui; float: right; margin-right: 16px; margin-top: -50px; font-size: 12px !important;"
+            >
+              11AM - 8PM
+            </p>
+          </div>
+          <br />
+          <div class="row-item">
+            <br />
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmapmarker-3.svg?v=1628280590327"
+              style="width: 30px; float: left; margin-left: 20px; margin-top: 2px;"
+            />
+            <p
+              class="location-indicator"
+              style="font-family: 'Neurial Grotesk', system-ui; margin-left: 30px; position: relative; text-align: left; text-transform: uppercase; font-size: 12px; margin-top: 2px; left: 10px;"
+            >
+              Sydney
+            </p>
+            <h4
+              class="anchor-name"
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; margin-top: -10px; top: 4px; margin-left: 30px; left: 10px;"
+            >
+              Westfield Plaza
+            </h4>
+            <div
+              class="status-tag"
+              style="float: right; margin-right: 16px; margin-top: -60px;"
+            >
+              <p
+                style="font-family: 'Basier Circle', system-ui; color: #A4CA92; font-size: 14px !important; font-weight: 500; text-transform: uppercase; margin-top: -1px;"
+              >
+                Coming soon
+              </p>
+            </div>
+            <br />
+            <p
+              class="location-indicator"
+              style="font-family: 'Basier Circle', system-ui; float: right; margin-right: 16px; margin-top: -50px; font-size: 12px !important;"
+            >
+              9:30AM - 7PM
+            </p>
+          </div>
+          <br />
+          <div class="row-item">
+            <br />
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmapmarker-4.svg?v=1628280591265"
+              style="width: 30px; float: left; margin-left: 20px; margin-top: 2px;"
+            />
+            <p
+              class="location-indicator"
+              style="font-family: 'Neurial Grotesk', system-ui; margin-left: 30px; position: relative; text-align: left; text-transform: uppercase; font-size: 12px; margin-top: 2px; left: 10px;"
+            >
+              Melbourne
+            </p>
+            <h4
+              class="anchor-name"
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; margin-top: -10px; top: 4px; margin-left: 30px; left: 10px;"
+            >
+             Melbourne Anchor
+            </h4>
+            <div
+              class="status-tag"
+              style="float: right; margin-right: 16px; margin-top: -60px;"
+            >
+              <p
+                style="font-family: 'Basier Circle', system-ui; color: #A4CA92; font-size: 14px !important; font-weight: 500; text-transform: uppercase; margin-top: -1px;"
+              >
+                Coming soon
+              </p>
+            </div>
+            <br />
+            <p
+              class="location-indicator"
+              style="font-family: 'Basier Circle', system-ui; float: right; margin-right: 16px; margin-top: -50px; font-size: 12px !important;"
+            >
+              8AM - 9PM
+            </p>
+          </div>
+          <br />
+          <div class="row-item">
+            <br />
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmapmarker-5.svg?v=1628280592455"
+              style="width: 30px; float: left; margin-left: 20px; margin-top: 2px;"
+            />
+            <p
+              class="location-indicator"
+              style="font-family: 'Neurial Grotesk', system-ui; margin-left: 30px; position: relative; text-align: left; text-transform: uppercase; font-size: 12px; margin-top: 2px; left: 10px;"
+            >
+              Dubai
+            </p>
+            <h4
+              class="anchor-name"
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; margin-top: -10px; top: 4px; margin-left: 30px; left: 10px;"
+            >
+              Palm Jumeirah
+            </h4>
+            <div
+              class="status-tag"
+              style="float: right; margin-right: 16px; margin-top: -60px;"
+            >
+              <p
+                style="font-family: 'Basier Circle', system-ui; color: #A4CA92; font-size: 14px !important; font-weight: 500; text-transform: uppercase; margin-top: -1px;"
+              >
+                Coming soon
+              </p>
+            </div>
+            <br />
+            <p
+              class="location-indicator"
+              style="font-family: 'Basier Circle', system-ui; float: right; margin-right: 16px; margin-top: -50px; font-size: 12px !important;"
+            >
+              9:30AM - 7PM
+            </p>
+          </div>
+          <br>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; text-transform: uppercase; font-weight: 500;">
+            What is an anchor?
+          </p>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; width: 300px; margin-top: -10px;">
+            Anchors are AR experiences available only in one place. This means they can only be seen in that place and nowhere else. Anchors can be found inside of museums, malls, parks, and more.
+          </p>
+          <br>
+          <br>
+        </div>
+        <div class="close">
+          <a href="javascript:history.back()" style="color: #FF3A44; font-family: 'Basier Circle', system-ui; font-weight: 500; position: relative; top: 5px; text-transform: uppercase;">Close</a>
+        </div>
+        <div class="toggle" id="toggle">
+          <p
+            style="font-family: 'Basier Circle', system-ui; text-transform: uppercase; margin-top: 14px; font-size: 12px !important;"
+          >
+            Tap to reveal anchor list
+          </p>
+        </div>
+      </div>
+    </center>
+    <br />
+    <br />
+    <script>
+            mapboxgl.accessToken =
+              "pk.eyJ1IjoiYXJib294IiwiYSI6ImNrazBsYXl6NDA3MDUybnBiaHZ5a3IyMjAifQ.NnDbxZILxNDrJqgJcT7Xyg";
+            var map = new mapboxgl.Map({
+              container: "map",
+              style: "mapbox://styles/arboox/ckn83hpva106217mjk1h3ko23",
+              center: [-73.97460503891138, 40.77263911269625],
+              zoom: 3
+            });
+
+            map.addControl(new mapboxgl.NavigationControl());
+
+            var marker1 = new mapboxgl.Marker({ color: "#FF6868" })
+              .setLngLat([-99.16289318979926, 19.42980104734659])
+              .addTo(map);
+
+            var marker2 = new mapboxgl.Marker({ color: "#FF6868" })
+              .setLngLat([-99.20226320336833, 19.439195552619985])
+              .addTo(map);
+
+            var marker3 = new mapboxgl.Marker({ color: "#FF6868" })
+              .setLngLat([144.871689901749, -38.038326560880854])
+              .addTo(map);
+
+            var marker4 = new mapboxgl.Marker({ color: "#FF6868" })
+              .setLngLat([55.19983552382186, 25.119816697839596])
+              .addTo(map);
+
+               var marker5 = new mapboxgl.Marker({ color: "#FF6868" })
+              .setLngLat([151.208843552938, -33.86988658389301])
+              .addTo(map);
+
+            map.addControl(
+              new mapboxgl.GeolocateControl({
+                positionOptions: {
+                  enableHighAccuracy: false
+                },
+                trackUserLocation: true
+              })
+            );
+    </script>
+    <script>
+      document.querySelector("#toggle").addEventListener("click", function() {
+        document.querySelector("#map-anchors-sheet").style.display = "block";
+      });
+    </script>
+    <script>
+      document.querySelector("#toggle").addEventListener("click", function() {
+        document.querySelector(".toggle").style.display = "none";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#map-anchors-sheet").style.display = "none";
+        });
+    </script>
+    <script>
+      document
+        .querySelector("#sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector(".toggle").style.display = "block";
+        });
+    </script>
+  </body>
+</html>

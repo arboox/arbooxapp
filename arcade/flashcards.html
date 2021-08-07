@@ -3,20 +3,149 @@
   <head>
     <title>Flashcards</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://arboox.com/style.css">
   </head>
   <style>
+    @font-face {
+      font-family: "Basier Circle";
+      src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Regular.woff2?v=1628276477678")
+          format("woff2"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Regular.woff?v=1628276478719")
+          format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Basier Circle";
+      src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Medium.woff2?v=1628276475280")
+          format("woff2"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Medium.woff?v=1628276476551")
+          format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Basier Circle";
+      src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-SemiBold.woff2?v=1628276647759")
+          format("woff2"),
+        url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-SemiBold.woff?v=1628276474252")
+          format("woff");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    
     body {
       margin: 0px;
       background-color: #FFFFFF;
+      overflow: hidden;
     }
 
     a {
       color: #000000;
     }
+    
+    .navbar {
+      width: 100%;
+      height: 44px;
+      background-color: #FFFFFF95;
+      -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      z-index: 100;
+    }
+    
+    .control {
+      background-color: #FFFFFF98; 
+    }
+    
+    .sheet {
+      width: 100%;
+      height: 200px;
+      background-color: #F6F7F6;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1));
+      z-index: 90;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 44px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-radius: 16px 16px 0px 0px;
+      display: none;
+    }
+    
+    .bar {
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      background-color: #F0F0F0;
+      margin-top: 16px;
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+    }
+    
+    .game-card-small {
+      width: 90%;
+      max-width: 360px;
+      height: 60px;
+      border-radius: 10px;
+      background-color: #FFFFFF;
+      transition: linear 100ms;
+    }
+    
+    .game-card-small:hover {
+      transform: scale(0.98);
+    }
 
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #090C10;
+        color: #ADBAC7;
+      }
+      
+      .sheet {
+      background-color: #090C10;
+      }
+      
+      .navbar {
+        background-color: #090C1098;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+      }
+      
+      .control {
+        background-color: #090C1098;
+      }
+      
+      .game-card-small {
+        background-color: #0C0F14;
+        color: #ADBAC7;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
       }
     }
   </style>
@@ -24,24 +153,93 @@
     <center>
       <iframe
         src="https://ab-bites.glitch.me/flashcards.html"
-        style="width: 100%; height: 88.8vh; border: none; border-radius: 0px 0px 22px 22px;"
+        style="width: 100%; height: 100vh; border: none;"
       ></iframe>
-      <p
-        style="position: relative; text-align: left; margin-top: 6.4px; margin-left: 20px;"
-      >
-        <img
+      <div class="navbar">
+        <div id="toggle" class="control" style="width: 40px; height: 70%; float: left; margin-left: 10px; margin-top: 6px; border-radius: 4px; cursor: pointer;">
+          <img
           src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fflashcards-arcade-cover.png?v=1624027879350"
-          style="width: 36px; border-radius: 8px;"
+          style="width: 20px; border-radius: 3px; float: left; margin-left: 4px; margin-top: 5px;"
         />
-      </p>
-      <a
-        href="https://arboox.github.io/arbooxapp/arcade.html"
-        style="text-align: right; display: block; text-decoration: none; font-family: 'Neurial Grotesk', system-ui; position: relative; margin-right: 20px; margin-top: -48px;"
-      >
-        <img
-          src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclear.fill.svg?v=1625528546665"
-        />
-      </a>
+          &ensp;
+          <span class="material-icons-round" style="font-size: 10px; color: #A3AEB3; position: relative; top: -10px;">expand_less</span>
+        </div>
+        <div class="control" style="width: 66%; height: 70%; float: left; margin-left: 10px; margin-top: 6px; border-radius: 4px;">
+          <p style="font-family: 'Basier Circle', system-ui; color: #A3AEB3; text-transform: uppercase; font-size: 14px; margin-top: 7px;">
+            No game notifications
+          </p>
+        </div>
+        <div class="control" style="width: 40px; height: 70%; float: right; margin-right : 10px; margin-top: 6px; border-radius: 4px;">
+          <a href="https://arboox.github.io/arbooxapp/arcade.html" class="material-icons-round" style="color: #FF3A44; position: relative; top: 4px; text-decoration: none;">close</a>
+        </div>
+      </div>
+      <div class="sheet animate-reveal" id="game-sheet">
+        <div
+            class="bar"
+            id="sheet-bar"
+            style="z-index: 1000; position: relative;"
+          >
+            <span
+              id="sheet-bar"
+              class="material-icons-round"
+              style="font-size: 16px; margin-top: 2.4px;"
+              >close</span
+            >
+          </div>
+        <h3 style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 22px; margin-top: 16px;">
+          Flashcards
+        </h3>
+        <br>
+        <p style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; font-size: 14px; text-align: left; margin-left: 22px; margin-top: -10px;">
+          Switch game
+        </p>
+        <br>
+        <div class="game-card-small" style="margin-top: -30px; cursor: pointer;" onclick="window.location.href='https://arboox.github.io/arbooxapp/arcade/snake.html';">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fsnake-arcade-cover.png?v=1624027880735" style="width: 46px; float: left; margin-left: 10px; margin-top: 7px; border-radius: 4px;">
+          <p style="font-family: 'Neurial Grotesk', system-ui; font-weight: 500; font-size: 18px; text-align: left; position: relative; left: 10px; top: 16px;">
+            Snake
+          </p>
+        </div>
+        <br>
+        <div class="game-card-small" style="margin-top: -30px; cursor: pointer;" onclick="window.location.href='https://arboox.github.io/arbooxapp/arcade/lvrp.html';">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flvrp-arcade-cover.png?v=1624027880675" style="width: 46px; float: left; margin-left: 10px; margin-top: 7px; border-radius: 4px;">
+          <p style="font-family: 'Neurial Grotesk', system-ui; font-weight: 500; font-size: 18px; text-align: left; position: relative; left: 10px; top: 16px;">
+            Las Vegas Resort Party
+          </p>
+        </div>
+        <br>
+        <div class="game-card-small" style="margin-top: -30px; cursor: pointer;" onclick="window.location.href='https://arboox.github.io/arbooxapp/arcade/treebook.html';">
+          <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ftreebook-arcade-cover.png?v=1624027879351" style="width: 46px; float: left; margin-left: 10px; margin-top: 7px; border-radius: 4px;">
+          <p style="font-family: 'Neurial Grotesk', system-ui; font-weight: 500; font-size: 18px; text-align: left; position: relative; left: 10px; top: 16px;">
+            TreeBook
+          </p>
+        </div>
+        <br>
+        <br>
+        <p style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; font-size: 14px; text-align: left; margin-left: 22px;">
+          Game info
+        </p>
+        <br>
+        <p style="font-family: 'Basier Circle', system-ui; font-size: 14px; text-align: left; margin-left: 22px; margin-top: -18px;">
+          Refresh rate: 90Hz
+        </p>
+        <br>
+        <p style="font-family: 'Basier Circle', system-ui; font-size: 14px; text-align: left; margin-left: 22px; margin-top: -18px;">
+          Developer: Basier Experimental
+        </p>
+      </div>
     </center>
+        <script>
+      document.querySelector("#toggle").addEventListener("click", function() {
+        document.querySelector("#game-sheet").style.display = "block";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#game-sheet").style.display = "none";
+        });
+    </script>
   </body>
 </html>

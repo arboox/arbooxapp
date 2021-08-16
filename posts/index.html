@@ -235,6 +235,12 @@
       >
         <div
           class="thoughtpreview">
+          <div class="colour" id="visibility" style="float: left; position: relative; top: 50px;">
+            <img
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fvisibility.svg?v=1629084260882"
+              style="width: 18px; margin-top: 5.4px;"
+            />
+          </div>
           <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fblue.png?v=1627404358155" style="width: 100%; height: 100%; z-index: -2; border-radius: 16px;" id="colourswatch">
           <textarea
             placeholder="Share your thoughts, tell a story, or simply say something"
@@ -252,7 +258,7 @@
           &ensp;
           <div class="colour" id="music" style="margin-left: 12px;">
             <img
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmusic.svg?v=1627323025837"
+              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmusic.svg?v=1629083936727"
               style="height: 18px; margin-top: 5px; margin-left: 2px;"
             />
           </div>
@@ -439,10 +445,10 @@
           </h2>
           <br>
           <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 12px; margin-right: 10%; margin-top: -20px;">
-             You can add links to external links. If the destination website contains media (photos or videos), a preview of it will be shown.
+             You can add links to external websites. If the destination site contains media (photos or videos), a preview of it will be shown.
           </p>
           <br />
-          <input type="text" name="link" placeholder="https://arboox.ca">
+          <input type="text" name="link" placeholder="https://arboox.com">
         </div>
         <div
           class="sheet animate-reveal"
@@ -467,6 +473,23 @@
           <button id="toggleSuccessSheet" type="submit">
             Share
           </button>
+        </div>
+                <div
+          class="sheet animate-reveal"
+          id="visibility-sheet"
+             style="height: 160px;"
+        >
+          <div class="bar" id="visibility-sheet-bar"><span class="material-icons-round" style="font-size: 16px; margin-top: 2.4px;">close</span></div>
+          <img src="" style="width: 100%;">
+          <h2
+            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%;"
+          >
+            Posts are gone after 10 hours.
+          </h2>
+          <br>
+          <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10%; font-size: 12px; margin-right: 10%; margin-top: -20px;">
+             Once you've published your post, it will disappear automatically after 10 hours.
+          </p>
         </div>
       </form>
               <div
@@ -581,6 +604,18 @@
       .querySelector("#success-sheet-bar")
       .addEventListener("click", function() {
         document.querySelector("#success-sheet").style.display = "none";
+      });
+  </script>
+  <script>
+    document.querySelector("#visibility").addEventListener("click", function() {
+      document.querySelector("#visibility-sheet").style.display = "block";
+    });
+  </script>
+  <script>
+    document
+      .querySelector("#visibility-sheet-bar")
+      .addEventListener("click", function() {
+        document.querySelector("#visibility-sheet").style.display = "none";
       });
   </script>
   <script>

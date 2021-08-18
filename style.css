@@ -70,11 +70,6 @@ a:hover {
   transition: linear 100ms;
 }
 
-.experience_card:hover {
-  transition: linear 100ms;
-  transform: scale(0.96);
-}
-
 .nav {
   transition: linear 100ms;
 }

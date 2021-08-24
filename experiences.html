@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AR Experiences | ARBOOX</title>
+    <title>ARBOOX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
-    <meta name="apple-mobile-web-app-title" content="ARBOOX" />
+    <meta name="apple-mobile-web-app-title" content="ARBOOX (Experiments)" />
     <meta name="theme-color" content="#0094FF" />
     <link
       rel="apple-touch-icon"
-      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20BETA.png?v=1612919654358"
+      href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
       sizes="512x512"
     />
     <link
@@ -23,29 +23,73 @@
     />
   </head>
   <style>
-    @import url("https://arboox.glitch.me/style.css");
-
     html {
       scroll-behavior: smooth;
     }
     
-    .main {
-      width: 300px;
-      z-index: 8;
+    body {
+      overflow-x: hidden;
     }
 
-    .experience_card {
+    .main {
       width: 300px;
-      display: inline-block;
+      z-index: 9;
+    }
+
+    .story_card {
+      width: 300px;
+      max-width: 100%;
+      height: 384px;
+      background-color: #F3F4F5;
+      color: #FFFFFF;
+      border-radius: 18px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
       -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      border-radius: 14px;
+      transition: 100ms linear;
+      cursor: pointer;
+      z-index: 9;
     }
 
-    .nav {
+    .separator {
+      background-color: #F3F4F5;
+    }
+
+    .explore {
+      width: 30px;
+      position: relative;
+      top: -86px;
+      right: -136px;
+      cursor: pointer;
+    }
+
+    .text-logo {
+      font-family: "Neurial Grotesk", system-ui;
+      color: #000000;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    
+    .experience-card-small {
+      width: 100%;
+      height: 80px;
+      background-color: #FFFFFF;
+      border-radius: 12px;
+       filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
+      transition: linear 160ms;
+    }
+    
+    .experience-card-small:hover {
+      transform: scale(0.92);
+    }
+    
+    a {
+      color: #000000;
+    }
+    
+    .ttp {
       width: 48px;
       height: 48px;
       background-color: #FFFFFF;
@@ -56,32 +100,46 @@
       margin-right: 30px;
       margin-bottom: 30px;
       border-radius: 26px;
-      overflow: hidden;
-      perspective: 1px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+      display: block;
     }
-
-    .text-logo {
-      font-family: "Neurial Grotesk", system-ui;
-      color: #000000;
-      font-weight: 700;
-      font-size: 24px;
+    
+    .btt {
+      color: #0094FF;
+      font-size: 30px;
+      position: relative;
+      top: 8px;
+      left: 9px;
     }
 
     @media (prefers-color-scheme: dark) {
+      
+      body {
+        background-color: #090C10;
+        color: #C9D1D9;
+      }
+      
+      a {
+        color: #C9D1D9;
+      }
+
+      .separator {
+        background-color: #C9D1D930;
+      }
+
       .text-logo {
         font-family: "Neurial Grotesk", system-ui;
         color: #0094FF;
         font-weight: 700;
         font-size: 24px;
       }
-
-      body {
-        background-color: #090C10;
-        color: #C9D1D9;
+      
+      .experience-card-small {
+        background-color: #0C0F14;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3);
       }
-
-      .nav {
+      
+      .ttp {
         background-color: #0C0F14;
         filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.8));
       }
@@ -89,292 +147,121 @@
   </style>
   <body>
     <center>
-      <div style="width: 300px;" id="top">
+      <div class="main">
+        <center>
+          <br />
+          <br />
+          <br>
+          <div>
+            <a class="material-icons-round" style="display: inline-block; color: #0094FF; float: left;">arrow_back</a>
+            &ensp;
+            <h1
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -30px; font-weight: 500; display: inline-block; margin-left: -54px;" id="top"
+            >
+              Experiences
+            </h1>
+            <br />
+            <br />
+            <br>
+            <div
+              class="separator"
+              style="width: 100%; height: 2px; margin-top: -66px; border-radius: 12px;"
+            ></div>
+          </div>
+          <br />
+          <br />
+                       <a href="https://arboox.com/experiences/airplane" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2021.png?v=1629739571140'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px;">
+               Airplane
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               Flight vibes in your space
+             </p>
+          </div>
+          </a>
+          <br />
+          <br />
+          <a href="https://arboox.com/experiences/velociraptor" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2016.png?v=1629746322190'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px; ">
+               Velociraptor
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               View a raptor in real life
+          </div>
+          </a>
+          <br />
+          <br />
+          <a href="https://arboox.com/experiences/rock-fountain" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2026.png?v=1629747598947'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px;">
+               Rock Fountain
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               A relaxing oasis
+             </p>
+          </div>
+          </a>
+          <br />
+          <br />
+          <a href="https://arboox.com/experiences/double-decker" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2Fdoubledecker-og-image.png?v=1629652639291'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px;">
+               Double Decker
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               From London City Centre
+             </p>
+          </div>
+          </a>
+          <br />
+          <br />
+          <a href="https://arboox.com/experiences/" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2028.png?v=1629756559071'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px;">
+               Curiosity®
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               The Curiosity Rover
+             </p>
+          </div>
+          </a>
+          <br />
+          <br />
+          <br />
+          <p class="text-logo">
+            ARBOOX™
+          </p>
+        </center>
         <br />
-        <br />
-        <text
-          style="font-family: 'Neurial Grotesk', Avenir, system-ui; font-weight: 800; text-align: left; float: left; position: relative; top: 14px; display: inline-block; font-size: 18px;"
-          >AR Experiences</text
-        >
-        &emsp;
-        <span class="material-icons-round" onclick="window.location.href='javascript:history.back()';"
-          style="width: 22px; float: right; cursor: pointer; margin-top: 16px; color: #0094FF;"
-              >close</span>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="main">
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=eec0d502-70dc-4e12-996f-320845cf09d5"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_chalet.png?v=1617823930243"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.instagram.com/ar/897085954401303/"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_phrog.png?v=1617823931671"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=e15230a4-1280-4710-8c8e-159de522285e"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_windmill.png?v=1617823932590"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=4c686e1c-c6a2-4424-9f1f-c38bde47fcb6"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_airplane.png?v=1617823929376"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=2158c13e-d5a0-48aa-b3e0-af415cdd8207"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_truck.png?v=1617823929431"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=dec34d22-f076-41ef-843c-a6c4dbc8b0a8"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_plants.png?v=1617823930800"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=2800f4de-a6e2-47a0-922a-6d4f9b98ae6e&env=studio3"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_abstrakt.png?v=1618849535571"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=ed0f0e6b-3b7a-462b-aa51-7d17603d0a40"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_surface.png?v=1618849749639"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=730f0a20-ae35-48a2-a08b-b4e34896f2c6"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_ship.png?v=1618849978185"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=1fab0af5-8833-422b-a035-eb994e0e6870"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_whale.png?v=1620241784270"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=887926db-3f94-42c2-9ecf-b6a96b165fef"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_cat.png?v=1620241983844"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=720e9a5e-a5d8-4618-ab89-5426ef696feb"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_deserttemple.png?v=1621447752902"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=4b4fe558-cf2b-4421-9006-c364a4dc2f63"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_moon.png?v=1621447746283"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=fdc84714-f6fe-404c-b123-5fe7e9c9d7e7"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_spaceshuttle.png?v=1622934137354"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a
-            href="https://www.vectary.com/viewer-ar/v1/?model=3fb6481e-f0fa-4e80-bd5a-db9cfd798b38"
-            target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_duck.png?v=1622934131923"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3izC2vj" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_farm.png?v=1624746144247"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/2TUTkZD" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_train.png?v=1624746319788"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/35VFB7O" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_telescope.png?v=1625413802002"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/2Ua16iE" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_fiat.png?v=1625413803218"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3xgYwWJ" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_goat.png?v=1626055075366"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3hgzGAI" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_velociraptor.png?v=1626055078066"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3hXuMrd" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_curiosity.png?v=1627084211913"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3wy7oGi" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_fox.png?v=1627084378277"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3eSvk14" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_kangaroo.png?v=1627871886877"
-          /></a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3i2elv4" target="_blank"
-            ><img
-              class="experience_card"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fex_detail_card_rockfountain.png?v=1627872277339"
-          /></a>
-        </div>
       </div>
-      <div class="nav">
-        <a
-          href="#top"
-          style="color: #0094FF; text-decoration: none; font-size: 32px; margin-top: 6px;"
-          class="material-icons-round back-to-top"
-          >expand_less</a
-        >
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <p class="text-logo">
-        ARBOOX™
-      </p>
       <br />
     </center>
+    <div class="ttp">
+      <a class="material-icons-round btt" href="#top">expand_less</a>
+    </div>
+                  <script>
+      document.querySelector("#toggle").addEventListener("click", function() {
+        document.querySelector("#settings-sheet").style.display = "block";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#settings-sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#settings-sheet").style.display = "none";
+        });
+    </script>
   </body>
 </html>

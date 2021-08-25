@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ARBOOX</title>
+    <title>ARBOOX™</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
@@ -21,6 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
   <style>
     body {
@@ -32,212 +33,42 @@
       z-index: 9;
     }
 
-    .story_card {
-      width: 300px;
-      max-width: 100%;
-      height: 384px;
-      background-color: #F3F4F5;
-      color: #FFFFFF;
-      border-radius: 18px;
-      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -webkit-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -moz-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -ms-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      -o-filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
-      transition: 100ms linear;
-      cursor: pointer;
-      z-index: 9;
+    .experience-card-small {
+      width: 100%;
+      height: 80px;
+      background-color: #FFFFFF;
+      border-radius: 12px;
+       filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
+      transition: linear 160ms;
+    }
+    
+    .experience-card-small:hover {
+      transform: scale(0.92);
+    }
+
+    .story-card-small {
+      width: 100%;
+      height: 168px;
+      border-radius: 16px;
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
     }
 
     .separator {
       background-color: #F3F4F5;
     }
 
-    .explore {
-      width: 30px;
-      position: relative;
-      top: -86px;
-      right: -136px;
-      cursor: pointer;
-    }
-
-    .text-logo {
-      font-family: "Neurial Grotesk", system-ui;
-      color: #000000;
-      font-weight: 700;
-      font-size: 24px;
-    }
-
-    .experiences {
+    .adverts {
       width: 300px;
-      height: 522px;
-      background-color: #FFFFFF;
-      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.08));
-      border-radius: 18px;
-    }
-
-    .experience-content {
-      width: 300px;
-    }
-
-    .ar-experience-title {
-      font-family: "Neurial Grotesk", system-ui;
-      text-align: left;
-      display: block;
-      margin-left: 100px;
-      font-weight: 600;
-      position: relative;
-      top: -100px;
-    }
-
-    .ar-experience-description {
-      font-family: "Neurial Grotesk", system-ui;
-      font-size: 14px;
-      text-align: left;
-      display: block;
-      margin-left: 100px;
-      color: #CCCCCC;
-      position: relative;
-      top: -98px;
-    }
-
-    .ar-experience-cover {
-      width: 50px;
-      height: 60px;
-      background-color: #F3F4F5;
-      border-radius: 8px;
-      position: relative;
-      top: -26px;
-      left: -94px;
-    }
-
-    .ar-experience-launchlink {
-      font-family: "Neurial Grotesk", system-ui;
-      font-size: 14px;
-      text-align: left;
-      display: block;
-      margin-left: 100px;
-      color: #0094FF;
-      text-transform: uppercase;
-      position: relative;
-      top: -94px;
-      font-weight: 600;
-    }
-
-    .video-widget {
-      width: 300px;
-      height: 168px;
-      background-color: #F6F7F8;
-      border-radius: 14px;
-      filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
-    }
-
-    .video-widget-youtube-logo {
-      width: 108px;
-      position: relative;
-      top: 24px;
-      left: -72px;
-      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
-    }
-
-    .video-widget-title {
-      font-family: "Neurial Grotesk", system-ui;
-      color: #FFFFFF;
-      position: relative;
-      text-align: left;
-      left: -36px;
-      bottom: -48px;
-      width: 180px;
-      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
-    }
-
-    .video-widget-play-button {
-      width: 32px;
-      font-family: "Neurial Grotesk", system-ui;
-      color: #FFFFFF;
-      font-weight: 500;
-      position: relative;
-      bottom: 18px;
-      right: -110px;
-      transition: linear 100ms;
-      cursor: pointer;
-    }
-
-    .video-widget-play-button:hover {
-      transition: linear 100ms;
-      transform: scale(1.2);
-    }
-
-    .one {
-      background: url("https://i.ytimg.com/vi/x6btmJSRueE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOc3qcLS9oAyG1NBPTvNJWSnQ71w");
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-    }
-
-    .two {
-      background: url("https://i.ytimg.com/vi/t6V9i8fFADI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBSJSdkvV2fOwzmWwcX3I_HO1q7Bw");
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .three {
-      background: url("https://i.ytimg.com/vi/eSajMxAelcc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCpb4HyVmo2bTbIUSXyarAUG_CZ2w");
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-    }
-
-    .postbutton {
-      width: 204px;
-      height: 44px;
-      background-color: #0094FF;
-      border-radius: 32px;
+      height: 533.33px;
+      overflow: hidden;
       border: none;
-      position: fixed;
-      position: -webkit-fixed;
-      bottom: 0;
-      margin: 0;
-      right: 0;
-      left: 0;
-      margin-right: auto;
-      margin-left: auto;
-      margin-bottom: 25px;
-      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3));
-      transition: linear 100ms;
-      cursor: pointer;
-    }
-
-    .postbutton:hover {
-      transform: scale(1.04);
-    }
-
-    .gamecard {
-      width: 300px;
-      height: 200px;
-      background-color: #FFFFFF;
-      filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.2));
-      border-radius: 14px;
-    }
-
-    .gamecard-button {
-      border-radius: 12px;
-      border: none;
-      background-color: #F3F4F5;
-      color: #0094FF;
-      font-family: "Neurial Grotesk", system-ui;
-      font-weight: 500;
-      text-transform: uppercase;
-      transition: linear 100ms;
-      cursor: pointer;
-    }
-
-    .gamecard-button:hover {
-      transform: scale(1.08);
+      border-radius: 16px;
+      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
     }
 
     .translucent-sheet {
       width: 100%;
-      height: 90vh;
+      height: 40vh;
       background-color: #FFFFFF95;
       position: fixed;
       position: -webkit-fixed;
@@ -252,7 +83,7 @@
       margin-left: auto;
       overflow-x: hidden;
       overflow-y: scroll;
-      border-radius: 16px 16px 0px 0px;
+      border-radius: 16px 16px 0px 0px; 
     }
 
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -261,31 +92,20 @@
         backdrop-filter: blur(30px);
         background-color: #FFFFFF95;
       }
+      
+      #abp001 {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background-color: #FFFFFF95;
+      }
     }
-
-    .shortcuts-container {
+    
+        .shortcuts-container {
       width: 300px;
       height: 60px;
       background-color: #FFFFFF;
       border-radius: 14px;
       filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
-    }
-
-    .launchlink-button {
-      width: 180px;
-      height: 26px;
-      border-radius: 28px;
-      border: solid 2px #0094FF;
-      background-color: transparent;
-      cursor: pointer;
-      color: #0094FF;
-      font-weight: 500;
-      margin-top: 20px;
-      transition: linear 100ms;
-    }
-
-    .launchlink-button:hover {
-      transform: scale(1.1);
     }
 
     .bar {
@@ -298,83 +118,50 @@
       float: right;
       margin-right: 20px;
     }
-
+    
     .shortcut {
       width: 140px;
       height: 60px;
       display: inline-block;
     }
-
+    
     .shortcut-text {
-      font-family: "Neurial Grotesk", system-ui;
+      font-family: 'Neurial Grotesk', system-ui;
       color: #CCCCCC;
       font-weight: 500;
       position: relative;
       top: 20px;
       transition: linear 100ms;
     }
-
+    
     .settings-href {
       color: #000000;
     }
-
+    
     .backlink {
       color: #000000;
     }
-
+    
     .menu-heading {
       color: #000000;
     }
     
-    .adverts {
-      width: 300px;
-      height: 533.33px;
-      overflow: hidden;
-      border: none;
-      border-radius: 18px;
-      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
-    }
-    
-    .post-card {
-      background: rgb(0, 198, 255);
-      background: linear-gradient(
-        180deg,
-        rgba(0, 198, 255, 1) 0%,
-        rgba(0, 148, 255, 1) 100%
-      );
-      border-radius: 16px;
-      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.04));
-    }
-    
-    .productcard {
-      width: 300px;
-      height: 200px;
+    .tab-bar {
+      width: 100%;
+      height: 60px;
       background-color: #FFFFFF;
-      border-radius: 14px;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+       margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
     }
     
-    .productcard-content {
-      width: 300px;
-    }
-
-    .purchase-button {
-      width: 106px;
-      height: 32px;
-      background-color: #222222;
-      color: #F6F6F6;
-      border: none;
-      border-radius: 32px;
-      font-family: 'Neurial Grotesk', system-ui;
-      text-transform: uppercase;
-      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
-      cursor: pointer;
-      transition: linear 200ms;
-      letter-spacing: 1.2px;
-      text-align: center;
-    }
-    
-    .purchase-button:hover {
-      transform: scale(1.1);
+    a {
+      color: #000000;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -382,71 +169,74 @@
         background-color: #090C10;
         color: #C9D1D9;
       }
+      
+      a {
+        color: #C9D1D9;
+      }
+
+      .experience-card-small {
+        background-color: #0C0F14;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3);
+      }
 
       .separator {
         background-color: #C9D1D930;
       }
 
-      .text-logo {
-        font-family: "Neurial Grotesk", system-ui;
-        color: #0094FF;
-        font-weight: 700;
-        font-size: 24px;
-      }
-
-      .experiences {
-        background-color: #0C0F14;
-        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
-      }
-
-      .video-widget {
-        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
-      }
-
-      .gamecard {
-        filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.8));
-      }
-
       @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        .translucent-sheet {
-          -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-          background-color: #090C1095;
-        }
+      .translucent-sheet {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        background-color: #090C1095;
       }
-
+        
+        #abp001 {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        background-color: #090C1095;
+      }
+    }
+      
       .translucent-sheet {
         filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
       }
-
+      
+      #abp001 {
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
+      }
+      
       .bar {
         background-color: #090C10;
       }
-
+      
       .shortcuts-container {
-        width: 300px;
-        height: 60px;
-        background-color: #0D1117;
-        border-radius: 14px;
+      width: 300px;
+      height: 60px;
+      background-color: #0D1117;
+      border-radius: 14px;
         border: 1.6px solid #30363D;
-        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
-      }
-
+      filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    }
+      
       .settings-href {
         color: #C9D1D9;
-      }
-
+    }
+      
       .backlink {
         color: #C9D1D9;
       }
-
+      
       .menu-heading {
-        color: #C9D1D9;
+      color: #C9D1D9;
+    }
+      
+      .tab-bar {
+        background-color: #090C10 !important;
       }
       
-      .purchase-button {
-        background-color: #0094FF;
-      } 
+      a {
+        color: #C9D1D9;
+      }
     }
   </style>
   <body>
@@ -457,202 +247,75 @@
           <br />
           <div>
             <h1
-              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -16px;"
+              style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; top: -16px; font-weight: 500;"
             >
-              <a
-                href="javascript:history.back()"
-                style="color: #0094FF"
-                class="material-icons-round"
-                >arrow_back</a
-              >
-              &ensp; Explore
+              Explore &ensp;
+            <i class="bi bi-list" id="toggle" style="font-size: 28px; float: right; cursor: pointer;"></i>
             </h1>
             <br />
-            <img
-              class="explore"
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fa39af331-79fb-48cc-a4bf-8afdb00edd95.image.png?v=1627093172944"
-                 id="toggle"
-            />
-            <br />
+            <br>
+            <br>
             <div
               class="separator"
               style="width: 100%; height: 2px; margin-top: -66px; border-radius: 12px;"
             ></div>
           </div>
-          <br>
-          <br>
-          <br>
-          <div class="experiences">
-            <text
-              style="font-family: 'Neurial Grotesk', system-ui; font-size: 18px;
-      font-weight: 500;
-      color: #CCCCCC;
-      text-transform: uppercase;  position: relative; text-align: left; display: block; top: 22px; left: 26px;"
-            >
-              AR Experiences
-            </text>
-            <br />
-            <text
-              style="font-family: 'Neurial Grotesk', system-ui; font-size: 24px;
-      font-weight: 600;
-position: relative; text-align: left; display: block; top: 22px; left: -2px; width: 240px;"
-            >
-              All the AR content you can ask for.
-            </text>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div class="experience-content">
-              <figure
-                class="ar-experience-cover"
-                style="background: url('https://cdn.dribbble.com/users/1869172/screenshots/14544858/media/b24c63cf37bcf28da87f4d6e5f2d1cf2.png?compress=1&resize=1600x1200'); background-size: auto 100%;"
-              ></figure>
-              <text class="ar-experience-title">Windmill</text>
-              <text class="ar-experience-description"
-                >View a windmill in AR</text
-              >
-              <a
-                class="ar-experience-launchlink"
-                href="https://bit.ly/3vh2NY8"
-                target="_blank"
-                >Open in AR</a
-              >
-            </div>
-            <br />
-            <div class="experience-content" style="margin-top: -70px;">
-              <figure
-                class="ar-experience-cover"
-                style="background: url('https://cdn.dribbble.com/users/60166/screenshots/11442385/media/04245a13a17845b0bb38203e7bf4eac9.jpg?compress=1&resize=1600x1200'); background-size: auto 100%;"
-              ></figure>
-              <text class="ar-experience-title">Desert Temple</text>
-              <text class="ar-experience-description"
-                >View a pyramyd in AR</text
-              >
-              <a
-                class="ar-experience-launchlink"
-                href="https://bit.ly/3cTxj4j"
-                target="_blank"
-                >Open in AR</a
-              >
-            </div>
-            <br />
-            <div class="experience-content" style="margin-top: -70px;">
-              <figure
-                class="ar-experience-cover"
-                style="background: url('https://cdn.dribbble.com/users/844597/screenshots/12486416/media/c23a3220d3d06074ba2e422a6f35f21e.png'); background-size: auto 100%;"
-              ></figure>
-              <text class="ar-experience-title">Whale</text>
-              <text class="ar-experience-description"
-                >The biggest on the ocean</text
-              >
-              <a
-                class="ar-experience-launchlink"
-                href="https://bit.ly/3iBc5vI"
-                target="_blank"
-                >Open in AR</a
-              >
-            </div>
-            <br />
-            <button
-              style="width: 90%; height: 36px; border-radius: 10px; background-color: #0094FF; border: none; position: relative; top: -76px;"
-            >
-              <a
-                href="experiences.html"
-                style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;"
-                >All experiences</a
-              >
-            </button>
-          </div>
           <br />
           <br />
-          <br />
-          <br />
-          <h3
-            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
-          >
-            Top Arcade games
+          <h3 style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500;">
+            Popular experiences &ensp; <a href="experiences.html" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; text-decoration: none; float: right; text-align: right; position: relative; font-size: 16px; top: 2px;">View all</a>
           </h3>
-          &ensp;
-          <a href="arcade.html" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; font-weight: 500; font-size: 18px; position: relative; right: -100px; top: -40px;">View all <span style="font-size: 16px;" class="material-icons-round">arrow_forward</span></a>
           <br />
-          <div
-            class="gamecard"
-            style="background: url('https://cdn.dribbble.com/users/121405/screenshots/14915028/media/36d6190013d42ec57391733c5fc5c515.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
-          >
-            <div
-              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-        background-color: #FFFFFF85;"
-            >
-              <img
-                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fsnake-arcade-cover.png?v=1624027880735"
-                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
-              />
-              <br />
-              <h3
-                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
-              >
-                Snake
-              </h3>
-              <br />
-              <p
-                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
-              >
-                Don't bite your tail!
-              </p>
-              <br />
-              <button
-                onclick="window.location.href='arcade/snake.html';"
-                style="position: relative; top: -54px; left: 110px;"
-                class="gamecard-button"
-              >
-                Play
-              </button>
-            </div>
+           <a href="https://arboox.com/experiences/airplane" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2021.png?v=1629739571140'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px;">
+               Airplane
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               Flight vibes in your space
+             </p>
           </div>
+          </a>
           <br />
-          <br />
-          <div
-            class="gamecard"
-            style="background: url('https://cdn.dribbble.com/users/1728242/screenshots/15134789/media/f47b57d975aeb725c9d3483d66b83984.jpg?compress=1&resize=1600x1200'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
-          >
-            <div
-              style="width: 100%; height: 60px; background-color: #FFFFFF; position: relative; top: 140px; border-radius: 0px 0px 14px 14px; -webkit-backdrop-filter: blur(14px);
-        backdrop-filter: blur(14px);
-        background-color: #FFFFFF85;"
-            >
-              <img
-                src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Flvrp-arcade-cover.png?v=1624027880675"
-                style="width: 40px; margin-top: 10px; border-radius: 8px; margin-left: -240px;"
-              />
-              <br />
-              <h3
-                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -44px; font-weight: 500; margin-left: 60px;"
-              >
-                LV Resort Party
-              </h3>
-              <br />
-              <p
-                style="font-family: 'Neurial Grotesk', system-ui; text-align: left; color: #FFFFFF; margin-top: -40px; font-size: 12px; margin-left: 60px;"
-              >
-                Party in any hotel
-              </p>
-              <br />
-              <button
-                onclick="window.location.href='arcade/lvrp.html';"
-                style="position: relative; top: -54px; left: 110px;"
-                class="gamecard-button"
-              >
-                Play
-              </button>
-            </div>
+          <a href="https://arboox.com/experiences/velociraptor" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2016.png?v=1629746322190'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px; ">
+               Velociraptor
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               View a raptor in real life
           </div>
+          </a>
           <br />
-          <br />
-          <br />
-          <br />
+          <a href="https://arboox.com/experiences/space-shuttle" target="_blank">
+           <div class="experience-card-small">
+             <figure style="width: 50px; height: 60px; background-color: #F0F0F0; border-radius: 6px; float: left; position: relative; top: -6px; left: -30px; background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2023.png?v=1629851618184'); background-size: auto 100%; background-position: center;"></figure>
+             &ensp;
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; position: relative; left: -50px; top: -16px;">
+               Space Shuttle
+             </p>
+             <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-size: 14px; position: relative; left: -50px; top: -26px;">
+               Prepare for launch
+             </p>
+          </div>
+          </a>
+          <br>
+          <br>
+          <br>
+          <h3 style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500;">
+            New stories
+          </h3>
+          <br>
+          <div class="story-card-small">
+            
+          </div>
+          <br>
+          <br>
+          <br>
           <div>
             <iframe
               src="https://arboox.glitch.me/datalogs/1.html"
@@ -674,74 +337,59 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
           <br />
           <br />
           <br />
-          <h3
-            style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;"
-          >
-            Watch trending videos from popular publishers
-          </h3>
-          <br />
-          <div class="videos">
-            <div class="video-widget one">
-              <img
-                class="video-widget-youtube-logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg"
-              />
+          <a href="https://bit.ly/3i2elv4" target="_blank">
+            <div class="experience_card">
+              <div
+                style="background: url('https://cdn.dribbble.com/users/1803663/screenshots/15984463/media/2d3bee8b50e96998f777dea3fbb7341e.png?compress=1&resize=1600x1200'); background-size: auto 100%; background-position: center; width: 300px; height: 294px; border-radius: 18px 18px 0px 0px; "
+              ></div>
               <br />
-              <h3 class="video-widget-title" style="margin-top: -4px;">
-                How Noiseless Props Are Made For Movies
-              </h3>
-              <br />
-              <a class="video-widget-play-button" href="tv/1.html">Play</a>
+              <div>
+                <p
+                  style="font-family: 'Neurial Grotesk', system-ui; font-weight: 700; position: relative; text-align: left; left: 30px; top: -8px;"
+                >
+                  Rock Fountain
+                </p>
+                <br />
+                <p
+                  style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; left: 30px; top: -58px; color: #CCCCCC;"
+                >
+                  Give yourself a zen moment
+                </p>
+              </div>
             </div>
-            <br />
-            <br />
-            <div class="video-widget two">
-              <img
-                class="video-widget-youtube-logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg"
-              />
-              <br />
-              <h3
-                class="video-widget-title"
-                style="margin-top: 30px; margin-left: 18px; width: 200px;"
-              >
-                How the rich avoid paying taxes
-              </h3>
-              <br />
-              <a class="video-widget-play-button" href="tv/2.html">Play</a>
-            </div>
-            <br />
-            <br />
-            <div class="video-widget three">
-              <img
-                class="video-widget-youtube-logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/YouTube_light_logo_%282017%29.svg"
-              />
-              <br />
-              <h3 class="video-widget-title">
-                Windows 11 beta deep dive
-              </h3>
-              <br />
-              <a class="video-widget-play-button" href="tv/3.html">Play</a>
-            </div>
+          </a>
+          <div class="tab-bar">
+            <center>
+              <div style="width: 90%; max-width: 400px; height: 60px; margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;">
+                <div style="width: 60px; height: 60px; display: inline-block; margin-left: -10px;">
+                  <i class="bi bi-file-binary" style="font-size: 22px; position: relative; top: 14px; cursor: pointer;" onclick="window.location.href='main.html';"></i>
+                </div>
+               &ensp; 
+                <div style="width: 50px; height: 60px; display: inline-block">
+                  <i class="bi bi-tv" style="font-size: 26px; position: relative; top: 16px; cursor: pointer;" onclick="window.location.href='tv';"></i>
+                </div>
+                &ensp; 
+                <div style="width: 50px; height: 60px; display: inline-block">
+                  <i class="bi bi-globe2" style="font-size: 22px; position: relative; top: 14px; cursor: pointer;" onclick="window.location.href='explore.html';"></i>
+                </div>
+                &ensp; 
+                <div style="width: 50px; height: 60px; display: inline-block">
+                  <i class="bi bi-basket" style="font-size: 24px; position: relative; top: 14px; cursor: pointer;" onclick="window.location.href='shopping';"></i>
+                </div>
+                &ensp; 
+                <div style="width: 50px; height: 60px; display: inline-block">
+                  <i class="bi bi-map" style="font-size: 22px; position: relative; top: 14px; cursor: pointer;" onclick="window.location.href='map.html';"></i>
+              </div>
+            </center>
           </div>
-          <button
-            class="postbutton"
-            onclick="window.location.href='https://arboox.github.io/arbooxapp/posts';"
-          >
-            <img
-              src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fplus.svg?v=1627238736991"
-              style="width: 18px; margin-top: 12.4px; float: left; margin-left: 10px; display: inline-block;"
-            />
-            &ensp;
-            <p
-              style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; font-size: 18px; display: inline-block; margin-top: 9.8px; margin-left: -10px;"
-            >
-              Share something
-            </p>
-          </button>
-          <div class="translucent-sheet animate-reveal" id="settings-sheet">
-          <div class="bar" id="settings-sheet-bar">
+        </center>
+        <br />
+        <div class="translucent-sheet animate-reveal" id="settings-sheet">
+          <div id="settings-sheet-bar">
             <span
               class="material-icons-round"
               style="font-size: 28px; margin-top: 20px; float: right; margin-right: 20px; cursor: pointer; position: relative; top: 22px;"
@@ -752,86 +400,37 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
         <center>
           <br />
           <br />
-          <p style="text-align: center; display: inline-block; font-family: 'Neurial Grotesk', system-ui; font-weight: 500; font-size: 20px; margin-top: 6px;">
-              Menu
-          </p>
-          <br />
-          <br />
           <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
-            Shortcuts
+            More from ARBOOX
           </p>
           <br>
-          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/explore.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fexplore.png?v=1626964537116" style="position: relative; top: 3px; width: 24px;">
-            &ensp;
+           <a class="settings-href animate-reveal" href="https://arboox.com/studio/" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
             <h2 style="display: inline-block;">
-              Explore
+             <i class="bi bi-laptop"></i>&ensp; Studio
             </h2>
           </a>
           <br>
-          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/map.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fmap.png?v=1626965399891" style="position: relative; top: 3px; width: 24px;">
-            &ensp;
+          <a class="settings-href animate-reveal" href="https://arboox.com/brands" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
             <h2 style="display: inline-block;">
-              Map
+              <i class="bi bi-basket"></i>&ensp; For Brands
             </h2>
           </a>
-          <br>
-          <a class="settings-href animate-reveal" href="https://arboox.github.io/arbooxapp/arcade.html" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Farcade.png?v=1626997768600" style="position: relative; top: 3px; width: 28px;">
-            &ensp;
-            <h2 style="display: inline-block;">
-              Arcade
-            </h2>
-          </a>
-          <br>
-          <br>
-          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
-            More
-          </p>
           <br>
           <a class="settings-href animate-reveal" href="https://arboox.com/privacy" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprivacy.png?v=1626999116977" style="position: relative; top: 3px; width: 30px;">
-            &ensp;
             <h2 style="display: inline-block;">
-              Privacy
-            </h2>
-          </a>
-           <br />
-          <a class="settings-href animate-reveal" href="https://arboox.com/studio/creators" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <img src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fprofile.png?v=1627002530605" style="position: relative; top: 3px; width: 24px;">
-            &ensp;
-            <h2 style="display: inline-block;">
-              Profile
+              <i class="bi bi-lock-fill"></i>&ensp; Privacy
             </h2>
           </a>
           <br>
-          <br>
-          <p class="menu-heading" style="font-family: 'Neurial Grotesk', system-ui; text-transform: uppercase; text-align: left; font-weight: 500; font-size: 13px">
-            Other
-          </p>
-          <br>
-          <a class="settings-href animate-reveal" href="https://arboox.com/studio/adverts" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <span class="material-icons-round" style="position: relative; top: 3px;">north_east</span>
-            &ensp;
+          <a class="settings-href animate-reveal" href="https://instagram.com/arbooxapp" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
             <h2 style="display: inline-block;">
-              Advertisements
-            </h2>
-          </a>
-          <br>
-          <a class="settings-href animate-reveal" href="https://arboox.com/studio/brands" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block;">
-            <span class="material-icons-round" style="position: relative; top: 3px;">shopping_bag</span>
-            &ensp;
-            <h2 style="display: inline-block;">
-              Set up shopping
+              <i class="bi bi-instagram"></i>&ensp; Instagram
             </h2>
           </a>
           <br>
           <a class="settings-href animate-reveal" href="https://arboox.com/setup/delete" target="_blank" style="font-family: 'Neurial Grotesk', system-ui; text-align: left; display: block; color: #FF3A44;">
-            <span class="material-icons-round" style="position: relative; top: 3px;">delete</span>
-            &ensp;
             <h2 style="display: inline-block;">
-              Delete account
+              <i class="bi bi-trash"></i>&ensp; Delete account
             </h2>
           </a>
           </div>
@@ -839,17 +438,12 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
           <br />
           <br />
         </div>
-      </div>
-          <br />
-          <br />
-          <br />
-          <p class="text-logo">
-            ARBOOX™
-          </p>
-        </center>
-        <br />
-      </div>
-      <br />
+        <br>
+        <br>
+        <br>
+          <br>
+          <br>
+          <br>
     </center>
     <script>
       document.querySelector("#toggle").addEventListener("click", function() {
@@ -861,6 +455,18 @@ position: relative; text-align: left; display: block; top: 22px; left: -2px; wid
         .querySelector("#settings-sheet-bar")
         .addEventListener("click", function() {
           document.querySelector("#settings-sheet").style.display = "none";
+        });
+    </script>
+      <script>
+      document.querySelector("#ustxt-abp001").addEventListener("click", function() {
+        document.querySelector("#abp001").style.display = "block";
+      });
+    </script>
+    <script>
+      document
+        .querySelector("#abp001-sheet-bar")
+        .addEventListener("click", function() {
+          document.querySelector("#abp001").style.display = "none";
         });
     </script>
   </body>

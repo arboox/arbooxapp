@@ -104,6 +104,26 @@
     .p-content {
       color: #ABABAB;
     }
+    
+    .translucent-sheet {
+      width: 100%;
+      height: 80vh;
+      background-color: #FFFFFF95;
+      -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
+      z-index: 100;
+      display: none;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 16px 16px 0px 0px; 
+    }
 
     @media (prefers-color-scheme: dark) {
       body {
@@ -121,6 +141,13 @@
 
       .p-content {
         color: #C9D1D9;
+      }
+      
+      .translucent-sheet {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        background-color: #090C1095;
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
       }
     }
   </style>
@@ -154,8 +181,7 @@ background: linear-gradient(180deg, rgba(68,68,68,1) 0%, rgba(0,0,0,0) 100%);"
           ></div>
           &ensp;
           <p
-            onclick="window.location.href='https://arboox.github.io/arbooxapp/brands/dailysoup.html';"
-            style="position: relative; top: -34px; left: 60px; cursor: pointer; font-weight: 500; color: #FFFFFF; text-align: left;"
+            style="position: relative; top: -34px; left: 60px; font-weight: 500; color: #FFFFFF; text-align: left;"
           >
             @dailysoup
           </p>
@@ -276,9 +302,15 @@ background: linear-gradient(0deg, rgba(68,68,68, 0.8) 0%, rgba(0,0,0,0) 100%); w
           There are many rooftop gardens open to the public in Chicago. Check out <a href="https://www.timeout.com/chicago/restaurants/hidden-patios-rooftops-in-chicago" target="_blank">this article</a> by the Time Out mag.
         </p>
       </div>
+      <div class="translucent-sheet animate-reveal" id="abp001">
+        <iframe src="https://arboox.github.io/arbooxapp/brands/dailysoup" style="width: 100%; height: 100%; border: none; border-radius: 16px 16px 0px 0px;">
+          
+        </iframe>
+      </div>
       <br />
       <br />
       <br />
     </center>
   </body>
 </html>
+

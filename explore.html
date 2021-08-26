@@ -46,17 +46,6 @@
       transform: scale(0.92);
     }
 
-    .story-card-small {
-      width: 100%;
-      height: 168px;
-      border-radius: 16px;
-      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
-    }
-
-    .separator {
-      background-color: #F3F4F5;
-    }
-
     .adverts {
       width: 300px;
       height: 533.33px;
@@ -64,40 +53,6 @@
       border: none;
       border-radius: 16px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
-    }
-
-    .translucent-sheet {
-      width: 100%;
-      height: 40vh;
-      background-color: #FFFFFF95;
-      position: fixed;
-      position: -webkit-fixed;
-      bottom: 0;
-      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
-      z-index: 100;
-      display: none;
-      margin: 0;
-      right: 0;
-      left: 0;
-      margin-right: auto;
-      margin-left: auto;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      border-radius: 16px 16px 0px 0px; 
-    }
-
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      .translucent-sheet {
-        -webkit-backdrop-filter: blur(30px);
-        backdrop-filter: blur(30px);
-        background-color: #FFFFFF95;
-      }
-      
-      #abp001 {
-        -webkit-backdrop-filter: blur(30px);
-        backdrop-filter: blur(30px);
-        background-color: #FFFFFF95;
-      }
     }
     
         .shortcuts-container {
@@ -146,20 +101,6 @@
       color: #000000;
     }
     
-    .tab-bar {
-      width: 100%;
-      height: 60px;
-      background-color: #FFFFFF;
-      position: fixed;
-      position: -webkit-fixed;
-      bottom: 0;
-       margin: 0;
-      right: 0;
-      left: 0;
-      margin-right: auto;
-      margin-left: auto;
-    }
-    
     a {
       color: #000000;
     }
@@ -178,34 +119,98 @@
         background-color: #0C0F14;
         filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3);
       }
+      
+      .tab-bar {
+        background-color: #090C10 !important;
+      }
 
-      .separator {
+      a {
+        color: #C9D1D9;
+      }
+    }
+  </style>
+  <style> 
+  .tab-bar {
+      width: 100%;
+      height: 60px;
+      background-color: #FFFFFF;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+       margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    
+    .separator {
+      background-color: #F3F4F5;
+    }
+    
+    
+    .story-card-small {
+      width: 100%;
+      height: 168px;
+      border-radius: 16px;
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
+      background-color: #F8F9FA;
+      transition: linear 160ms;
+      cursor: pointer;
+    }
+    
+    .story-card-small:hover {
+      transform: scale(0.92);
+    }
+    
+    .translucent-sheet {
+      width: 100%;
+      height: 40vh;
+      background-color: #FFFFFF95;
+      -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.2));
+      z-index: 100;
+      display: none;
+      margin: 0;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-radius: 16px 16px 0px 0px; 
+    }
+    
+    .bi-globe2 {
+      -webkit-text-stroke: .2px #000000;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+            .tab-bar {
+        background-color: #090C10 !important;
+      }
+      
+            .separator {
         background-color: #C9D1D930;
       }
 
-      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .story-card-small {
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.6));
+      background-color: #0C0F14;
+      }
+      
       .translucent-sheet {
+        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
         background-color: #090C1095;
       }
-        
-        #abp001 {
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        background-color: #090C1095;
-      }
-    }
       
-      .translucent-sheet {
-        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
-      }
-      
-      #abp001 {
-        filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.6));
-      }
-      
-      .bar {
+            .bar {
         background-color: #090C10;
       }
       
@@ -230,13 +235,32 @@
       color: #C9D1D9;
     }
       
-      .tab-bar {
-        background-color: #090C10 !important;
+      .bi-globe2 {
+        -webkit-text-stroke: .2px #C9D1D9;
       }
-      
-      a {
-        color: #C9D1D9;
-      }
+    }
+  </style>
+  <style>
+    .game-card {
+      width: 140px;
+      height: 160px;
+      background-color: #F8F9FA;
+      border-radius: 16px;
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
+      displaY: inline-block;
+      cursor: pointer;
+      transition: linear 160ms;
+    }
+    
+    .game-card:hover {
+      transform: scale(0.92);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      .game-card {
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.6));
+      background-color: #0C0F14;
+    }
     }
   </style>
   <body>
@@ -310,9 +334,63 @@
             New stories
           </h3>
           <br>
-          <div class="story-card-small">
-            
+          <a href="stories/0001">
+          <div class="story-card-small" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ffcf673dd-b95d-4900-a53d-d12f777a1e59.image.png?v=1628525668911'); background-size: 100%; background-position: center; background-repeat: no-repeat;">
+             <h3 style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; text-transform: uppercase; position: relative; top: 10px; left: 12px;">
+               Story
+            </h3>
+            <br>
+            <h2 style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; position: relative; float: left; width: 260px; bottom: -20px; left: 12px;">
+              Why rooftop gardens are a good solution
+            </h2>
           </div>
+          </a>
+          <br>
+          <br>
+           <a href="stories/0002">
+          <div class="story-card-small" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FInstagram%20post%20-%2030.png?v=1629941623533'); background-size: 100%; background-position: bottom; background-repeat: no-repeat;">
+             <h3 style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; text-transform: uppercase; position: relative; top: 10px; left: 12px;">
+               Story
+            </h3>
+            <br>
+            <h2 style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; position: relative; float: left; width: 260px; bottom: 6px; left: 12px;">
+            The all-new Nefertiti experience is waiting for you to try it  
+            </h2>
+          </div>
+          </a>
+          <br>
+          <br>
+          <br>
+          <h3 style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500;">
+            Top arcade games &ensp; <a href="arcade" style="font-family: 'Neurial Grotesk', system-ui; color: #0094FF; text-decoration: none; float: right; text-align: right; position: relative; font-size: 16px; top: 2px;">View all</a>
+          </h3>
+          <br>
+          <a href="arcade/snake">
+          <div class="game-card">
+            <figure style="width: 120px; height: 90px; border-radius: 6px; background-color: #F0F0F0; position: relative; margin: 0; right: 0; left: 0; margin-right: auto; margin-left: auto; top: 10px; background: url('https://cdn.dribbble.com/users/121405/screenshots/14915028/media/36d6190013d42ec57391733c5fc5c515.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;"></figure>
+            <br>
+            <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; margin-left: 10px; position: relative; top: -16px;">
+              Snake
+            </p>
+            <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10px; position: relative; top: -30px; font-size: 14px;">
+              Don't bite your tail!
+            </p>
+          </div>
+          </a>
+          &ensp;
+          <a href="arcade/lvrp">
+          <div class="game-card">
+            <figure style="width: 120px; height: 90px; border-radius: 6px; background-color: #F0F0F0; position: relative; margin: 0; right: 0; left: 0; margin-right: auto; margin-left: auto; top: 10px; background: url('https://cdn.dribbble.com/users/1728242/screenshots/15134789/media/f47b57d975aeb725c9d3483d66b83984.jpg?compress=1&resize=1600x1200'); background-size: 100%; background-repeat: no-repeat; background-position: center;"></figure>
+            <br>
+            <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; font-weight: 500; margin-left: 10px; position: relative; top: -16px;">
+              LVRP
+            </p>
+            <p style="font-family: 'Neurial Grotesk', system-ui; text-align: left; margin-left: 10px; position: relative; top: -30px; font-size: 14px;">
+              Host your party
+            </p>
+          </div>
+          </a>
+          <br>
           <br>
           <br>
           <br>
@@ -333,31 +411,6 @@
               Sponsored
             </p>
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="https://bit.ly/3i2elv4" target="_blank">
-            <div class="experience_card">
-              <div
-                style="background: url('https://cdn.dribbble.com/users/1803663/screenshots/15984463/media/2d3bee8b50e96998f777dea3fbb7341e.png?compress=1&resize=1600x1200'); background-size: auto 100%; background-position: center; width: 300px; height: 294px; border-radius: 18px 18px 0px 0px; "
-              ></div>
-              <br />
-              <div>
-                <p
-                  style="font-family: 'Neurial Grotesk', system-ui; font-weight: 700; position: relative; text-align: left; left: 30px; top: -8px;"
-                >
-                  Rock Fountain
-                </p>
-                <br />
-                <p
-                  style="font-family: 'Neurial Grotesk', system-ui; position: relative; text-align: left; left: 30px; top: -58px; color: #CCCCCC;"
-                >
-                  Give yourself a zen moment
-                </p>
-              </div>
-            </div>
-          </a>
           <div class="tab-bar">
             <center>
               <div style="width: 90%; max-width: 400px; height: 60px; margin: 0;

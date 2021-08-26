@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stories | ARBOOX</title>
+    <title>ARBOOX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="apple-mobile-web-app-title" content="ARBOOX" />
-    <meta name="theme-color" content="#0094FF">
+    <meta name="theme-color" content="#0094FF" />
     <link
       rel="apple-touch-icon"
       href="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FARBOOX%20LOGO.png?v=1610647083458"
@@ -16,7 +16,7 @@
       rel="shortcut icon"
       href="https://cdn.glitch.com/2d6e568a-47b8-4f2a-901b-67b9aad6a35d%2Fapp_icon_pwa.png?v=1617986632632"
     />
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
@@ -24,61 +24,56 @@
     />
   </head>
   <style>
-    @import url('https://arboox.glitch.me/style.css');
-    
+    @import url("https://arboox.glitch.me/style.css");
+
     body {
       overflow-x: hidden;
       margin: 0px;
     }
-    
-    .main {
-      width: 300px;
-    }
-    
+
     h1 {
-      font-family: 'Neurial Grotesk', system-ui;
+      font-family: "Neurial Grotesk", system-ui;
       position: relative;
       text-align: left;
       margin-top: -36px;
       margin-left: -10px;
     }
-  
+
     h2 {
-      font-family: 'Neurial Grotesk', system-ui;
+      font-family: "Neurial Grotesk", system-ui;
     }
-    
+
     h3 {
-      font-family: 'Neurial Grotesk', system-ui;
+      font-family: "Neurial Grotesk", system-ui;
     }
-    
+
     p {
-      font-family: 'Neurial Grotesk', system-ui;
+      font-family: "Neurial Grotesk", system-ui;
     }
-    
+
     .story-header {
-      width: 300px;
-      margin-top: 20px;
-      height: 384px;
+      width: 100%;
+      height: 297px;
+      margin-top: -20px;
       background-color: #F3F4F5;
-      background: url('https://images.unsplash.com/photo-1518517611416-da57df49b8d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=769&q=80');
+      background: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Ffcf673dd-b95d-4900-a53d-d12f777a1e59.image.png?v=1628525668911");
       background-size: auto 100%;
       background-position: center;
-      border-radius: 16px;
-      filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.16));
     }
 
     .story-content {
       width: 80%;
     }
-    
+
     .profile-img {
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
       background-color: #F3F4F5;
-      margin-left: -96%;
+      float: left;
+      margin-left: 20px;
       border-radius: 22px;
-    } 
-    
+    }
+
     .topictag {
       width: 100px;
       height: 28px;
@@ -88,197 +83,202 @@
       left: -70px;
       top: 300px;
     }
-    
-    ::selection {
-      color: #FFFFFF;
-      background-color: #000000;
-    }  
-    
+
     .image {
       width: 100%;
       height: 200px;
       background-color: #F3F4F5;
       border-radius: 16px;
       filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
-      transition: linear 100ms;
+      transition: linear 120ms;
     }
-    
+
     .image:hover {
       transform: scale(0.9);
     }
-    
+
     a {
       color: #0094FF;
     }
-    
+
+    .p-content {
+      color: #ABABAB;
+    }
+
     @media (prefers-color-scheme: dark) {
       body {
-        background-color: #1E2329;
-        color: #ADBAC7;
+        background-color: #090C10;
+        color: #C9D1D9;
       }
-      
-      ::selection {
-      color: #1E2329;
-      background-color: #ADBAC7;
-      }
-      
+
       a {
         color: #00B3FF;
       }
-      
+
       .material-icons-round {
         color: #222222;
       }
-    } 
+
+      .p-content {
+        color: #C9D1D9;
+      }
+    }
   </style>
   <body>
-<center>
-  <div class="main">
-    <br>
-    <br>
-  <div class="story-header">
-    <img onclick="window.location.href='javascript:history.back()';" src="https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fclose.svg?v=1625410277160" style="width: 30px; float: right; margin: 20px; cursor: pointer;">
-    &emsp;
-    <div class="topictag">
-      <p style="margin-top: 4px; color: #FFFFFF; text-transform: uppercase;">
-        Lifestyle
-      </p>
-    </div>
-  </div>
-  <br>
-  <div class="story-content">
-    <div class="profile">
-    <div class="profile-img" style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fyds-logo.png?v=1624747404472'); background-size: 100%;">
-      
-    </div>
-      &emsp;
-      <p onclick="window.location.href='https://arboox.github.io/arbooxapp/brands/dailysoup.html';" style="position: relative; top: -60px; left: -26px; cursor: pointer; font-weight: 500;">
-        @yourdailysoup
-      </p>
-    </div>
-    <h1>
-      Top 3 countries with best life quality
-    </h1>
-    <br>
-    <p style="text-align: left; margin-top: -16px; margin-left: -10px; color: #ABABAB;">
-      26 JUN, 2021&ensp; • &ensp;17:50 PM
-    </p>
-    <br>
-    <br>
-    <br>
-    <p style="text-align: left; margin-top: -22px; margin-left: -10px; color: #ABABAB;">
-      Hey fellow reader! Today, we're bringing you the tree countries with the best life quality in the world. For you to better understand the topic, we'll give you some context and explain what life quality is exactly first.
-    </p>
-    <br>
-    <br>
-    <h2 style="text-align: left; margin-left: -10px;">
-      What is life quality?
-    </h2>
-    <br>
-    <p style="text-align: left; margin-top: -22px; margin-left: -10px; color: #ABABAB;">
-      First of all, it is appropiate to mention that life quality is also known as <i>"Quality of life"</i> (QOL), but essentially, they're the same thing written in different orders. According to <a href="https://www.britannica.com/topic/quality-of-life" target="_blank">Enciclopædia Britannica</a>, Quality of Life is the degree to which an individual is healthy, comfortable, and able to participate in or enjoy life events.
-    </p>
-    <br>
-    <br>
-    <h2 style="text-align: left; margin-left: -10px;">
-      How is life quality measured?
-    </h2>
-    <br>
-    <p style="text-align: left; margin-top: -22px; margin-left: -10px; color: #ABABAB;">
-      There are multiple methods in which global organizations measure the QOL. Some organizations may calculate the quality of life based in a country's <i>Gross Domestic Product</i>, or GDP, and others based in the HDI <i>(Human Development Index)</i>. With all this being said, feel free to scroll down and find out the top 3 countries with best life quality. Also, there's an index that goes from 64 and below to 191 and above, meaning that the higher the number, the better the life quality.
-    </p>
-    <br>
-    <br>
-    <h3 style="text-align: left; margin-left: -10px; text-transform: uppercase;">
-      No. 1
-    </h3>
-    <br>
-        <h2 style="text-align: left; margin-left: -10px; margin-top: -20px;">
-      Switzerland
-    </h2>
-    <p style="text-align: left; margin-top: -4px; margin-left: -10px; color: #ABABAB;">
-      This one was expectable, and no wonder why some of the richest people in the world open bank accounts in Zurich. Switzerland is currently the number one country in the world (inside the ranking of life quality), with a QOL Index of 190.82.
-    </p>
-    <br>
-    <br>
-    <div class="image" style="background: url('https://images.unsplash.com/photo-1603978111726-42dd6fedbf67?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: auto 100%; background-repeat: no-repeat; background-position: center;">
-      
-    </div>
-    <br>
-    <p style="text-align: left; margin-top: -4px; color: #ABABAB;">
-      Bern, Switzerland — <a href="https://images.unsplash.com/photo-1603978111726-42dd6fedbf67?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" target="_blank">Unsplash</a>
-    </p>
-        <br>
-    <br>
-    <h3 style="text-align: left; margin-left: -10px; text-transform: uppercase;">
-      No. 2
-    </h3>
-    <br>
-        <h2 style="text-align: left; margin-left: -10px; margin-top: -20px;">
-        Denmark
-    </h2>
-    <p style="text-align: left; margin-top: -4px; margin-left: -10px; color: #ABABAB;">
-      Located in Europe as well, Denmark does not stay left behind in the top countries. It has a QOL Index of 190.02. It is also a secure country, with a Safety Index of 78.6.
-    </p>
-    <br>
-    <br>
-    <div class="image" style="background: url('https://images.unsplash.com/photo-1556051391-a6e4d5e3be1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80'); background-size: auto 100%; background-repeat: no-repeat; background-position: center;">
-      
-    </div>
-    <br>
-    <p style="text-align: left; margin-top: -4px; color: #ABABAB;">
-      Copenhagen Opera House, Denmark — <a href="https://images.unsplash.com/photo-1556051391-a6e4d5e3be1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" target="_blank">Unsplash</a>
-    </p>
-            <br>
-    <br>
-    <h3 style="text-align: left; margin-left: -10px; text-transform: uppercase;">
-      No. 3
-    </h3>
-    <br>
-        <h2 style="text-align: left; margin-left: -10px; margin-top: -20px;">
-        Netherlands
-    </h2>
-    <p style="text-align: left; margin-top: -4px; margin-left: -10px; color: #ABABAB;">
-      Wow. It must be a coincidence, right? It seems like the countries with the best life quality are in Europe. Finally, we have the Netherlands, with a QOL Index of 183.31.
-    </p>
-    <br>
-    <br>
-    <div class="image" style="background: url('https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'); background-size: auto 100%; background-repeat: no-repeat; background-position: center;">
-      
-    </div>
-    <br>
-    <p style="text-align: left; margin-top: -4px; color: #ABABAB;">
-      Amsterdam, Netherlands — <a href="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" target="_blank">Unsplash</a>
-    </p>
-        <br>
-    <br>
-    <h2 style="text-align: left; margin-left: -10px;">
-      Conclusion
-    </h2>
-    <br>
-    <p style="text-align: left; margin-top: -22px; margin-left: -10px; color: #ABABAB;">
-      As you can see, these 3 countries are slightly separated in QOL Indexes, but still they're some of the world's best countries to live in. What do you think? Would you like to visit them one day?
-    </p>
-    <br>
-    <br>
-    <h3 style="text-align: left; margin-left: -10px;">
-      Sources and references
-    </h3>
-    <br>
-    <p style="text-align: left; margin-top: -22px; margin-left: -10px; color: #ABABAB;">
-      Jenkinson, C. (2020, May 6). Quality of life. Encyclopedia Britannica. https://www.britannica.com/topic/quality-of-life
-      <br>
-      <br>
-      wikiHow. (2021, March 29). How to Measure Quality of Life. wikiHow. https://www.wikihow.com/Measure-Quality-of-Life. 
-      <br>
-      <br>
-      Quality of Life. Cost of Living. (n.d.). https://www.numbeo.com/quality-of-life/rankings_by_country.jsp. 
-    </p>
-  </div>
-  </div>
-  <br>
-  <br>
-  <br>
+    <center>
+      <div class="story-header">
+        <div
+          style="width: 100%; height: 50px; background: rgb(68,68,68);
+background: linear-gradient(180deg, rgba(68,68,68,1) 0%, rgba(0,0,0,0) 100%);"
+        ></div>
+        <h3
+          style="font-family: 'Neurial Grotesk', system-ui; color: #FFFFFF; text-align: left; font-size: 20px; text-transform: uppercase; margin-left: 20px; position: relative; top: 30px !important; margin-top: -50px;"
+        >
+          Story &ensp; <a href="javascript:history.back()" class="material-icons-round" style="color: #FFFFFF; float: right; position: relative; margin-right: 12px;">close</a>
+        </h3>
+        <br />
+        <h1
+          style="margin-left: 20px; margin-top: 100px; color: #FFFFFF; z-index: 100;"
+        >
+          Why rooftop gardens <br />
+          are a good solution
+        </h1>
+        <br />
+        <div
+          class="profile"
+          style="position: relative; z-index: 100; top: -26px;"
+        >
+          <div
+            class="profile-img"
+            style="background: url('https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2Fyds-logo.png?v=1629944280092'); background-size: 100%;"
+          ></div>
+          &ensp;
+          <p
+            onclick="window.location.href='https://arboox.github.io/arbooxapp/brands/dailysoup.html';"
+            style="position: relative; top: -34px; left: 60px; cursor: pointer; font-weight: 500; color: #FFFFFF; text-align: left;"
+          >
+            @dailysoup
+          </p>
+        </div>
+        <div
+          style="background: rgb(68,68,68);
+background: linear-gradient(0deg, rgba(68,68,68, 0.8) 0%, rgba(0,0,0,0) 100%); width: 100%; height: 100px; position: relative; top: -152px;"
+        ></div>
+      </div>
+      <br />
+      <div class="story-content">
+        <p style="text-align: left; margin-left: -10px;" class="p-content">
+          25 AUG, 2021&ensp; • &ensp;14:30 PM
+        </p>
+        <br />
+        <br />
+        <br />
+        <p
+          style="text-align: left; margin-top: -22px; margin-left: -10px;"
+          class="p-content"
+        >
+          If you've ever been to Chicago —or seen a satellite picture, you might
+          have noticed some buildings in the city have implemented the so-called
+          "rooftop gardens". These gardens are a solution to a set of problems
+          that are harming the planet. In this story, we share the secret sauce
+          behind rooftop gardens and the troubles they're solving.
+        </p>
+        <br />
+        <br />
+        <h2 style="text-align: left; margin-left: -10px;">
+          What is a rooftop garden?
+        </h2>
+        <br />
+        <p
+          style="text-align: left; margin-top: -22px; margin-left: -10px;"
+          class="p-content"
+        >
+          A rooftop garden is, as its name indicates, a garden sitting on top of
+          a roof. You can see these gardens in hotels and corporate buildings,
+          but some citizens have implemented them in duplexes and houses.
+        </p>
+        <br />
+        <br />
+        <div
+          class="image"
+          style="background: url('https://images.unsplash.com/photo-1527690499469-ef2eff9c6735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+        ></div>
+        <br />
+        <p style="text-align: left; margin-top: -4px;" class="p-content">
+          Building complex with rooftop gardens —
+          <a href="https://unsplash.com/photos/IfmqOuOkaOA" target="_blank"
+            >Unsplash</a
+          >
+        </p>
+        <br />
+        <br />
+        <h2 style="text-align: left; margin-left: -10px;">
+          What are the benefits of <i>hosting</i> a rooftop garden?
+        </h2>
+        <br />
+        <p
+          style="text-align: left; margin-top: -22px; margin-left: -10px;"
+          class="p-content"
+        >
+          There are many benefits that creating a rooftop garden can bring:
+          community engagement, business exposure and clean air, to name some,
+          but one of the most important benefits is the versatility that rooftop
+          gardens offer.
+        </p>
+        <br />
+        <br />
+        <div
+          class="image"
+          style="background: url('https://media.timeout.com/images/105787429/380/285/image.jpg'); background-size: 100%; background-repeat: no-repeat; background-position: center;"
+        ></div>
+        <br />
+        <p style="text-align: left; margin-top: -4px;" class="p-content">
+          This is Tony's Rooftop Bar at Time Out Market in Chicago — Photo by
+          Kevin Serna
+        </p>
+        <br />
+        <br />
+        <br />
+        <p
+          style="text-align: left; margin-top: -22px; margin-left: -10px;"
+          class="p-content"
+        >
+          Tony's Rooftop Bar is just a great example of how people can transform
+          rooftop gardens to become better spaces. Restaurants are not the only
+          way to transform a rooftop garden, but also orchards, small parks,
+          summer camp spaces, and many more!
+        </p>
+        <br />
+        <br />
+        <h2 style="text-align: left; margin-left: -10px;">
+          Which problems are rooftop gardens helping to solve?
+        </h2>
+        <br />
+        <p
+          style="text-align: left; margin-top: -22px; margin-left: -10px;"
+          class="p-content"
+        >
+          Rooftop gardens play an important role in decreasing overall noise in
+          busy urban areas. Empty roofs in buildings absorb and then radiate
+          heat. On the other hand, rooftop gardens help to cool buildings,
+          reducing carbon emissions.
+        </p>
+        <br />
+        <br />
+        <h2 style="text-align: left; margin-left: -10px;">
+          Where can I visit those rooftop gardens?
+        </h2>
+        <br />
+        <p
+          style="text-align: left; margin-top: -22px; margin-left: -10px;"
+          class="p-content"
+        >
+          There are many rooftop gardens open to the public in Chicago. Check out <a href="https://www.timeout.com/chicago/restaurants/hidden-patios-rooftops-in-chicago" target="_blank">this article</a> by the Time Out mag.
+        </p>
+      </div>
+      <br />
+      <br />
+      <br />
     </center>
   </body>
 </html>

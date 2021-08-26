@@ -133,3 +133,7 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+::selection {
+  background-color: #0094FF50;
+}
